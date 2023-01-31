@@ -1,0 +1,17 @@
+name: learn-github-actions
+
+on:
+  push:
+    branches:
+      - 'main'
+      
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Invoke foobarFunction Lambda
+      uses: gagoar/invoke-aws-lambda@master
+      with:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        FunctionName: foobarFunction
