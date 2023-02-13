@@ -1,0 +1,3639 @@
+[
+  {
+    "propertyName": "Id",
+    "numberOfServicesItAppearsIn": 429,
+    "patterns": {
+      "AWS::AppIntegrations::DataIntegration": "[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}",
+      "AWS::DevOpsGuru::NotificationChannel": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+      "AWS::FMS::Policy": "^[a-z0-9A-Z-]{36}$",
+      "AWS::Grafana::Workspace": "^g-[0-9a-f]{10}$",
+      "AWS::IoTFleetWise::Fleet": "^[a-zA-Z0-9:_-]+$",
+      "AWS::IoTWireless::TaskDefinition": "[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}",
+      "AWS::Lambda::EventSourceMapping": "[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}",
+      "AWS::MediaPackage::Channel": "\\A[0-9a-zA-Z-_]+\\Z",
+      "AWS::MediaPackage::OriginEndpoint": "\\A[0-9a-zA-Z-_]+\\Z",
+      "AWS::MediaPackage::PackagingGroup": "\\A[0-9a-zA-Z-_]+\\Z",
+      "AWS::OpenSearchServerless::VpcEndpoint": "^vpce-[0-9a-z]*$",
+      "AWS::Organizations::Policy": "^p-[0-9a-zA-Z_]{8,128}$",
+      "AWS::Organizations::OrganizationalUnit": "^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$",
+      "AWS::S3Outposts::Endpoint": "^[a-zA-Z0-9]{19}$",
+      "AWS::ServiceCatalogAppRegistry::Application": "[a-z0-9]{26}",
+      "AWS::ServiceCatalogAppRegistry::AttributeGroup": "[a-z0-9]{12}",
+      "AWS::WAFv2::RegexPatternSet": "^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$"
+    }
+  },
+  {
+    "propertyName": "Name",
+    "numberOfServicesItAppearsIn": 316,
+    "patterns": {
+      "AWS::Amplify::App": "(?s).+",
+      "AWS::AppIntegrations::EventIntegration": "^[a-zA-Z0-9/\\._\\-]+$",
+      "AWS::AppIntegrations::DataIntegration": "^[a-zA-Z0-9/\\._\\-]+$",
+      "AWS::Athena::WorkGroup": "[a-zA-Z0-9._-]{1,128}",
+      "AWS::BillingConductor::CustomLineItem": "[a-zA-Z0-9_\\+=\\.\\-@]+",
+      "AWS::Batch::SchedulingPolicy": "",
+      "AWS::BillingConductor::BillingGroup": "[a-zA-Z0-9_\\+=\\.\\-@]+",
+      "AWS::BillingConductor::PricingPlan": "[a-zA-Z0-9_\\+=\\.\\-@]+",
+      "AWS::BillingConductor::PricingRule": "[a-zA-Z0-9_\\+=\\.\\-@]+",
+      "AWS::CodeArtifact::Domain": "^([a-z][a-z0-9\\-]{0,48}[a-z0-9])$",
+      "AWS::CodeArtifact::Repository": "^([A-Za-z0-9][A-Za-z0-9._\\-]{1,99})$",
+      "AWS::CodeGuruReviewer::RepositoryAssociation": "^\\S[\\w.-]*$",
+      "AWS::CodeStarNotifications::NotificationRule": "[A-Za-z0-9\\-_ ]+$",
+      "AWS::Connect::ContactFlowModule": ".*\\S.*",
+      "AWS::Connect::Rule": "^[a-zA-Z0-9._-]{1,200}$",
+      "AWS::DataSync::Task": "^[a-zA-Z0-9\\s+=._:@/-]+$",
+      "AWS::EKS::Cluster": "^[0-9A-Za-z][A-Za-z0-9\\-_]*",
+      "AWS::EMR::Studio": "[a-zA-Z0-9_-]+",
+      "AWS::EMRServerless::Application": "^[A-Za-z0-9._\\/#-]+$",
+      "AWS::EMRContainers::VirtualCluster": "[\\.\\-_/#A-Za-z0-9]+",
+      "AWS::Events::Endpoint": "^[\\.\\-_A-Za-z0-9]+$",
+      "AWS::Evidently::Experiment": "[-a-zA-Z0-9._]*",
+      "AWS::Evidently::Feature": "[-a-zA-Z0-9._]*",
+      "AWS::Evidently::Project": "[-a-zA-Z0-9._]*",
+      "AWS::Evidently::Launch": "[-a-zA-Z0-9._]*",
+      "AWS::Evidently::Segment": "[-a-zA-Z0-9._]*",
+      "AWS::FinSpace::Environment": "^[a-zA-Z0-9]+[a-zA-Z0-9-]*[a-zA-Z0-9]{1,255}$",
+      "AWS::FraudDetector::EntityType": "^[0-9a-z_-]+$",
+      "AWS::FraudDetector::EventType": "^[0-9a-z_-]+$",
+      "AWS::FraudDetector::Label": "^[0-9a-z_-]+$",
+      "AWS::FraudDetector::Outcome": "^[0-9a-z_-]+$",
+      "AWS::FraudDetector::Variable": "^[a-z_][a-z0-9_]{0,99}?$",
+      "AWS::GameLift::Alias": ".*\\S.*",
+      "AWS::GlobalAccelerator::Accelerator": "^[a-zA-Z0-9_-]{0,64}$",
+      "AWS::Grafana::Workspace": "^[a-zA-Z0-9-._~]{1,255}$",
+      "AWS::GroundStation::Config": "^[ a-zA-Z0-9_:-]{1,256}$",
+      "AWS::IAM::SAMLProvider": "[\\w._-]+",
+      "AWS::GroundStation::MissionProfile": "^[ a-zA-Z0-9_:-]{1,256}$",
+      "AWS::IoT::Dimension": "[a-zA-Z0-9:_-]+",
+      "AWS::IoTFleetWise::Campaign": "^[a-zA-Z\\d\\-_:]+$",
+      "AWS::IoTFleetWise::DecoderManifest": "^[a-zA-Z\\d\\-_:]+$",
+      "AWS::IoTFleetWise::Vehicle": "^[a-zA-Z\\d\\-_:]+$",
+      "AWS::IoTFleetWise::ModelManifest": "^[a-zA-Z\\d\\-_:]+$",
+      "AWS::IoTFleetWise::SignalCatalog": "^[a-zA-Z\\d\\-_:]+$",
+      "AWS::IoTWireless::Destination": "[a-zA-Z0-9:_-]+",
+      "AWS::IoTWireless::NetworkAnalyzerConfiguration": "^[a-zA-Z0-9-_]+$",
+      "AWS::IVS::Channel": "^[a-zA-Z0-9-_]*$",
+      "AWS::IVS::RecordingConfiguration": "^[a-zA-Z0-9-_]*$",
+      "AWS::IVS::PlaybackKeyPair": "^[a-zA-Z0-9-_]*$",
+      "AWS::Kinesis::Stream": "^[a-zA-Z0-9_.-]+$",
+      "AWS::KinesisVideo::SignalingChannel": "[a-zA-Z0-9_.-]+",
+      "AWS::KinesisVideo::Stream": "[a-zA-Z0-9_.-]+",
+      "AWS::Logs::QueryDefinition": "^([^:*\\/]+\\/?)*[^:*\\/]+$",
+      "AWS::M2::Application": "^[A-Za-z0-9][A-Za-z0-9_\\-]{1,59}$",
+      "AWS::M2::Environment": "^[A-Za-z0-9][A-Za-z0-9_\\-]{1,59}$",
+      "AWS::MediaTailor::PlaybackConfiguration": "^[a-zA-Z0-9_-]+$",
+      "AWS::Oam::Sink": "^[a-zA-Z0-9_.-]+$",
+      "AWS::OpenSearchServerless::AccessPolicy": "^[a-z][a-z0-9-]{2,31}$",
+      "AWS::OpenSearchServerless::SecurityPolicy": "^[a-z][a-z0-9-]{2,31}$",
+      "AWS::OpenSearchServerless::Collection": "^[a-z][a-z0-9-]{2,31}$",
+      "AWS::OpenSearchServerless::SecurityConfig": "^[a-z][a-z0-9-]{2,31}$",
+      "AWS::OpenSearchServerless::VpcEndpoint": "^[a-z][a-z0-9-]{2,31}$",
+      "AWS::Organizations::Policy": "[\\s\\S]*",
+      "AWS::Organizations::OrganizationalUnit": "[\\s\\S]*",
+      "AWS::Personalize::Dataset": "^[a-zA-Z0-9][a-zA-Z0-9\\-_]*",
+      "AWS::Personalize::DatasetGroup": "^[a-zA-Z0-9][a-zA-Z0-9\\-_]*",
+      "AWS::Personalize::Solution": "^[a-zA-Z0-9][a-zA-Z0-9\\-_]*",
+      "AWS::Personalize::Schema": "^[a-zA-Z0-9][a-zA-Z0-9\\-_]*",
+      "AWS::Pipes::Pipe": "^[\\.\\-_A-Za-z0-9]+$",
+      "AWS::QuickSight::Dashboard": "[\\u0020-\\u00FF]+",
+      "AWS::QuickSight::Template": "[\\u0020-\\u00FF]+",
+      "AWS::QuickSight::Analysis": "[\\u0020-\\u00FF]+",
+      "AWS::RefactorSpaces::Application": "^(?!app-)[a-zA-Z0-9]+[a-zA-Z0-9-_ ]+$",
+      "AWS::RefactorSpaces::Environment": "^(?!env-)[a-zA-Z0-9]+[a-zA-Z0-9-_ ]+$",
+      "AWS::RefactorSpaces::Service": "^(?!svc-)[a-zA-Z0-9]+[a-zA-Z0-9-_ ]+$",
+      "AWS::ResilienceHub::App": "^[A-Za-z0-9][A-Za-z0-9_\\-]{1,59}$",
+      "AWS::Rekognition::StreamProcessor": "[a-zA-Z0-9_.\\-]+",
+      "AWS::RoboMaker::Fleet": "[a-zA-Z0-9_\\-]{1,255}$",
+      "AWS::RoboMaker::SimulationApplication": "[a-zA-Z0-9_\\-]*",
+      "AWS::Route53::CidrCollection": "^[0-9A-Za-z_\\-]+$",
+      "AWS::Route53::KeySigningKey": "^[a-zA-Z0-9_]{3,128}$",
+      "AWS::Route53Resolver::FirewallDomainList": "(?!^[0-9]+$)([a-zA-Z0-9\\-_' ']+)",
+      "AWS::Route53Resolver::FirewallRuleGroup": "(?!^[0-9]+$)([a-zA-Z0-9\\-_' ']+)",
+      "AWS::Route53Resolver::FirewallRuleGroupAssociation": "(?!^[0-9]+$)([a-zA-Z0-9\\-_' ']+)",
+      "AWS::Route53Resolver::ResolverQueryLoggingConfig": "(?!^[0-9]+$)([a-zA-Z0-9\\-_' ']+)",
+      "AWS::RUM::AppMonitor": "[\\.\\-_/#A-Za-z0-9]+",
+      "AWS::S3::AccessPoint": "^[a-z0-9]([a-z0-9\\-]*[a-z0-9])?$",
+      "AWS::S3::MultiRegionAccessPoint": "^[a-z0-9][-a-z0-9]{1,48}[a-z0-9]$",
+      "AWS::S3ObjectLambda::AccessPoint": "^[a-z0-9]([a-z0-9\\-]*[a-z0-9])?$",
+      "AWS::S3Outposts::AccessPoint": "^[a-z0-9]([a-z0-9\\\\-]*[a-z0-9])?$",
+      "AWS::Scheduler::ScheduleGroup": "^[0-9a-zA-Z-_.]+$",
+      "AWS::Scheduler::Schedule": "^[0-9a-zA-Z-_.]+$",
+      "AWS::ServiceCatalogAppRegistry::Application": "\\w+",
+      "AWS::ServiceCatalogAppRegistry::AttributeGroup": "\\w+",
+      "AWS::SES::ConfigurationSet": "^[a-zA-Z0-9_-]{1,64}$",
+      "AWS::SSM::Association": "^[a-zA-Z0-9_\\-.:/]{3,200}$",
+      "AWS::SSM::Document": "^[a-zA-Z0-9_\\-.]{3,128}$",
+      "AWS::SSMIncidents::ResponsePlan": "^[a-zA-Z0-9_-]*$",
+      "AWS::SSO::PermissionSet": "[\\w+=,.@-]+",
+      "AWS::Synthetics::Canary": "^[0-9a-z_\\-]{1,21}$",
+      "AWS::Synthetics::Group": "^[0-9a-z_\\-]{1,64}$",
+      "AWS::VoiceID::Domain": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+      "AWS::WAFv2::RegexPatternSet": "^[0-9A-Za-z_-]{1,128}$"
+    }
+  },
+  {
+    "propertyName": "Arn",
+    "numberOfServicesItAppearsIn": 301,
+    "patterns": {
+      "AWS::Amplify::App": "(?s).*",
+      "AWS::Amplify::Domain": "(?s).*",
+      "AWS::Amplify::Branch": "(?s).*",
+      "AWS::APS::Workspace": "^arn:(aws|aws-us-gov|aws-cn):aps:[a-z0-9-]+:[0-9]+:workspace/[a-zA-Z0-9-]+$",
+      "AWS::APS::RuleGroupsNamespace": "^arn:(aws|aws-us-gov|aws-cn):aps:[a-z0-9-]+:[0-9]+:rulegroupsnamespace/[a-zA-Z0-9-]+/[0-9A-Za-z][-.0-9A-Z_a-z]*$",
+      "AWS::BillingConductor::CustomLineItem": "(arn:aws(-cn)?:billingconductor::[0-9]{12}:customlineitem/)?[a-zA-Z0-9]{10}",
+      "AWS::BillingConductor::BillingGroup": "arn:aws(-cn)?:billingconductor::[0-9]{12}:billinggroup/?[0-9]{12}",
+      "AWS::BillingConductor::PricingPlan": "arn:aws(-cn)?:billingconductor::[0-9]{12}:pricingplan/[a-zA-Z0-9]{10}",
+      "AWS::BillingConductor::PricingRule": "arn:aws(-cn)?:billingconductor::[0-9]{12}:pricingrule/[a-zA-Z0-9]{10}",
+      "AWS::CE::CostCategory": "^arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+$",
+      "AWS::Chatbot::SlackChannelConfiguration": "^arn:(aws[a-zA-Z-]*)?:chatbot:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$",
+      "AWS::CloudFormation::HookDefaultVersion": "^arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/hook/.+$",
+      "AWS::CloudFormation::ModuleDefaultVersion": "^arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/module/.+/[0-9]{8}$",
+      "AWS::CloudFormation::ModuleVersion": "^arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/module/.+$",
+      "AWS::CloudFormation::PublicTypeVersion": "arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:[0-9]{12}:type/.+",
+      "AWS::CloudFormation::ResourceDefaultVersion": "^arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/resource/.+$",
+      "AWS::CloudFormation::ResourceVersion": "^arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/resource/.+$",
+      "AWS::CloudFormation::HookVersion": "^arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/hook/.+$",
+      "AWS::CloudFormation::TypeActivation": "arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/.+",
+      "AWS::CodeStarNotifications::NotificationRule": "^arn:aws[^:\\s]*:codestar-notifications:[^:\\s]+:\\d{12}:notificationrule\\/(.*\\S)?$",
+      "AWS::Connect::Instance": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*$",
+      "AWS::Connect::TaskTemplate": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*/task-template/[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}$",
+      "AWS::ConnectCampaigns::Campaign": "^arn:aws[-a-z0-9]*:connect-campaigns:[-a-z0-9]*:[0-9]{12}:campaign/[-a-zA-Z0-9]*$",
+      "AWS::Events::Endpoint": "^arn:aws([a-z]|\\-)*:events:([a-z]|\\d|\\-)*:([0-9]{12})?:endpoint\\/[/\\.\\-_A-Za-z0-9]+$",
+      "AWS::Evidently::Experiment": "arn:[^:]*:[^:]*:[^:]*:[^:]*:project/[-a-zA-Z0-9._]*/experiment/[-a-zA-Z0-9._]*",
+      "AWS::Evidently::Feature": "arn:[^:]*:[^:]*:[^:]*:[^:]*:project/[-a-zA-Z0-9._]*/feature/[-a-zA-Z0-9._]*",
+      "AWS::Evidently::Project": "arn:[^:]*:[^:]*:[^:]*:[^:]*:project/[-a-zA-Z0-9._]*",
+      "AWS::Evidently::Launch": "arn:[^:]*:[^:]*:[^:]*:[^:]*:project/[-a-zA-Z0-9._]*/launch/[-a-zA-Z0-9._]*",
+      "AWS::Evidently::Segment": "arn:[^:]*:[^:]*:[^:]*:[^:]*:segment/[-a-zA-Z0-9._]*",
+      "AWS::Forecast::Dataset": "^[a-zA-Z0-9\\-\\_\\.\\/\\:]+$",
+      "AWS::Glue::Registry": "arn:(aws|aws-us-gov|aws-cn):glue:.*",
+      "AWS::Glue::Schema": "arn:(aws|aws-us-gov|aws-cn):glue:.*",
+      "AWS::IoTTwinMaker::ComponentType": "arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\\/a-zA-Z0-9_\\-\\.:]+",
+      "AWS::IoTTwinMaker::Scene": "arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\\/a-zA-Z0-9_\\-\\.:]+",
+      "AWS::IoTTwinMaker::Entity": "arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\\/a-zA-Z0-9_\\-\\.:]+",
+      "AWS::IoTTwinMaker::SyncJob": "arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\\/a-zA-Z0-9_\\-\\.:]+",
+      "AWS::IoTTwinMaker::Workspace": "arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\\/a-zA-Z0-9_\\-\\.:]+",
+      "AWS::IVS::Channel": "^arn:aws:ivs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$",
+      "AWS::IVS::RecordingConfiguration": "^arn:aws[-a-z]*:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$",
+      "AWS::IVS::PlaybackKeyPair": "^arn:aws:ivs:[a-z0-9-]+:[0-9]+:playback-key/[a-zA-Z0-9-]+$",
+      "AWS::IVS::StreamKey": "^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stream-key/[a-zA-Z0-9-]+$",
+      "AWS::Location::Map": "^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:([^/].*)?$",
+      "AWS::Location::GeofenceCollection": "^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:([^/].*)?$",
+      "AWS::Location::PlaceIndex": "^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:([^/].*)?$",
+      "AWS::Location::Tracker": "^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:([^/].*)?$",
+      "AWS::Location::RouteCalculator": "^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:([^/].*)?$",
+      "AWS::Organizations::Account": "^arn:aws.*:organizations::\\d{12}:account\\/o-[a-z0-9]{10,32}\\/\\d{12}",
+      "AWS::Organizations::Policy": "^arn:aws.*:organizations::[0-9]{12}:policy/o-[a-z0-9]{10}/(service_control|tag|backup|aiservices_opt_out)_policy/p-[a-z0-9]{8}",
+      "AWS::Organizations::OrganizationalUnit": "^arn:aws.*:organizations::\\d{12}:ou/o-[a-z0-9]{10,32}/ou-[0-9a-z]{4,32}-[0-9a-z]{8,32}",
+      "AWS::RefactorSpaces::Application": "^arn:(aws[a-zA-Z-]*)?:refactor-spaces:[a-zA-Z0-9\\-]+:\\w{12}:[a-zA-Z_0-9+=,.@\\-_/]+$",
+      "AWS::RefactorSpaces::Environment": "^arn:(aws[a-zA-Z-]*)?:refactor-spaces:[a-zA-Z0-9\\-]+:\\w{12}:[a-zA-Z_0-9+=,.@\\-_/]+$",
+      "AWS::RefactorSpaces::Route": "^arn:(aws[a-zA-Z-]*)?:refactor-spaces:[a-zA-Z0-9\\-]+:\\w{12}:[a-zA-Z_0-9+=,.@\\-_/]+$",
+      "AWS::RefactorSpaces::Service": "^arn:(aws[a-zA-Z-]*)?:refactor-spaces:[a-zA-Z0-9\\-]+:\\w{12}:[a-zA-Z_0-9+=,.@\\-_/]+$",
+      "AWS::S3ObjectLambda::AccessPoint": "arn:[^:]+:s3-object-lambda:[^:]*:\\d{12}:accesspoint/.*",
+      "AWS::S3Outposts::AccessPoint": "^arn:[^:]+:s3-outposts:[a-zA-Z0-9\\-]+:\\d{12}:outpost\\/[^:]+\\/accesspoint\\/[^:]+$",
+      "AWS::S3Outposts::Bucket": "^arn:[^:]+:s3-outposts:[a-zA-Z0-9\\-]+:\\d{12}:outpost\\/[^:]+\\/bucket\\/[^:]+$",
+      "AWS::S3Outposts::Endpoint": "^arn:[^:]+:s3-outposts:[a-zA-Z0-9\\-]+:\\d{12}:outpost\\/[^:]+\\/endpoint/[a-zA-Z0-9]{19}$",
+      "AWS::Scheduler::ScheduleGroup": "^arn:aws(-[a-z]+)?:scheduler:[a-z0-9\\-]+:\\d{12}:schedule-group\\/[0-9a-zA-Z-_.]+$",
+      "AWS::Scheduler::Schedule": "^arn:aws(-[a-z]+)?:scheduler:[a-z0-9\\-]+:\\d{12}:schedule\\/[0-9a-zA-Z-_.]+\\/[0-9a-zA-Z-_.]+$",
+      "AWS::ServiceCatalogAppRegistry::Application": "arn:aws[-a-z]*:servicecatalog:[a-z]{2}(-gov)?-[a-z]+-\\d:\\d{12}:/applications/[a-z0-9]+",
+      "AWS::ServiceCatalogAppRegistry::AttributeGroup": "arn:aws[-a-z]*:servicecatalog:[a-z]{2}(-gov)?-[a-z]+-\\d:\\d{12}:/attribute-groups/[a-z0-9]+",
+      "AWS::SSMIncidents::ResponsePlan": "^arn:aws(-(cn|us-gov))?:[a-z-]+:(([a-z]+-)+[0-9])?:([0-9]{12})?:[^.]+$",
+      "AWS::Transfer::Agreement": "arn:.*",
+      "AWS::Transfer::Certificate": "arn:.*",
+      "AWS::Transfer::Profile": "arn:.*",
+      "AWS::Transfer::Workflow": "arn:.*",
+      "AWS::Transfer::Connector": "arn:.*"
+    }
+  },
+  {
+    "propertyName": "Description",
+    "numberOfServicesItAppearsIn": 259,
+    "patterns": {
+      "AWS::Amplify::App": "(?s).*",
+      "AWS::Amplify::Branch": "(?s).*",
+      "AWS::AppFlow::Flow": "[\\w!@#\\-.?,\\s]*",
+      "AWS::AppFlow::Connector": "[\\s\\w/!@#+=.-]*",
+      "AWS::Connect::ContactFlowModule": ".*\\S.*",
+      "AWS::Events::Endpoint": ".*",
+      "AWS::FinSpace::Environment": "^[a-zA-Z0-9. ]{1,1000}$",
+      "AWS::IdentityStore::Group": "^[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}\\t\\n\\r  　]+$",
+      "AWS::IoT::JobTemplate": "[^\\p{C}]+",
+      "AWS::IoTFleetWise::Campaign": "^[^\\u0000-\\u001F\\u007F]+$",
+      "AWS::IoTFleetWise::DecoderManifest": "^[^\\u0000-\\u001F\\u007F]+$",
+      "AWS::IoTFleetWise::Fleet": "^[^\\u0000-\\u001F\\u007F]+$",
+      "AWS::IoTFleetWise::ModelManifest": "^[^\\u0000-\\u001F\\u007F]+$",
+      "AWS::IoTFleetWise::SignalCatalog": "^[^\\u0000-\\u001F\\u007F]+$",
+      "AWS::NetworkFirewall::Firewall": "^.*$",
+      "AWS::NetworkFirewall::FirewallPolicy": "^.*$",
+      "AWS::NetworkFirewall::RuleGroup": "^.*$",
+      "AWS::Organizations::Policy": "[\\s\\S]*",
+      "AWS::Pipes::Pipe": "^.*$",
+      "AWS::RefactorSpaces::Environment": "^[a-zA-Z0-9-_\\s\\.\\!\\*\\#\\@\\']+$",
+      "AWS::RefactorSpaces::Service": "^[a-zA-Z0-9-_\\s\\.\\!\\*\\#\\@\\']+$",
+      "AWS::SageMaker::DeviceFleet": "[\\S\\s]+",
+      "AWS::SSO::PermissionSet": "[\\u0009\\u000A\\u000D\\u0020-\\u007E\\u00A1-\\u00FF]*",
+      "AWS::Transfer::Agreement": "^[\\w\\- ]*$",
+      "AWS::Transfer::Certificate": "^[\\w\\- ]*$",
+      "AWS::Transfer::Workflow": "^[\\w\\- ]*$",
+      "AWS::VoiceID::Domain": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-%@]*)$",
+      "AWS::WAFv2::RegexPatternSet": "^[a-zA-Z0-9=:#@/\\-,.][a-zA-Z0-9+=:#@/\\-,.\\s]+[a-zA-Z0-9+=:#@/\\-,.]{1,256}$"
+    }
+  },
+  {
+    "propertyName": "Type",
+    "numberOfServicesItAppearsIn": 55,
+    "patterns": {
+      "AWS::Connect::PhoneNumber": "TOLL_FREE|DID"
+    }
+  },
+  {
+    "propertyName": "RoleArn",
+    "numberOfServicesItAppearsIn": 51,
+    "patterns": {
+      "AWS::EC2::EnclaveCertificateIamRoleAssociation": "^arn:aws[A-Za-z0-9-]{0,64}:iam:.*:([0-9]{12})?:role/.+$",
+      "AWS::Events::Endpoint": "^arn:aws[a-z-]*:iam::\\d{12}:role\\/[\\w+=,.@/-]+$",
+      "AWS::IoT::RoleAlias": "arn:(aws[a-zA-Z-]*)?:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+",
+      "AWS::IoTFleetHub::Application": "^arn:[!-~]+$",
+      "AWS::LookoutEquipment::InferenceScheduler": "arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+",
+      "AWS::Personalize::DatasetGroup": "arn:([a-z\\d-]+):iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+",
+      "AWS::Rekognition::StreamProcessor": "arn:aws(-[\\w]+)*:iam::[0-9]{12}:role/.*",
+      "AWS::SageMaker::DataQualityJobDefinition": "^arn:aws[a-z\\-]*:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+$",
+      "AWS::SageMaker::DeviceFleet": "^arn:aws[a-z\\-]*:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+$",
+      "AWS::SageMaker::FeatureGroup": "^arn:aws[a-z\\-]*:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+$",
+      "AWS::SageMaker::ModelExplainabilityJobDefinition": "^arn:aws[a-z\\-]*:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+$",
+      "AWS::SageMaker::ModelBiasJobDefinition": "^arn:aws[a-z\\-]*:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+$",
+      "AWS::SageMaker::ModelQualityJobDefinition": "^arn:aws[a-z\\-]*:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+$",
+      "AWS::SageMaker::Pipeline": "^arn:aws[a-z\\-]*:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+$"
+    }
+  },
+  {
+    "propertyName": "State",
+    "numberOfServicesItAppearsIn": 31,
+    "patterns": {
+      "AWS::IoTTwinMaker::SyncJob": "[a-zA-Z_\\-0-9]+"
+    }
+  },
+  {
+    "propertyName": "KmsKeyId",
+    "numberOfServicesItAppearsIn": 31,
+    "patterns": {
+      "AWS::FinSpace::Environment": "^[a-zA-Z-0-9-:\\/]*{1,1000}$",
+      "AWS::KinesisVideo::Stream": ".+",
+      "AWS::Logs::LogGroup": "^arn:[a-z0-9-]+:kms:[a-z0-9-]+:\\d{12}:(key|alias)/.+\\Z",
+      "AWS::SageMaker::Domain": ".*"
+    }
+  },
+  {
+    "propertyName": "VpcId",
+    "numberOfServicesItAppearsIn": 27,
+    "patterns": {
+      "AWS::EMR::Studio": "^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$",
+      "AWS::NetworkFirewall::Firewall": "^vpc-[0-9a-f]+$",
+      "AWS::OpenSearchServerless::VpcEndpoint": "^vpc-[0-9a-z]*$",
+      "AWS::RefactorSpaces::Application": "^vpc-[-a-f0-9]{8}([-a-f0-9]{9})?$",
+      "AWS::RefactorSpaces::Service": "^vpc-[-a-f0-9]{8}([-a-f0-9]{9})?$",
+      "AWS::SageMaker::Domain": "[-0-9a-zA-Z]+"
+    }
+  },
+  {
+    "propertyName": "DomainName",
+    "numberOfServicesItAppearsIn": 25,
+    "patterns": {
+      "AWS::Amplify::Domain": "^(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])(\\.)?$",
+      "AWS::AppRunner::VpcIngressConnection": "[A-Za-z0-9*.-]{1,255}",
+      "AWS::AppSync::DomainNameApiAssociation": "^(\\*[a-z\\d-]*\\.)?([a-z\\d-]+\\.)+[a-z\\d-]+$",
+      "AWS::AppSync::DomainName": "^(\\*[a-z\\d-]*\\.)?([a-z\\d-]+\\.)+[a-z\\d-]+$",
+      "AWS::CodeArtifact::Domain": "^([a-z][a-z0-9\\-]{0,48}[a-z0-9])$",
+      "AWS::CodeArtifact::Repository": "^([a-z][a-z0-9\\-]{0,48}[a-z0-9])$",
+      "AWS::CustomerProfiles::Domain": "^[a-zA-Z0-9_-]+$",
+      "AWS::CustomerProfiles::ObjectType": "^[a-zA-Z0-9_-]+$",
+      "AWS::CustomerProfiles::Integration": "^[a-zA-Z0-9_-]+$",
+      "AWS::SageMaker::Domain": "^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}"
+    }
+  },
+  {
+    "propertyName": "ApplicationId",
+    "numberOfServicesItAppearsIn": 21,
+    "patterns": {
+      "AWS::IoTFleetHub::Application": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "AWS::M2::Application": "^\\S{1,80}$"
+    }
+  },
+  {
+    "propertyName": "SubnetId",
+    "numberOfServicesItAppearsIn": 19,
+    "patterns": {
+      "AWS::S3Outposts::Endpoint": "^subnet-([0-9a-f]{8}|[0-9a-f]{17})$"
+    }
+  },
+  {
+    "propertyName": "Version",
+    "numberOfServicesItAppearsIn": 19,
+    "patterns": {
+      "AWS::EKS::Cluster": "1\\.\\d\\d"
+    }
+  },
+  {
+    "propertyName": "EngineVersion",
+    "numberOfServicesItAppearsIn": 15,
+    "patterns": {
+      "AWS::M2::Environment": "^\\S{1,10}$"
+    }
+  },
+  {
+    "propertyName": "PreferredMaintenanceWindow",
+    "numberOfServicesItAppearsIn": 15,
+    "patterns": {
+      "AWS::M2::Environment": "^\\S{1,50}$",
+      "AWS::OpsWorksCM::Server": "^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$"
+    }
+  },
+  {
+    "propertyName": "Port",
+    "numberOfServicesItAppearsIn": 15,
+    "patterns": {
+      "AWS::RDS::DBInstance": "^\\d*$"
+    }
+  },
+  {
+    "propertyName": "Policy",
+    "numberOfServicesItAppearsIn": 14,
+    "patterns": {
+      "AWS::OpenSearchServerless::AccessPolicy": "[\\u0009\\u000A\\u000D\\u0020-\\u007E\\u00A1-\\u00FF]+",
+      "AWS::OpenSearchServerless::SecurityPolicy": "[\\u0009\\u000A\\u000D\\u0020-\\u007E\\u00A1-\\u00FF]+"
+    }
+  },
+  {
+    "propertyName": "ApplicationName",
+    "numberOfServicesItAppearsIn": 14,
+    "patterns": {
+      "AWS::IoTFleetHub::Application": "^[ -~]*$",
+      "AWS::KinesisAnalyticsV2::Application": "^[a-zA-Z0-9_.-]+$"
+    }
+  },
+  {
+    "propertyName": "Domain",
+    "numberOfServicesItAppearsIn": 13,
+    "patterns": {
+      "AWS::DataSync::LocationFSxWindows": "^([A-Za-z0-9]+[A-Za-z0-9-.]*)*[A-Za-z0-9-]*[A-Za-z0-9]$",
+      "AWS::DataSync::LocationSMB": "^([A-Za-z0-9]+[A-Za-z0-9-.]*)*[A-Za-z0-9-]*[A-Za-z0-9]$",
+      "AWS::RUM::AppMonitor": "^(localhost)|^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$|^(?![-.])([A-Za-z0-9-\\.\\-]{0,63})((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))\\.(?![-])[A-Za-z-0-9]{1,63}((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))|^(\\*\\.)(?![-.])([A-Za-z0-9-\\.\\-]{0,63})((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))\\.(?![-])[A-Za-z-0-9]{1,63}((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))"
+    }
+  },
+  {
+    "propertyName": "InstanceArn",
+    "numberOfServicesItAppearsIn": 13,
+    "patterns": {
+      "AWS::Connect::ContactFlow": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*$",
+      "AWS::Connect::ContactFlowModule": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*$",
+      "AWS::Connect::HoursOfOperation": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*$",
+      "AWS::Connect::InstanceStorageConfig": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*$",
+      "AWS::Connect::QuickConnect": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*$",
+      "AWS::Connect::TaskTemplate": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*$",
+      "AWS::Connect::Rule": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*$",
+      "AWS::Connect::User": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*$",
+      "AWS::Connect::UserHierarchyGroup": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*$",
+      "AWS::SSO::Assignment": "arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}",
+      "AWS::SSO::InstanceAccessControlAttributeConfiguration": "arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}",
+      "AWS::SSO::PermissionSet": "arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}"
+    }
+  },
+  {
+    "propertyName": "DisplayName",
+    "numberOfServicesItAppearsIn": 12,
+    "patterns": {
+      "AWS::IdentityStore::Group": "^[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}\\t\\n\\r  ]+$",
+      "AWS::SSMContacts::Contact": "^[a-zA-Z0-9_\\-\\s]*$"
+    }
+  },
+  {
+    "propertyName": "InstanceType",
+    "numberOfServicesItAppearsIn": 12,
+    "patterns": {
+      "AWS::M2::Environment": "^\\S{1,20}$"
+    }
+  },
+  {
+    "propertyName": "PolicyDocument",
+    "numberOfServicesItAppearsIn": 12,
+    "patterns": {
+      "AWS::Logs::ResourcePolicy": "[\\u0009\\u000A\\u000D\\u0020-\\u00FF]+"
+    }
+  },
+  {
+    "propertyName": "Configuration",
+    "numberOfServicesItAppearsIn": 11,
+    "patterns": {
+      "AWS::CloudFormation::HookTypeConfig": "[\\s\\S]+"
+    }
+  },
+  {
+    "propertyName": "LocationUri",
+    "numberOfServicesItAppearsIn": 11,
+    "patterns": {
+      "AWS::DataSync::LocationEFS": "^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\\-/]+$",
+      "AWS::DataSync::LocationFSxLustre": "^(efs|nfs|s3|smb|fsxw|hdfs|fsxl)://[a-zA-Z0-9.:/\\-]+$",
+      "AWS::DataSync::LocationFSxONTAP": "^(efs|nfs|s3|smb|hdfs|fsx[a-z0-9-]+)://[a-zA-Z0-9.:/\\-]+$",
+      "AWS::DataSync::LocationFSxOpenZFS": "^(efs|nfs|s3|smb|fsxw|hdfs|fsxl|fsxz)://[a-zA-Z0-9.:/\\-]+$",
+      "AWS::DataSync::LocationFSxWindows": "^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9./\\-]+$",
+      "AWS::DataSync::LocationHDFS": "^(efs|nfs|s3|smb|fsxw|hdfs)://[a-zA-Z0-9.:/\\-]+$",
+      "AWS::DataSync::LocationNFS": "^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9./\\-]+$",
+      "AWS::DataSync::LocationObjectStorage": "^(efs|nfs|s3|smb|fsxw|object-storage)://[a-zA-Z0-9./\\-]+$",
+      "AWS::DataSync::LocationS3": "^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\\-/]+$",
+      "AWS::DataSync::LocationSMB": "^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9./\\-]+$"
+    }
+  },
+  {
+    "propertyName": "LocationArn",
+    "numberOfServicesItAppearsIn": 11,
+    "patterns": {
+      "AWS::DataSync::LocationEFS": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$",
+      "AWS::DataSync::LocationFSxLustre": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$",
+      "AWS::DataSync::LocationFSxONTAP": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$",
+      "AWS::DataSync::LocationFSxOpenZFS": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$",
+      "AWS::DataSync::LocationFSxWindows": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$",
+      "AWS::DataSync::LocationHDFS": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$",
+      "AWS::DataSync::LocationNFS": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$",
+      "AWS::DataSync::LocationObjectStorage": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$",
+      "AWS::DataSync::LocationS3": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$",
+      "AWS::DataSync::LocationSMB": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$",
+      "AWS::GameLift::Location": "^arn:.*:location/custom-\\S+"
+    }
+  },
+  {
+    "propertyName": "ClusterName",
+    "numberOfServicesItAppearsIn": 11,
+    "patterns": {
+      "AWS::DocDBElastic::Cluster": "[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*",
+      "AWS::MemoryDB::Cluster": "[a-z][a-z0-9\\-]*"
+    }
+  },
+  {
+    "propertyName": "MetricName",
+    "numberOfServicesItAppearsIn": 10,
+    "patterns": {
+      "AWS::IoT::CustomMetric": "[a-zA-Z0-9:_-]+"
+    }
+  },
+  {
+    "propertyName": "Subdirectory",
+    "numberOfServicesItAppearsIn": 10,
+    "patterns": {
+      "AWS::DataSync::LocationEFS": "^[a-zA-Z0-9_\\-\\+\\./\\(\\)\\$\\p{Zs}]+$",
+      "AWS::DataSync::LocationFSxLustre": "^[a-zA-Z0-9_\\-\\+\\./\\(\\)\\$\\p{Zs}]+$",
+      "AWS::DataSync::LocationFSxONTAP": "^[a-zA-Z0-9_\\-\\+\\./\\(\\)\\$\\p{Zs}]+$",
+      "AWS::DataSync::LocationFSxOpenZFS": "^[a-zA-Z0-9_\\-\\+\\./\\(\\)\\$\\p{Zs}]+$",
+      "AWS::DataSync::LocationFSxWindows": "^[a-zA-Z0-9_\\-\\+\\./\\(\\)\\$\\p{Zs}]+$",
+      "AWS::DataSync::LocationHDFS": "^[a-zA-Z0-9_\\-\\+\\./\\(\\)\\$\\p{Zs}]+$",
+      "AWS::DataSync::LocationNFS": "^[a-zA-Z0-9_\\-\\+\\./\\(\\)\\$\\p{Zs}]+$",
+      "AWS::DataSync::LocationObjectStorage": "^[a-zA-Z0-9_\\-\\+\\./\\(\\)\\p{Zs}]*$",
+      "AWS::DataSync::LocationS3": "^[\\p{L}\\p{M}\\p{Z}\\p{S}\\p{N}\\p{P}\\p{C}]*$",
+      "AWS::DataSync::LocationSMB": "^[a-zA-Z0-9_\\-\\+\\./\\(\\)\\$\\p{Zs}]+$"
+    }
+  },
+  {
+    "propertyName": "ResourceArn",
+    "numberOfServicesItAppearsIn": 10,
+    "patterns": {
+      "AWS::ServiceCatalogAppRegistry::ResourceAssociation": "arn:aws[-a-z]*:cloudformation:[a-z]{2}(-gov)?-[a-z]+-\\d:\\d{12}:stack/[a-zA-Z][-A-Za-z0-9]{0,127}/[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}"
+    }
+  },
+  {
+    "propertyName": "PolicyName",
+    "numberOfServicesItAppearsIn": 9,
+    "patterns": {
+      "AWS::FMS::Policy": "^([a-zA-Z0-9_.:/=+\\-@]+)$",
+      "AWS::Logs::ResourcePolicy": "^([^:*\\/]+\\/?)*[^:*\\/]+$",
+      "AWS::ResilienceHub::ResiliencyPolicy": "^[A-Za-z0-9][A-Za-z0-9_\\-]{1,59}$",
+      "AWS::XRay::ResourcePolicy": "[\\w+=,.@-]+"
+    }
+  },
+  {
+    "propertyName": "UserName",
+    "numberOfServicesItAppearsIn": 9,
+    "patterns": {
+      "AWS::MemoryDB::User": "[a-z][a-z0-9\\\\-]*"
+    }
+  },
+  {
+    "propertyName": "InstanceId",
+    "numberOfServicesItAppearsIn": 9,
+    "patterns": {
+      "AWS::SSM::Association": "(^i-(\\w{8}|\\w{17})$)|(^mi-\\w{17}$)"
+    }
+  },
+  {
+    "propertyName": "VersionId",
+    "numberOfServicesItAppearsIn": 9,
+    "patterns": {
+      "AWS::CloudFormation::HookDefaultVersion": "^[A-Za-z0-9-]{1,128}$",
+      "AWS::CloudFormation::ModuleDefaultVersion": "^[0-9]{8}$",
+      "AWS::CloudFormation::ModuleVersion": "^[0-9]{8}$",
+      "AWS::CloudFormation::ResourceDefaultVersion": "^[A-Za-z0-9-]{1,128}$",
+      "AWS::CloudFormation::ResourceVersion": "^[A-Za-z0-9-]{1,128}$",
+      "AWS::CloudFormation::HookVersion": "^[A-Za-z0-9-]{1,128}$",
+      "AWS::Glue::SchemaVersion": "[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}",
+      "AWS::SupportApp::SlackWorkspaceConfiguration": "^[0-9]+$"
+    }
+  },
+  {
+    "propertyName": "ExecutionRoleArn",
+    "numberOfServicesItAppearsIn": 9,
+    "patterns": {
+      "AWS::CloudFormation::HookVersion": "arn:.+:iam::[0-9]{12}:role/.+"
+    }
+  },
+  {
+    "propertyName": "GroupName",
+    "numberOfServicesItAppearsIn": 9,
+    "patterns": {
+      "AWS::Scheduler::Schedule": "^[0-9a-zA-Z-_.]+$"
+    }
+  },
+  {
+    "propertyName": "AwsAccountId",
+    "numberOfServicesItAppearsIn": 9,
+    "patterns": {
+      "AWS::FinSpace::Environment": "^[a-zA-Z0-9]{1,26}$",
+      "AWS::QuickSight::Dashboard": "^[0-9]{12}$",
+      "AWS::QuickSight::DataSet": "^[0-9]{12}$",
+      "AWS::QuickSight::DataSource": "^[0-9]{12}$",
+      "AWS::QuickSight::Template": "^[0-9]{12}$",
+      "AWS::QuickSight::Theme": "^[0-9]{12}$",
+      "AWS::QuickSight::Analysis": "^[0-9]{12}$"
+    }
+  },
+  {
+    "propertyName": "TransitGatewayId",
+    "numberOfServicesItAppearsIn": 9,
+    "patterns": {
+      "AWS::RefactorSpaces::Environment": "^tgw-[-a-f0-9]{17}$"
+    }
+  },
+  {
+    "propertyName": "Certificate",
+    "numberOfServicesItAppearsIn": 8,
+    "patterns": {
+      "AWS::Transfer::Certificate": "^[\t\n\r -ÿ]*"
+    }
+  },
+  {
+    "propertyName": "Content",
+    "numberOfServicesItAppearsIn": 8,
+    "patterns": {
+      "AWS::Organizations::Policy": "[\\s\\S]*"
+    }
+  },
+  {
+    "propertyName": "ResourceOwner",
+    "numberOfServicesItAppearsIn": 8,
+    "patterns": {
+      "AWS::Redshift::EndpointAccess": "^\\d{12}$"
+    }
+  },
+  {
+    "propertyName": "TypeName",
+    "numberOfServicesItAppearsIn": 8,
+    "patterns": {
+      "AWS::CloudFormation::HookDefaultVersion": "^[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}$",
+      "AWS::CloudFormation::HookTypeConfig": "^[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}$",
+      "AWS::CloudFormation::PublicTypeVersion": "[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}(::MODULE){0,1}",
+      "AWS::CloudFormation::ResourceDefaultVersion": "^[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}$",
+      "AWS::CloudFormation::ResourceVersion": "^[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}$",
+      "AWS::CloudFormation::HookVersion": "^[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}$",
+      "AWS::CloudFormation::TypeActivation": "[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}(::MODULE){0,1}"
+    }
+  },
+  {
+    "propertyName": "Url",
+    "numberOfServicesItAppearsIn": 8,
+    "patterns": {
+      "AWS::EMR::Studio": "^https://[0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])(:[0-9]*)*([?/#].*)?$"
+    }
+  },
+  {
+    "propertyName": "DatabaseName",
+    "numberOfServicesItAppearsIn": 8,
+    "patterns": {
+      "AWS::Timestream::Database": "^[a-zA-Z0-9_.-]{3,256}$",
+      "AWS::Timestream::Table": "^[a-zA-Z0-9_.-]{3,256}$"
+    }
+  },
+  {
+    "propertyName": "DBSubnetGroupName",
+    "numberOfServicesItAppearsIn": 8,
+    "patterns": {
+      "AWS::RDS::DBSubnetGroup": "^(?!default$)[a-zA-Z]{1}[a-zA-Z0-9-_\\.\\s]{0,254}$"
+    }
+  },
+  {
+    "propertyName": "EndpointName",
+    "numberOfServicesItAppearsIn": 8,
+    "patterns": {
+      "AWS::Redshift::EndpointAccess": "^(?=^[a-z][a-z0-9]*(-[a-z0-9]+)*$).{1,30}$"
+    }
+  },
+  {
+    "propertyName": "Path",
+    "numberOfServicesItAppearsIn": 8,
+    "patterns": {
+      "AWS::IAM::ServerCertificate": "(\\u002F)|(\\u002F[\\u0021-\\u007F]+\\u002F)",
+      "AWS::IAM::VirtualMFADevice": "(\\u002F)|(\\u002F[\\u0021-\\u007F]+\\u002F)"
+    }
+  },
+  {
+    "propertyName": "ProductId",
+    "numberOfServicesItAppearsIn": 8,
+    "patterns": {
+      "AWS::ServiceCatalog::ServiceActionAssociation": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,99}\\Z"
+    }
+  },
+  {
+    "propertyName": "HostedZoneId",
+    "numberOfServicesItAppearsIn": 7,
+    "patterns": {
+      "AWS::Route53::DNSSEC": "^[A-Z0-9]{1,32}$",
+      "AWS::Route53::KeySigningKey": "^[A-Z0-9]{1,32}$"
+    }
+  },
+  {
+    "propertyName": "FunctionName",
+    "numberOfServicesItAppearsIn": 7,
+    "patterns": {
+      "AWS::Lambda::EventSourceMapping": "(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\\d{1}:)?(\\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\\$LATEST|[a-zA-Z0-9-_]+))?"
+    }
+  },
+  {
+    "propertyName": "Role",
+    "numberOfServicesItAppearsIn": 7,
+    "patterns": {
+      "AWS::IoTTwinMaker::Workspace": "arn:((aws)|(aws-cn)|(aws-us-gov)):iam::[0-9]{12}:role/.*",
+      "AWS::Lambda::Function": "^arn:(aws[a-zA-Z-]*)?:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+$"
+    }
+  },
+  {
+    "propertyName": "TemplateName",
+    "numberOfServicesItAppearsIn": 7,
+    "patterns": {
+      "AWS::IoT::ProvisioningTemplate": "^[0-9A-Za-z_-]+$"
+    }
+  },
+  {
+    "propertyName": "AppId",
+    "numberOfServicesItAppearsIn": 6,
+    "patterns": {
+      "AWS::Amplify::App": "d[a-z0-9]+",
+      "AWS::Amplify::Domain": "d[a-z0-9]+",
+      "AWS::Amplify::Branch": "d[a-z0-9]+"
+    }
+  },
+  {
+    "propertyName": "FlowArn",
+    "numberOfServicesItAppearsIn": 6,
+    "patterns": {
+      "AWS::AppFlow::Flow": "arn:aws:appflow:.*:[0-9]+:.*"
+    }
+  },
+  {
+    "propertyName": "WorkspaceId",
+    "numberOfServicesItAppearsIn": 6,
+    "patterns": {
+      "AWS::APS::Workspace": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,99}$",
+      "AWS::IoTTwinMaker::ComponentType": "[a-zA-Z_0-9][a-zA-Z_\\-0-9]*[a-zA-Z0-9]+",
+      "AWS::IoTTwinMaker::Scene": "[a-zA-Z_0-9][a-zA-Z_\\-0-9]*[a-zA-Z0-9]+",
+      "AWS::IoTTwinMaker::Entity": "[a-zA-Z_0-9][a-zA-Z_\\-0-9]*[a-zA-Z0-9]+",
+      "AWS::IoTTwinMaker::SyncJob": "[a-zA-Z_0-9][a-zA-Z_\\-0-9]*[a-zA-Z0-9]+",
+      "AWS::IoTTwinMaker::Workspace": "[a-zA-Z_0-9][a-zA-Z_\\-0-9]*[a-zA-Z0-9]+"
+    }
+  },
+  {
+    "propertyName": "Alias",
+    "numberOfServicesItAppearsIn": 6,
+    "patterns": {
+      "AWS::S3::AccessPoint": "^[a-z0-9]([a-z0-9\\-]*[a-z0-9])?$",
+      "AWS::SSMContacts::Contact": "^[a-z0-9_\\-\\.]*$"
+    }
+  },
+  {
+    "propertyName": "TableName",
+    "numberOfServicesItAppearsIn": 6,
+    "patterns": {
+      "AWS::Cassandra::Table": "^[a-zA-Z0-9][a-zA-Z0-9_]{1,47}$",
+      "AWS::Timestream::Table": "^[a-zA-Z0-9_.-]{3,256}$"
+    }
+  },
+  {
+    "propertyName": "AccountId",
+    "numberOfServicesItAppearsIn": 6,
+    "patterns": {
+      "AWS::IoT::Logging": "^[0-9]{12}$",
+      "AWS::Organizations::Account": "^\\d{12}$"
+    }
+  },
+  {
+    "propertyName": "LogGroupName",
+    "numberOfServicesItAppearsIn": 6,
+    "patterns": {
+      "AWS::Logs::LogGroup": "^[.\\-_/#A-Za-z0-9]{1,512}\\Z",
+      "AWS::Logs::MetricFilter": "^[.\\-_/#A-Za-z0-9]{1,512}"
+    }
+  },
+  {
+    "propertyName": "BucketName",
+    "numberOfServicesItAppearsIn": 6,
+    "patterns": {
+      "AWS::CodeGuruReviewer::RepositoryAssociation": "^\\S(.*\\S)?$",
+      "AWS::DataSync::LocationObjectStorage": "^[a-zA-Z0-9_\\-\\+\\./\\(\\)\\$\\p{Zs}]+$",
+      "AWS::Lightsail::Bucket": "^[a-z0-9][a-z0-9-]{1,52}[a-z0-9]$",
+      "AWS::S3::Bucket": "^[a-z0-9][a-z0-9//.//-]*[a-z0-9]$",
+      "AWS::S3Outposts::Bucket": "(?=^.{3,63}$)(?!^(\\d+\\.)+\\d+$)(^(([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])\\.)*([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])$)"
+    }
+  },
+  {
+    "propertyName": "TargetType",
+    "numberOfServicesItAppearsIn": 6,
+    "patterns": {
+      "AWS::SSM::Document": "^\\/[\\w\\.\\-\\:\\/]*$"
+    }
+  },
+  {
+    "propertyName": "Password",
+    "numberOfServicesItAppearsIn": 6,
+    "patterns": {
+      "AWS::Connect::User": "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d\\S]{8,64}$",
+      "AWS::DataSync::LocationFSxWindows": "^.{0,104}$",
+      "AWS::DataSync::LocationSMB": "^.{0,104}$"
+    }
+  },
+  {
+    "propertyName": "DBClusterIdentifier",
+    "numberOfServicesItAppearsIn": 6,
+    "patterns": {
+      "AWS::RDS::DBCluster": "^[a-zA-Z]{1}(?:-?[a-zA-Z0-9]){0,62}$"
+    }
+  },
+  {
+    "propertyName": "PreferredBackupWindow",
+    "numberOfServicesItAppearsIn": 6,
+    "patterns": {
+      "AWS::OpsWorksCM::Server": "^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$"
+    }
+  },
+  {
+    "propertyName": "GroupId",
+    "numberOfServicesItAppearsIn": 6,
+    "patterns": {
+      "AWS::IdentityStore::Group": "^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$",
+      "AWS::IdentityStore::GroupMembership": "^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$"
+    }
+  },
+  {
+    "propertyName": "StudioId",
+    "numberOfServicesItAppearsIn": 6,
+    "patterns": {
+      "AWS::EMR::Studio": "^es-[0-9A-Z]+",
+      "AWS::EMR::StudioSessionMapping": "^es-[0-9A-Z]+"
+    }
+  },
+  {
+    "propertyName": "DetectorId",
+    "numberOfServicesItAppearsIn": 6,
+    "patterns": {
+      "AWS::FraudDetector::Detector": "^[0-9a-z_-]+$"
+    }
+  },
+  {
+    "propertyName": "PrivateKey",
+    "numberOfServicesItAppearsIn": 6,
+    "patterns": {
+      "AWS::IAM::ServerCertificate": "[\\u0009\\u000A\\u000D\\u0020-\\u00FF]+",
+      "AWS::Transfer::Certificate": "^[\t\n\r -ÿ]*"
+    }
+  },
+  {
+    "propertyName": "TeamId",
+    "numberOfServicesItAppearsIn": 6,
+    "patterns": {
+      "AWS::SupportApp::SlackChannelConfiguration": "^\\S+$",
+      "AWS::SupportApp::SlackWorkspaceConfiguration": "^\\S+$"
+    }
+  },
+  {
+    "propertyName": "DeploymentId",
+    "numberOfServicesItAppearsIn": 5,
+    "patterns": {
+      "AWS::GreengrassV2::Deployment": ".+"
+    }
+  },
+  {
+    "propertyName": "StageName",
+    "numberOfServicesItAppearsIn": 5,
+    "patterns": {
+      "AWS::RefactorSpaces::Application": "^[-a-zA-Z0-9_]*$"
+    }
+  },
+  {
+    "propertyName": "CertificateArn",
+    "numberOfServicesItAppearsIn": 5,
+    "patterns": {
+      "AWS::AppSync::DomainName": "^arn:[a-z-]*:acm:[a-z0-9-]*:\\d{12}:certificate/[0-9A-Za-z_/-]*$",
+      "AWS::EC2::EnclaveCertificateIamRoleAssociation": "^arn:aws[A-Za-z0-9-]{0,64}:acm:[A-Za-z0-9-]{1,64}:([0-9]{12})?:certificate/.+$"
+    }
+  },
+  {
+    "propertyName": "ApplicationArn",
+    "numberOfServicesItAppearsIn": 5,
+    "patterns": {
+      "AWS::IoTFleetHub::Application": "^arn:[!-~]+$",
+      "AWS::M2::Application": "^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$",
+      "AWS::ServiceCatalogAppRegistry::ResourceAssociation": "arn:aws[-a-z]*:servicecatalog:[a-z]{2}(-gov)?-[a-z]+-\\d:\\d{12}:/applications/[a-z0-9]+",
+      "AWS::ServiceCatalogAppRegistry::AttributeGroupAssociation": "arn:aws[-a-z]*:servicecatalog:[a-z]{2}(-gov)?-[a-z]+-\\d:\\d{12}:/applications/[a-z0-9]+"
+    }
+  },
+  {
+    "propertyName": "ServiceRoleArn",
+    "numberOfServicesItAppearsIn": 5,
+    "patterns": {
+      "AWS::OpsWorksCM::Server": "arn:aws:iam::[0-9]{12}:role/.*"
+    }
+  },
+  {
+    "propertyName": "CreationDate",
+    "numberOfServicesItAppearsIn": 5,
+    "patterns": {
+      "AWS::CE::AnomalyMonitor": "(\\d{4}-\\d{2}-\\d{2})(T\\d{2}:\\d{2}:\\d{2}Z)?"
+    }
+  },
+  {
+    "propertyName": "ConnectionArn",
+    "numberOfServicesItAppearsIn": 5,
+    "patterns": {
+      "AWS::CloudFormation::Publisher": "arn:aws(-[w]+)*:.+:.+:[0-9]{12}:.+",
+      "AWS::CodeGuruReviewer::RepositoryAssociation": "arn:aws(-[\\w]+)*:.+:.+:[0-9]{12}:.+",
+      "AWS::CodeStarConnections::Connection": "arn:aws(-[\\w]+)*:.+:.+:[0-9]{12}:.+"
+    }
+  },
+  {
+    "propertyName": "RepositoryName",
+    "numberOfServicesItAppearsIn": 5,
+    "patterns": {
+      "AWS::CodeArtifact::Repository": "^([A-Za-z0-9][A-Za-z0-9._\\-]{1,99})$",
+      "AWS::ECR::PublicRepository": "^(?=.{2,256}$)((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*)$",
+      "AWS::ECR::Repository": "^(?=.{2,256}$)((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*)$"
+    }
+  },
+  {
+    "propertyName": "Username",
+    "numberOfServicesItAppearsIn": 5,
+    "patterns": {
+      "AWS::Connect::User": "[a-zA-Z0-9\\_\\-\\.\\@]+"
+    }
+  },
+  {
+    "propertyName": "Resource",
+    "numberOfServicesItAppearsIn": 5,
+    "patterns": {
+      "AWS::CodeStarNotifications::NotificationRule": "^arn:aws[^:\\s]*:[^:\\s]*:[^:\\s]*:[0-9]{12}:[^\\s]+$",
+      "AWS::ServiceCatalogAppRegistry::ResourceAssociation": "\\w+|arn:aws[-a-z]*:cloudformation:[a-z]{2}(-gov)?-[a-z]+-\\d:\\d{12}:stack/[a-zA-Z][-A-Za-z0-9]{0,127}/[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}"
+    }
+  },
+  {
+    "propertyName": "AssociationId",
+    "numberOfServicesItAppearsIn": 5,
+    "patterns": {
+      "AWS::SSM::Association": "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"
+    }
+  },
+  {
+    "propertyName": "TargetArn",
+    "numberOfServicesItAppearsIn": 5,
+    "patterns": {
+      "AWS::Connect::PhoneNumber": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:(instance|traffic-distribution-group)/[-a-zA-Z0-9]*$",
+      "AWS::GreengrassV2::Deployment": "arn:[^:]*:iot:[^:]*:[0-9]+:(thing|thinggroup)/.+"
+    }
+  },
+  {
+    "propertyName": "ClientToken",
+    "numberOfServicesItAppearsIn": 5,
+    "patterns": {
+      "AWS::Grafana::Workspace": "^[!-~]{1,64}$"
+    }
+  },
+  {
+    "propertyName": "SubnetGroupName",
+    "numberOfServicesItAppearsIn": 5,
+    "patterns": {
+      "AWS::MemoryDB::SubnetGroup": "[a-z][a-z0-9\\-]*",
+      "AWS::Redshift::EndpointAccess": "^(?=^[a-zA-Z0-9-]+$).{1,255}$"
+    }
+  },
+  {
+    "propertyName": "MemberId",
+    "numberOfServicesItAppearsIn": 5,
+    "patterns": {
+      "AWS::Detective::MemberInvitation": "[0-9]{12}"
+    }
+  },
+  {
+    "propertyName": "MasterUsername",
+    "numberOfServicesItAppearsIn": 5,
+    "patterns": {
+      "AWS::RDS::DBCluster": "^[a-zA-Z]{1}[a-zA-Z0-9_]*$",
+      "AWS::RDS::DBInstance": "^[a-zA-Z][a-zA-Z0-9_]{0,127}$"
+    }
+  },
+  {
+    "propertyName": "Platform",
+    "numberOfServicesItAppearsIn": 4,
+    "patterns": {
+      "AWS::NimbleStudio::StreamingImage": "^[a-zA-Z]*$"
+    }
+  },
+  {
+    "propertyName": "EnvironmentId",
+    "numberOfServicesItAppearsIn": 4,
+    "patterns": {
+      "AWS::FinSpace::Environment": "^[a-zA-Z0-9]{1,26}$",
+      "AWS::M2::Environment": "^\\S{1,80}$"
+    }
+  },
+  {
+    "propertyName": "ApplicationIdentifier",
+    "numberOfServicesItAppearsIn": 4,
+    "patterns": {
+      "AWS::RefactorSpaces::Application": "^app-([0-9A-Za-z]{10}$)",
+      "AWS::RefactorSpaces::Route": "^app-([0-9A-Za-z]{10}$)",
+      "AWS::RefactorSpaces::Service": "^app-([0-9A-Za-z]{10}$)"
+    }
+  },
+  {
+    "propertyName": "ServiceName",
+    "numberOfServicesItAppearsIn": 4,
+    "patterns": {
+      "AWS::AppRunner::Service": "[A-Za-z0-9][A-Za-z0-9-_]{3,39}",
+      "AWS::Lightsail::Container": "^[a-z0-9]{1,2}|[a-z0-9][a-z0-9-]+[a-z0-9]$"
+    }
+  },
+  {
+    "propertyName": "SubscriptionName",
+    "numberOfServicesItAppearsIn": 4,
+    "patterns": {
+      "AWS::CE::AnomalySubscription": "[\\S\\s]*",
+      "AWS::Redshift::EventSubscription": "^(?=^[a-z][a-z0-9]*(-[a-z0-9]+)*$).{1,255}$"
+    }
+  },
+  {
+    "propertyName": "Owner",
+    "numberOfServicesItAppearsIn": 4,
+    "patterns": {
+      "AWS::CodeArtifact::Domain": "[0-9]{12}",
+      "AWS::CodeGuruReviewer::RepositoryAssociation": "^\\S(.*\\S)?$"
+    }
+  },
+  {
+    "propertyName": "OwnerAccountId",
+    "numberOfServicesItAppearsIn": 4,
+    "patterns": {
+      "AWS::CodeStarConnections::Connection": "[0-9]{12}"
+    }
+  },
+  {
+    "propertyName": "TargetId",
+    "numberOfServicesItAppearsIn": 4,
+    "patterns": {
+      "AWS::IoT::ResourceSpecificLogging": "[a-zA-Z0-9.:_-]+",
+      "AWS::SSO::Assignment": "\\d{12}"
+    }
+  },
+  {
+    "propertyName": "DatasetName",
+    "numberOfServicesItAppearsIn": 4,
+    "patterns": {
+      "AWS::Forecast::Dataset": "^[a-zA-Z][a-zA-Z0-9_]*",
+      "AWS::IoTAnalytics::Dataset": "(^(?!_{2}))(^[a-zA-Z0-9_]+$)"
+    }
+  },
+  {
+    "propertyName": "FsxFilesystemArn",
+    "numberOfServicesItAppearsIn": 4,
+    "patterns": {
+      "AWS::DataSync::LocationFSxLustre": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):fsx:[a-z\\-0-9]+:[0-9]{12}:file-system/fs-[0-9a-f]+$",
+      "AWS::DataSync::LocationFSxONTAP": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):fsx:[a-z\\-0-9]+:[0-9]{12}:file-system/fs-[0-9a-f]+$",
+      "AWS::DataSync::LocationFSxOpenZFS": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):fsx:[a-z\\-0-9]+:[0-9]{12}:file-system/fs-[0-9a-f]+$",
+      "AWS::DataSync::LocationFSxWindows": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):fsx:[a-z\\-0-9]*:[0-9]{12}:file-system/fs-.*$"
+    }
+  },
+  {
+    "propertyName": "DBClusterParameterGroupName",
+    "numberOfServicesItAppearsIn": 4,
+    "patterns": {
+      "AWS::RDS::DBClusterParameterGroup": "^[a-zA-Z]{1}(?:-?[a-zA-Z0-9])*$"
+    }
+  },
+  {
+    "propertyName": "LoadBalancerName",
+    "numberOfServicesItAppearsIn": 4,
+    "patterns": {
+      "AWS::Lightsail::LoadBalancerTlsCertificate": "\\w[\\w\\-]*\\w",
+      "AWS::Lightsail::LoadBalancer": "\\w[\\w\\-]*\\w"
+    }
+  },
+  {
+    "propertyName": "DatasetGroupArn",
+    "numberOfServicesItAppearsIn": 4,
+    "patterns": {
+      "AWS::Forecast::DatasetGroup": "^[a-zA-Z0-9\\-\\_\\.\\/\\:]+$",
+      "AWS::Personalize::Dataset": "arn:([a-z\\d-]+):personalize:.*:.*:.+",
+      "AWS::Personalize::DatasetGroup": "arn:([a-z\\d-]+):personalize:.*:.*:.+",
+      "AWS::Personalize::Solution": "arn:([a-z\\d-]+):personalize:.*:.*:.+"
+    }
+  },
+  {
+    "propertyName": "Key",
+    "numberOfServicesItAppearsIn": 4,
+    "patterns": {
+      "AWS::IoTEvents::DetectorModel": "^((`[\\w\\- ]+`)|([\\w\\-]+))(\\.((`[\\w\\- ]+`)|([\\w\\-]+)))*$",
+      "AWS::IoTEvents::AlarmModel": "^((`[\\w\\- ]+`)|([\\w\\-]+))(\\.((`[\\w\\- ]+`)|([\\w\\-]+)))*$"
+    }
+  },
+  {
+    "propertyName": "ThingName",
+    "numberOfServicesItAppearsIn": 4,
+    "patterns": {
+      "AWS::IoT::Thing": "[a-zA-Z0-9:_-]+"
+    }
+  },
+  {
+    "propertyName": "KmsKeyArn",
+    "numberOfServicesItAppearsIn": 4,
+    "patterns": {
+      "AWS::Lambda::Function": "^(arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|()$",
+      "AWS::LookoutMetrics::AnomalyDetector": "arn:aws.*:kms:.*:[0-9]{12}:key/.*",
+      "AWS::Personalize::DatasetGroup": "arn:aws.*:kms:.*:[0-9]{12}:key/.*",
+      "AWS::Scheduler::Schedule": "^arn:aws(-[a-z]+)?:kms:[a-z0-9\\-]+:\\d{12}:(key|alias)\\/[0-9a-zA-Z-_]*$"
+    }
+  },
+  {
+    "propertyName": "EnvironmentIdentifier",
+    "numberOfServicesItAppearsIn": 4,
+    "patterns": {
+      "AWS::RefactorSpaces::Application": "^env-([0-9A-Za-z]{10}$)",
+      "AWS::RefactorSpaces::Environment": "^env-([0-9A-Za-z]{10}$)",
+      "AWS::RefactorSpaces::Route": "^env-([0-9A-Za-z]{10}$)",
+      "AWS::RefactorSpaces::Service": "^env-([0-9A-Za-z]{10}$)"
+    }
+  },
+  {
+    "propertyName": "CurrentRevisionId",
+    "numberOfServicesItAppearsIn": 4,
+    "patterns": {
+      "AWS::RoboMaker::RobotApplicationVersion": "[a-zA-Z0-9_.\\-]*",
+      "AWS::RoboMaker::SimulationApplicationVersion": "[a-zA-Z0-9_.\\-]*"
+    }
+  },
+  {
+    "propertyName": "Application",
+    "numberOfServicesItAppearsIn": 4,
+    "patterns": {
+      "AWS::ServiceCatalogAppRegistry::ResourceAssociation": "\\w+|[a-z0-9]{12}",
+      "AWS::ServiceCatalogAppRegistry::AttributeGroupAssociation": "\\w+|[a-z0-9]{12}"
+    }
+  },
+  {
+    "propertyName": "Bucket",
+    "numberOfServicesItAppearsIn": 4,
+    "patterns": {
+      "AWS::S3Outposts::AccessPoint": "^arn:[^:]+:s3-outposts:[a-zA-Z0-9\\-]+:\\d{12}:outpost\\/[^:]+\\/bucket\\/[^:]+$",
+      "AWS::S3Outposts::BucketPolicy": "^arn:[^:]+:s3-outposts:[a-zA-Z0-9\\-]+:\\d{12}:outpost\\/[^:]+\\/bucket\\/[^:]+$"
+    }
+  },
+  {
+    "propertyName": "DomainId",
+    "numberOfServicesItAppearsIn": 4,
+    "patterns": {
+      "AWS::SageMaker::Domain": "^d-(-*[a-z0-9])+",
+      "AWS::VoiceID::Domain": "^[a-zA-Z0-9]{22}$"
+    }
+  },
+  {
+    "propertyName": "CertificateChain",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::IAM::ServerCertificate": "[\\u0009\\u000A\\u000D\\u0020-\\u00FF]+",
+      "AWS::Transfer::Certificate": "^[\t\n\r -ÿ]*"
+    }
+  },
+  {
+    "propertyName": "CredentialsArn",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::AppFlow::ConnectorProfile": "arn:aws:.*:.*:[0-9]+:.*"
+    }
+  },
+  {
+    "propertyName": "KmsKey",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::AppIntegrations::DataIntegration": ".*\\S.*"
+    }
+  },
+  {
+    "propertyName": "ServiceArn",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::AppRunner::VpcIngressConnection": "arn:aws(-[\\w]+)*:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[0-9]{12}:(\\w|/|-){1,1011}",
+      "AWS::AppRunner::Service": "arn:aws(-[\\w]+)*:[a-z0-9-\\\\.]{0,63}:[a-z0-9-\\\\.]{0,63}:[0-9]{12}:(\\w|\\/|-){1,1011}"
+    }
+  },
+  {
+    "propertyName": "IamRoleArn",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::Chatbot::SlackChannelConfiguration": "^arn:(aws[a-zA-Z-]*)?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$"
+    }
+  },
+  {
+    "propertyName": "Service",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::BillingConductor::PricingRule": "[a-zA-Z0-9\\.\\-]+"
+    }
+  },
+  {
+    "propertyName": "TypeVersionArn",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::CloudFormation::HookDefaultVersion": "^arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/hook/.+$",
+      "AWS::CloudFormation::PublicTypeVersion": "arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:[0-9]{12}:type/.+",
+      "AWS::CloudFormation::ResourceDefaultVersion": "^arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/resource/.+$"
+    }
+  },
+  {
+    "propertyName": "TypeArn",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::CloudFormation::HookTypeConfig": "^arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/hook/.+$",
+      "AWS::CloudFormation::ResourceVersion": "^arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/resource/.+$",
+      "AWS::CloudFormation::HookVersion": "^arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/hook/.+$"
+    }
+  },
+  {
+    "propertyName": "PublisherId",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::CloudFormation::PublicTypeVersion": "[0-9a-zA-Z]{40}",
+      "AWS::CloudFormation::Publisher": "[0-9a-zA-Z]{40}",
+      "AWS::CloudFormation::TypeActivation": "[0-9a-zA-Z]{40}"
+    }
+  },
+  {
+    "propertyName": "AlarmName",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::Lightsail::Alarm": "\\w[\\w\\-]*\\w"
+    }
+  },
+  {
+    "propertyName": "DirectoryId",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::Connect::Instance": "^d-[0-9a-f]{10}$"
+    }
+  },
+  {
+    "propertyName": "ServerHostname",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::DataSync::LocationNFS": "^(([a-zA-Z0-9\\-]*[a-zA-Z0-9])\\.)*([A-Za-z0-9\\-]*[A-Za-z0-9])$",
+      "AWS::DataSync::LocationObjectStorage": "^(([a-zA-Z0-9\\-]*[a-zA-Z0-9])\\.)*([A-Za-z0-9\\-]*[A-Za-z0-9])$",
+      "AWS::DataSync::LocationSMB": "^(([a-zA-Z0-9\\-]*[a-zA-Z0-9])\\.)*([A-Za-z0-9\\-]*[A-Za-z0-9])$"
+    }
+  },
+  {
+    "propertyName": "DBInstanceIdentifier",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::RDS::DBInstance": "^$|^[a-zA-Z]{1}(?:-?[a-zA-Z0-9]){0,62}$"
+    }
+  },
+  {
+    "propertyName": "AllocatedStorage",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::RDS::DBInstance": "^[0-9]*$"
+    }
+  },
+  {
+    "propertyName": "DomainArn",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::SageMaker::Domain": "arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:domain/.*"
+    }
+  },
+  {
+    "propertyName": "SchemaArn",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::Personalize::Dataset": "arn:([a-z\\d-]+):personalize:.*:.*:.+",
+      "AWS::Personalize::Schema": "arn:([a-z\\d-]+):personalize:.*:.*:.+"
+    }
+  },
+  {
+    "propertyName": "Project",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::Evidently::Experiment": "([-a-zA-Z0-9._]*)|(arn:[^:]*:[^:]*:[^:]*:[^:]*:project/[-a-zA-Z0-9._]*)",
+      "AWS::Evidently::Feature": "([-a-zA-Z0-9._]*)|(arn:[^:]*:[^:]*:[^:]*:[^:]*:project/[-a-zA-Z0-9._]*)",
+      "AWS::Evidently::Launch": "([-a-zA-Z0-9._]*)|(arn:[^:]*:[^:]*:[^:]*:[^:]*:project/[-a-zA-Z0-9._]*)"
+    }
+  },
+  {
+    "propertyName": "BackupId",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::OpsWorksCM::Server": "[a-zA-Z][a-zA-Z0-9\\-\\.\\:]*"
+    }
+  },
+  {
+    "propertyName": "ChannelName",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::IoTAnalytics::Channel": "(^(?!_{2}))(^[a-zA-Z0-9_]+$)",
+      "AWS::SSMContacts::ContactChannel": "[a-zA-Z 0-9_\\-+'&amp;\\uD83C-\\uDBFF\\uDC00-\\uDFFF\\u2000-\\u3300]+",
+      "AWS::SupportApp::SlackChannelConfiguration": "^.+$"
+    }
+  },
+  {
+    "propertyName": "ApplicationDescription",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::IoTFleetHub::Application": "^[ -~]*$"
+    }
+  },
+  {
+    "propertyName": "HomeRegion",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::NimbleStudio::Studio": "[a-z]{2}-?(iso|gov)?-{1}[a-z]*-{1}[0-9]"
+    }
+  },
+  {
+    "propertyName": "DBParameterGroupName",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::RDS::DBParameterGroup": "^[a-zA-Z]{1}(?:-?[a-zA-Z0-9])*$"
+    }
+  },
+  {
+    "propertyName": "DBProxyName",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::RDS::DBProxy": "[0-z]*",
+      "AWS::RDS::DBProxyTargetGroup": "[A-z][0-z]*",
+      "AWS::RDS::DBProxyEndpoint": "[0-z]*"
+    }
+  },
+  {
+    "propertyName": "ClusterIdentifier",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::Redshift::EndpointAuthorization": "^(?=^[a-z][a-z0-9]*(-[a-z0-9]+)*$).{1,63}$"
+    }
+  },
+  {
+    "propertyName": "ServerId",
+    "numberOfServicesItAppearsIn": 3,
+    "patterns": {
+      "AWS::Transfer::Agreement": "^s-([0-9a-f]{17})$"
+    }
+  },
+  {
+    "propertyName": "AppName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Amplify::App": "(?s).+",
+      "AWS::SageMaker::App": "^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}"
+    }
+  },
+  {
+    "propertyName": "BuildSpec",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Amplify::App": "(?s).+",
+      "AWS::Amplify::Branch": "(?s).+"
+    }
+  },
+  {
+    "propertyName": "ParentId",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Organizations::OrganizationalUnit": "^(r-[0-9a-z]{4,32})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$"
+    }
+  },
+  {
+    "propertyName": "VpcLinkId",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::RefactorSpaces::Application": "^[a-z0-9]{10}$"
+    }
+  },
+  {
+    "propertyName": "KMSArn",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::AppFlow::Flow": "arn:aws:kms:.*:[0-9]+:.*",
+      "AWS::AppFlow::ConnectorProfile": "arn:aws:kms:.*:[0-9]+:.*"
+    }
+  },
+  {
+    "propertyName": "ConnectorLabel",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::AppFlow::ConnectorProfile": "[\\w!@#.-]+",
+      "AWS::AppFlow::Connector": "[a-zA-Z0-9][\\w!@#.-]+"
+    }
+  },
+  {
+    "propertyName": "ConnectorArn",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::AppFlow::Connector": "arn:*:appflow:.*:[0-9]+:.*",
+      "AWS::KafkaConnect::Connector": "arn:(aws|aws-us-gov|aws-cn):kafkaconnect:.*"
+    }
+  },
+  {
+    "propertyName": "FunctionArn",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Lambda::Url": "^(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\\d{1}:)?(\\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:((?!\\d+)[0-9a-zA-Z_]+))?$"
+    }
+  },
+  {
+    "propertyName": "ScheduledActionName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Redshift::ScheduledAction": "^(?=^[a-z][a-z0-9]*(-[a-z0-9]+)*$).{1,60}$"
+    }
+  },
+  {
+    "propertyName": "KeyspaceName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Cassandra::Keyspace": "^[a-zA-Z0-9][a-zA-Z0-9_]{1,47}$",
+      "AWS::Cassandra::Table": "^[a-zA-Z0-9][a-zA-Z0-9_]{1,47}$"
+    }
+  },
+  {
+    "propertyName": "ModuleName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::CloudFormation::ModuleDefaultVersion": "^[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::MODULE",
+      "AWS::CloudFormation::ModuleVersion": "^[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::MODULE"
+    }
+  },
+  {
+    "propertyName": "PublicTypeArn",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::CloudFormation::PublicTypeVersion": "arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/.+",
+      "AWS::CloudFormation::TypeActivation": "arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/.+"
+    }
+  },
+  {
+    "propertyName": "StackSetName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::CloudFormation::StackSet": "^[a-zA-Z][a-zA-Z0-9\\-]{0,127}$"
+    }
+  },
+  {
+    "propertyName": "TemplateS3Uri",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Config::ConformancePack": "s3://.*",
+      "AWS::Config::OrganizationConformancePack": "s3://.*"
+    }
+  },
+  {
+    "propertyName": "ContactFlowArn",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Connect::ContactFlow": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*/contact-flow/[-a-zA-Z0-9]*$",
+      "AWS::Connect::TaskTemplate": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*/contact-flow/[-a-zA-Z0-9]*$"
+    }
+  },
+  {
+    "propertyName": "Address",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Connect::PhoneNumber": "^\\+[0-9]{2,15}"
+    }
+  },
+  {
+    "propertyName": "RuleArn",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Connect::Rule": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*/rule/[-a-zA-Z0-9]*$"
+    }
+  },
+  {
+    "propertyName": "ObjectTypeName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::CustomerProfiles::ObjectType": "^[a-zA-Z_][a-zA-Z_0-9-]*$",
+      "AWS::CustomerProfiles::Integration": "^[a-zA-Z_][a-zA-Z_0-9-]*$"
+    }
+  },
+  {
+    "propertyName": "TemplateId",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::CustomerProfiles::ObjectType": "^[a-zA-Z0-9_-]+$",
+      "AWS::QuickSight::Template": "[\\w\\-]+"
+    }
+  },
+  {
+    "propertyName": "VpcEndpointId",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::DataSync::Agent": "^vpce-[0-9a-f]{17}$"
+    }
+  },
+  {
+    "propertyName": "User",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::DataSync::LocationFSxWindows": "^[^\\x5B\\x5D\\\\/:;|=,+*?]{1,104}$",
+      "AWS::DataSync::LocationSMB": "^[^\\x5B\\x5D\\\\/:;|=,+*?]{1,104}$"
+    }
+  },
+  {
+    "propertyName": "SecretKey",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::DataSync::LocationObjectStorage": "^.+$"
+    }
+  },
+  {
+    "propertyName": "TaskArn",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::DataSync::Task": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$"
+    }
+  },
+  {
+    "propertyName": "ServerName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::OpsWorksCM::Server": "[a-zA-Z][a-zA-Z0-9\\-]*"
+    }
+  },
+  {
+    "propertyName": "AdminUserPassword",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::RedshiftServerless::Namespace": "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[^\\x00-\\x20\\x22\\x27\\x2f\\x40\\x5c\\x7f-\\uffff]+"
+    }
+  },
+  {
+    "propertyName": "FleetId",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::GameLift::Fleet": "^fleet-\\S+"
+    }
+  },
+  {
+    "propertyName": "PeerVpcId",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::GameLift::Fleet": "^vpc-\\S+"
+    }
+  },
+  {
+    "propertyName": "ReleaseLabel",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::EMRServerless::Application": "^[A-Za-z0-9._/-]+$"
+    }
+  },
+  {
+    "propertyName": "StateReason",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Events::Endpoint": "^.*$",
+      "AWS::Pipes::Pipe": "^.*$"
+    }
+  },
+  {
+    "propertyName": "RandomizationSalt",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Evidently::Experiment": ".*",
+      "AWS::Evidently::Launch": ".*"
+    }
+  },
+  {
+    "propertyName": "EnvironmentArn",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::FinSpace::Environment": "^arn:aws:finspace:[A-Za-z0-9_/.-]{0,63}:\\d+:environment/[0-9A-Za-z_-]{1,128}$",
+      "AWS::M2::Environment": "^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+=,@.-]{0,1023}$"
+    }
+  },
+  {
+    "propertyName": "AliasId",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::WorkSpaces::ConnectionAlias": "^wsca-[0-9a-z]{8,63}$"
+    }
+  },
+  {
+    "propertyName": "BuildId",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::GameLift::Fleet": "^build-\\S+|^arn:.*:build/build-\\S+"
+    }
+  },
+  {
+    "propertyName": "Email",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Organizations::Account": "[^\\s@]+@[^\\s@]+\\.[^\\s@]+"
+    }
+  },
+  {
+    "propertyName": "DatastoreName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::IoTAnalytics::Datastore": "[a-zA-Z0-9_]+"
+    }
+  },
+  {
+    "propertyName": "RoleName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Organizations::Account": "[\\w+=,.@-]{1,64}"
+    }
+  },
+  {
+    "propertyName": "IdentityStoreId",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::IdentityStore::Group": "^d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "AWS::IdentityStore::GroupMembership": "^d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    }
+  },
+  {
+    "propertyName": "SerialNumber",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::IAM::VirtualMFADevice": "[\\w+=/:,.@-]+"
+    }
+  },
+  {
+    "propertyName": "Serial",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Transfer::Certificate": "^[\\p{XDigit}{2}:?]*"
+    }
+  },
+  {
+    "propertyName": "KeyPair",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::OpsWorksCM::Server": ".*"
+    }
+  },
+  {
+    "propertyName": "CACertificatePem",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::IoT::CACertificate": "[\\s\\S]*"
+    }
+  },
+  {
+    "propertyName": "IndexName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Location::PlaceIndex": "^[-._\\w]+$"
+    }
+  },
+  {
+    "propertyName": "PipelineName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::IoTAnalytics::Pipeline": "[a-zA-Z0-9_]+",
+      "AWS::SageMaker::Pipeline": "^[a-zA-Z0-9](-*[a-zA-Z0-9])*"
+    }
+  },
+  {
+    "propertyName": "DashboardId",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::QuickSight::Dashboard": "[\\w\\-]+"
+    }
+  },
+  {
+    "propertyName": "Fingerprint",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::IoTWireless::PartnerAccount": "[a-fA-F0-9]{64}"
+    }
+  },
+  {
+    "propertyName": "LastUplinkReceivedAt",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::IoTWireless::WirelessDevice": "^^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
+    }
+  },
+  {
+    "propertyName": "DestinationName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Logs::Destination": "^[^:*]{1,512}$"
+    }
+  },
+  {
+    "propertyName": "CodeSigningConfigArn",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Lambda::CodeSigningConfig": "arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\\d{1}:\\d{12}:code-signing-config:csc-[a-z0-9]{17}",
+      "AWS::Lambda::Function": "arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\\d{1}:\\d{12}:code-signing-config:csc-[a-z0-9]{17}"
+    }
+  },
+  {
+    "propertyName": "Qualifier",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Lambda::Url": "((?!^[0-9]+$)([a-zA-Z0-9-_]+))"
+    }
+  },
+  {
+    "propertyName": "TrackerName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Location::Tracker": "^[-._\\w]+$",
+      "AWS::Location::TrackerConsumer": "^[-._\\w]+$"
+    }
+  },
+  {
+    "propertyName": "FilterName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Logs::MetricFilter": "^[^:*]{1,512}"
+    }
+  },
+  {
+    "propertyName": "ModelName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::LookoutEquipment::InferenceScheduler": "^[0-9a-zA-Z_-]{1,200}$"
+    }
+  },
+  {
+    "propertyName": "ChannelId",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::SupportApp::SlackChannelConfiguration": "^\\S+$"
+    }
+  },
+  {
+    "propertyName": "ACLName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::MemoryDB::Cluster": "[a-zA-Z][a-zA-Z0-9\\-]*",
+      "AWS::MemoryDB::ACL": "[a-z][a-z0-9\\\\-]*"
+    }
+  },
+  {
+    "propertyName": "FinalSnapshotName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::RedshiftServerless::Namespace": "[a-z][a-z0-9]*(-[a-z0-9]+)*"
+    }
+  },
+  {
+    "propertyName": "FirewallName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::NetworkFirewall::Firewall": "^[a-zA-Z0-9-]+$",
+      "AWS::NetworkFirewall::LoggingConfiguration": "^[a-zA-Z0-9-]+$"
+    }
+  },
+  {
+    "propertyName": "PoolName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::SES::DedicatedIpPool": "^[a-z0-9_-]{0,64}$"
+    }
+  },
+  {
+    "propertyName": "GlobalClusterIdentifier",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::RDS::DBCluster": "^$|^[a-zA-Z]{1}(?:-?[a-zA-Z0-9]){0,62}$",
+      "AWS::RDS::GlobalCluster": "^[a-zA-Z]{1}(?:-?[a-zA-Z0-9]){0,62}$"
+    }
+  },
+  {
+    "propertyName": "DBName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::RDS::DBInstance": "^$|^[_a-zA-Z][a-zA-Z0-9_]{0,63}$"
+    }
+  },
+  {
+    "propertyName": "NamespaceName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::RedshiftServerless::Namespace": "^[a-z0-9-]+$",
+      "AWS::RedshiftServerless::Workgroup": "^(?=^[a-z0-9-]+$).{3,64}$"
+    }
+  },
+  {
+    "propertyName": "ServiceIdentifier",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::RefactorSpaces::Route": "^svc-([0-9A-Za-z]{10}$)",
+      "AWS::RefactorSpaces::Service": "^svc-([0-9A-Za-z]{10}$)"
+    }
+  },
+  {
+    "propertyName": "AppArn",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::ResilienceHub::App": "^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$",
+      "AWS::SageMaker::App": "arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:app/.*"
+    }
+  },
+  {
+    "propertyName": "TrustAnchorArn",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::RolesAnywhere::CRL": "^arn:aws(-[^:]+)?:rolesanywhere(:.*){2}(:trust-anchor.*)$",
+      "AWS::RolesAnywhere::TrustAnchor": "[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}"
+    }
+  },
+  {
+    "propertyName": "ProfileId",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::RolesAnywhere::Profile": "[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}",
+      "AWS::Transfer::Profile": "^p-([0-9a-f]{17})$"
+    }
+  },
+  {
+    "propertyName": "ResourceSetName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Route53RecoveryReadiness::ReadinessCheck": "[a-zA-Z0-9_]+"
+    }
+  },
+  {
+    "propertyName": "OutpostId",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::S3Outposts::Bucket": "^(op-[a-f0-9]{17}|\\d{12}|ec2)$",
+      "AWS::S3Outposts::Endpoint": "^(op-[a-f0-9]{17}|\\d{12}|ec2)$"
+    }
+  },
+  {
+    "propertyName": "UserProfileName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::SageMaker::App": "^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}"
+    }
+  },
+  {
+    "propertyName": "DeviceFleetName",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::SageMaker::Device": "^[a-zA-Z0-9](-*_*[a-zA-Z0-9])*$",
+      "AWS::SageMaker::DeviceFleet": "^[a-zA-Z0-9](-*_*[a-zA-Z0-9])*$"
+    }
+  },
+  {
+    "propertyName": "ProvisioningArtifactId",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::ServiceCatalog::ServiceActionAssociation": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,99}\\Z"
+    }
+  },
+  {
+    "propertyName": "ProfileVersion",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Signer::ProfilePermission": "^[0-9a-zA-Z]{10}$"
+    }
+  },
+  {
+    "propertyName": "MaxErrors",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::SSM::Association": "^([1-9][0-9]{0,6}|[0]|[1-9][0-9]%|[0-9]%|100%)$"
+    }
+  },
+  {
+    "propertyName": "MaxConcurrency",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::SSM::Association": "^([1-9][0-9]{0,6}|[1-9][0-9]%|[1-9]%|100%)$"
+    }
+  },
+  {
+    "propertyName": "PermissionSetArn",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::SSO::Assignment": "arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}",
+      "AWS::SSO::PermissionSet": "arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}"
+    }
+  },
+  {
+    "propertyName": "AccessRole",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Transfer::Agreement": "arn:.*role/.*",
+      "AWS::Transfer::Connector": "arn:.*role/.*"
+    }
+  },
+  {
+    "propertyName": "LoggingRole",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Transfer::Connector": "arn:.*role/.*"
+    }
+  },
+  {
+    "propertyName": "AssistantArn",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Wisdom::Assistant": "^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$",
+      "AWS::Wisdom::AssistantAssociation": "^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$"
+    }
+  },
+  {
+    "propertyName": "AssistantId",
+    "numberOfServicesItAppearsIn": 2,
+    "patterns": {
+      "AWS::Wisdom::Assistant": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+      "AWS::Wisdom::AssistantAssociation": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$"
+    }
+  },
+  {
+    "propertyName": "CustomHeaders",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Amplify::App": "(?s).*"
+    }
+  },
+  {
+    "propertyName": "IAMServiceRole",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Amplify::App": "(?s).*"
+    }
+  },
+  {
+    "propertyName": "OauthToken",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Amplify::App": "(?s).*"
+    }
+  },
+  {
+    "propertyName": "Repository",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Amplify::App": "(?s).*"
+    }
+  },
+  {
+    "propertyName": "AutoSubDomainIAMRole",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Amplify::Domain": "^$|^arn:.+:iam::\\d{12}:role.+"
+    }
+  },
+  {
+    "propertyName": "BranchName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Amplify::Branch": "(?s).+"
+    }
+  },
+  {
+    "propertyName": "Framework",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Amplify::Branch": "(?s).*"
+    }
+  },
+  {
+    "propertyName": "PullRequestEnvironmentName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Amplify::Branch": "(?s).*"
+    }
+  },
+  {
+    "propertyName": "FlowName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::AppFlow::Flow": "[a-zA-Z0-9][\\w!@#.-]+"
+    }
+  },
+  {
+    "propertyName": "EventIntegrationArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::AppIntegrations::EventIntegration": "^arn:aws[-a-z]*:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$"
+    }
+  },
+  {
+    "propertyName": "EventBridgeBus",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::AppIntegrations::EventIntegration": "^[a-zA-Z0-9/\\._\\-]+$"
+    }
+  },
+  {
+    "propertyName": "ConnectorProfileArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::AppFlow::ConnectorProfile": "arn:aws:appflow:.*:[0-9]+:.*"
+    }
+  },
+  {
+    "propertyName": "ConnectorProfileName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::AppFlow::ConnectorProfile": "[\\w/!@#+=.-]+"
+    }
+  },
+  {
+    "propertyName": "DataIntegrationArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::AppIntegrations::DataIntegration": "^arn:aws[-a-z]*:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$"
+    }
+  },
+  {
+    "propertyName": "SourceURI",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::AppIntegrations::DataIntegration": "^\\w+\\:\\/\\/\\w+\\/[\\w/!@#+=.-]+$"
+    }
+  },
+  {
+    "propertyName": "ConnectorProvisioningType",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::AppFlow::Connector": "[a-zA-Z0-9][\\w!@#.-]+"
+    }
+  },
+  {
+    "propertyName": "ResourceGroupName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::ApplicationInsights::Application": "[a-zA-Z0-9.-_]*"
+    }
+  },
+  {
+    "propertyName": "OpsItemSNSTopicArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::ApplicationInsights::Application": "^arn:aws(-[\\w]+)*:[\\w\\d-]+:([\\w\\d-]*)?:[\\w\\d_-]*([:/].+)*$"
+    }
+  },
+  {
+    "propertyName": "ObservabilityConfigurationArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::AppRunner::ObservabilityConfiguration": "arn:aws(-[\\w]+)*:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[0-9]{12}:(\\w|/|-){1,1011}"
+    }
+  },
+  {
+    "propertyName": "ObservabilityConfigurationName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::AppRunner::ObservabilityConfiguration": "[A-Za-z0-9][A-Za-z0-9\\-_]{3,31}"
+    }
+  },
+  {
+    "propertyName": "VpcIngressConnectionArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::AppRunner::VpcIngressConnection": "arn:aws(-[\\w]+)*:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[0-9]{12}:(\\w|/|-){1,1011}"
+    }
+  },
+  {
+    "propertyName": "VpcIngressConnectionName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::AppRunner::VpcIngressConnection": "[A-Za-z0-9][A-Za-z0-9\\-_]{3,39}"
+    }
+  },
+  {
+    "propertyName": "VpcConnectorName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::AppRunner::VpcConnector": "^[A-Za-z0-9][A-Za-z0-9-\\\\_]{3,39}$"
+    }
+  },
+  {
+    "propertyName": "VpcConnectorArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::AppRunner::VpcConnector": "arn:aws(-[\\w]+)*:[a-z0-9-\\\\.]{0,63}:[a-z0-9-\\\\.]{0,63}:[0-9]{12}:(\\w|\\/|-){1,1011}"
+    }
+  },
+  {
+    "propertyName": "AutoScalingConfigurationArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::AppRunner::Service": "arn:aws(-[\\w]+)*:[a-z0-9-\\\\.]{0,63}:[a-z0-9-\\\\.]{0,63}:[0-9]{12}:(\\w|\\/|-){1,1011}"
+    }
+  },
+  {
+    "propertyName": "Workspace",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::APS::RuleGroupsNamespace": "^arn:(aws|aws-us-gov|aws-cn):aps:[a-z0-9-]+:[0-9]+:workspace/[a-zA-Z0-9-]+$"
+    }
+  },
+  {
+    "propertyName": "FrameworkName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Backup::Framework": "[a-zA-Z][_a-zA-Z0-9]*"
+    }
+  },
+  {
+    "propertyName": "ReportPlanName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Backup::ReportPlan": "[a-zA-Z][_a-zA-Z0-9]*"
+    }
+  },
+  {
+    "propertyName": "ReportPlanDescription",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Backup::ReportPlan": ".*\\S.*"
+    }
+  },
+  {
+    "propertyName": "BillingGroupArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::BillingConductor::CustomLineItem": "arn:aws(-cn)?:billingconductor::[0-9]{12}:billinggroup/?[0-9]{12}"
+    }
+  },
+  {
+    "propertyName": "PrimaryAccountId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::BillingConductor::BillingGroup": "[0-9]{12}"
+    }
+  },
+  {
+    "propertyName": "MonitorName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::CE::AnomalyMonitor": "[\\S\\s]*"
+    }
+  },
+  {
+    "propertyName": "LastEvaluatedDate",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::CE::AnomalyMonitor": "(\\d{4}-\\d{2}-\\d{2})(T\\d{2}:\\d{2}:\\d{2}Z)?"
+    }
+  },
+  {
+    "propertyName": "LastUpdatedDate",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::CE::AnomalyMonitor": "(\\d{4}-\\d{2}-\\d{2})(T\\d{2}:\\d{2}:\\d{2}Z)?"
+    }
+  },
+  {
+    "propertyName": "SlackWorkspaceId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Chatbot::SlackChannelConfiguration": "^[0-9A-Z]{1,255}$"
+    }
+  },
+  {
+    "propertyName": "SlackChannelId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Chatbot::SlackChannelConfiguration": "^[A-Za-z0-9]+$"
+    }
+  },
+  {
+    "propertyName": "ConfigurationName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Chatbot::SlackChannelConfiguration": "^[A-Za-z0-9-_]+$"
+    }
+  },
+  {
+    "propertyName": "LoggingLevel",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Chatbot::SlackChannelConfiguration": "^(ERROR|INFO|NONE)$"
+    }
+  },
+  {
+    "propertyName": "ConfigurationArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::CloudFormation::HookTypeConfig": "^arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type(-configuration)?/hook/.+$"
+    }
+  },
+  {
+    "propertyName": "ConfigurationAlias",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::CloudFormation::HookTypeConfig": "^[a-zA-Z0-9]{1,256}$"
+    }
+  },
+  {
+    "propertyName": "PublisherProfile",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::CloudFormation::Publisher": "(http:|https:)+[^s]+[w]"
+    }
+  },
+  {
+    "propertyName": "TypeNameAlias",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::CloudFormation::TypeActivation": "[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}(::MODULE){0,1}"
+    }
+  },
+  {
+    "propertyName": "TrailName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::CloudTrail::Trail": "(^[a-zA-Z0-9]$)|(^[a-zA-Z0-9]([a-zA-Z0-9\\._-])*[a-zA-Z0-9]$)"
+    }
+  },
+  {
+    "propertyName": "DomainOwner",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::CodeArtifact::Repository": "[0-9]{12}"
+    }
+  },
+  {
+    "propertyName": "AssociationArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::CodeGuruReviewer::RepositoryAssociation": "arn:aws(-[\\w]+)*:.+:.+:[0-9]{12}:.+"
+    }
+  },
+  {
+    "propertyName": "HostArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::CodeStarConnections::Connection": "arn:aws(-[\\w]+)*:.+:.+:[0-9]{12}:.+"
+    }
+  },
+  {
+    "propertyName": "AuthorizedAccountId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Config::AggregationAuthorization": "^\\d{12}$"
+    }
+  },
+  {
+    "propertyName": "ConfigurationAggregatorName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Config::ConfigurationAggregator": "[\\w\\-]+"
+    }
+  },
+  {
+    "propertyName": "ConformancePackName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Config::ConformancePack": "[a-zA-Z][-a-zA-Z0-9]*"
+    }
+  },
+  {
+    "propertyName": "OrganizationConformancePackName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Config::OrganizationConformancePack": "[a-zA-Z][-a-zA-Z0-9]*"
+    }
+  },
+  {
+    "propertyName": "ContactFlowModuleArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Connect::ContactFlowModule": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*/flow-module/[-a-zA-Z0-9]*$"
+    }
+  },
+  {
+    "propertyName": "QueryId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Config::StoredQuery": "^\\S+$"
+    }
+  },
+  {
+    "propertyName": "QueryName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Config::StoredQuery": "^[a-zA-Z0-9-_]+$"
+    }
+  },
+  {
+    "propertyName": "QueryDescription",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Config::StoredQuery": "[\\s\\S]*"
+    }
+  },
+  {
+    "propertyName": "QueryExpression",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Config::StoredQuery": "[\\s\\S]*"
+    }
+  },
+  {
+    "propertyName": "HoursOfOperationArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Connect::HoursOfOperation": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*/operating-hours/[-a-zA-Z0-9]*$"
+    }
+  },
+  {
+    "propertyName": "InstanceAlias",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Connect::Instance": "^(?!d-)([\\da-zA-Z]+)([-]*[\\da-zA-Z])*$"
+    }
+  },
+  {
+    "propertyName": "PhoneNumberArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Connect::PhoneNumber": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:phone-number/[-a-zA-Z0-9]*$"
+    }
+  },
+  {
+    "propertyName": "CountryCode",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Connect::PhoneNumber": "^[A-Z]{2}"
+    }
+  },
+  {
+    "propertyName": "Prefix",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Connect::PhoneNumber": "^\\+[0-9]{1,15}"
+    }
+  },
+  {
+    "propertyName": "QuickConnectArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Connect::QuickConnect": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*/transfer-destination/[-a-zA-Z0-9]*$"
+    }
+  },
+  {
+    "propertyName": "HierarchyGroupArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Connect::User": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*/agent-group/[-a-zA-Z0-9]*$"
+    }
+  },
+  {
+    "propertyName": "RoutingProfileArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Connect::User": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*/routing-profile/[-a-zA-Z0-9]*$"
+    }
+  },
+  {
+    "propertyName": "UserArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Connect::User": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*/agent/[-a-zA-Z0-9]*$"
+    }
+  },
+  {
+    "propertyName": "ConnectInstanceArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::ConnectCampaigns::Campaign": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*$"
+    }
+  },
+  {
+    "propertyName": "ControlIdentifier",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::ControlTower::EnabledControl": "^arn:aws[0-9a-zA-Z_\\-:\\/]+$"
+    }
+  },
+  {
+    "propertyName": "TargetIdentifier",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::ControlTower::EnabledControl": "^arn:aws[0-9a-zA-Z_\\-:\\/]+$"
+    }
+  },
+  {
+    "propertyName": "ReportName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::CUR::ReportDefinition": "[0-9A-Za-z!\\-_.*\\'()]+"
+    }
+  },
+  {
+    "propertyName": "S3Bucket",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::CUR::ReportDefinition": "[A-Za-z0-9_\\.\\-]+"
+    }
+  },
+  {
+    "propertyName": "S3Prefix",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::CUR::ReportDefinition": "[0-9A-Za-z!\\-_.*\\'()/]*"
+    }
+  },
+  {
+    "propertyName": "BillingViewArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::CUR::ReportDefinition": "(arn:aws(-cn)?:billing::[0-9]{12}:billingview/)?[a-zA-Z0-9_\\+=\\.\\-@].{1,30}"
+    }
+  },
+  {
+    "propertyName": "AgentName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::DataSync::Agent": "^[a-zA-Z0-9\\s+=._:@/-]+$"
+    }
+  },
+  {
+    "propertyName": "ActivationKey",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::DataSync::Agent": "[A-Z0-9]{5}(-[A-Z0-9]{5}){4}"
+    }
+  },
+  {
+    "propertyName": "AgentArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::DataSync::Agent": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$"
+    }
+  },
+  {
+    "propertyName": "EfsFilesystemArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::DataSync::LocationEFS": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):elasticfilesystem:[a-z\\-0-9]*:[0-9]{12}:file-system/fs-.*$"
+    }
+  },
+  {
+    "propertyName": "AccessPointArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::DataSync::LocationEFS": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):elasticfilesystem:[a-z\\-0-9]+:[0-9]{12}:access-point/fsap-[0-9a-f]{8,40}$"
+    }
+  },
+  {
+    "propertyName": "FileSystemAccessRoleArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::DataSync::LocationEFS": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):iam::[0-9]{12}:role/.*$"
+    }
+  },
+  {
+    "propertyName": "StorageVirtualMachineArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::DataSync::LocationFSxONTAP": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):fsx:[a-z\\-0-9]+:[0-9]{12}:storage-virtual-machine/fs-[0-9a-f]+/svm-[0-9a-f]{17,}$"
+    }
+  },
+  {
+    "propertyName": "KmsKeyProviderUri",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::DataSync::LocationHDFS": "^kms:\\/\\/http[s]?@(([a-zA-Z0-9\\-]*[a-zA-Z0-9])\\.)*([A-Za-z0-9\\-]*[A-Za-z0-9])(;(([a-zA-Z0-9\\-]*[a-zA-Z0-9])\\.)*([A-Za-z0-9\\-]*[A-Za-z0-9]))*:[0-9]{1,5}\\/kms$"
+    }
+  },
+  {
+    "propertyName": "SimpleUser",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::DataSync::LocationHDFS": "^[_.A-Za-z0-9][-_.A-Za-z0-9]*$"
+    }
+  },
+  {
+    "propertyName": "KerberosPrincipal",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::DataSync::LocationHDFS": "^.+$"
+    }
+  },
+  {
+    "propertyName": "AccessKey",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::DataSync::LocationObjectStorage": "^.+$"
+    }
+  },
+  {
+    "propertyName": "S3BucketArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::DataSync::LocationS3": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):s3:[a-z\\-0-9]*:[0-9]*:.*$"
+    }
+  },
+  {
+    "propertyName": "CloudWatchLogGroupArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::DataSync::Task": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):logs:[a-z\\-0-9]*:[0-9]{12}:log-group:([^:\\*]*)(:\\*)?$"
+    }
+  },
+  {
+    "propertyName": "DestinationLocationArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::DataSync::Task": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$"
+    }
+  },
+  {
+    "propertyName": "SourceLocationArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::DataSync::Task": "^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$"
+    }
+  },
+  {
+    "propertyName": "GraphArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Detective::MemberInvitation": "arn:aws(-[\\w]+)*:detective:(([a-z]+-)+[0-9]+):[0-9]{12}:graph:[0-9a-f]{32}"
+    }
+  },
+  {
+    "propertyName": "MemberEmailAddress",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Detective::MemberInvitation": ".*@.*"
+    }
+  },
+  {
+    "propertyName": "ProfilingGroupName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::CodeGuruProfiler::ProfilingGroup": "^[\\w-]+$"
+    }
+  },
+  {
+    "propertyName": "EcrRepositoryPrefix",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::ECR::PullThroughCacheRule": "^([a-z0-9]+(?:[._-][a-z0-9]+)*)$"
+    }
+  },
+  {
+    "propertyName": "UserId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::ElastiCache::User": "[a-z][a-z0-9\\\\-]*"
+    }
+  },
+  {
+    "propertyName": "UserGroupId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::ElastiCache::UserGroup": "[a-z][a-z0-9\\\\-]*"
+    }
+  },
+  {
+    "propertyName": "DefaultS3Location",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::EMR::Studio": "^s3://.*"
+    }
+  },
+  {
+    "propertyName": "EngineSecurityGroupId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::EMR::Studio": "^sg-[a-zA-Z0-9\\-._]+$"
+    }
+  },
+  {
+    "propertyName": "WorkspaceSecurityGroupId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::EMR::Studio": "^sg-[a-zA-Z0-9\\-._]+$"
+    }
+  },
+  {
+    "propertyName": "IdpAuthUrl",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::EMR::Studio": "^https://[0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])(:[0-9]*)*([?/#].*)?$"
+    }
+  },
+  {
+    "propertyName": "EndpointId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Events::Endpoint": "^[A-Za-z0-9\\-]+[\\.][A-Za-z0-9\\-]+$"
+    }
+  },
+  {
+    "propertyName": "EndpointUrl",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Events::Endpoint": "^(https://)?[\\.\\-a-z0-9]+$"
+    }
+  },
+  {
+    "propertyName": "Segment",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Evidently::Experiment": "([-a-zA-Z0-9._]*)|(arn:[^:]*:[^:]*:[^:]*:[^:]*:segment/[-a-zA-Z0-9._]*)"
+    }
+  },
+  {
+    "propertyName": "DefaultVariation",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Evidently::Feature": "[-a-zA-Z0-9._]*"
+    }
+  },
+  {
+    "propertyName": "EnvironmentUrl",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::FinSpace::Environment": "^[-a-zA-Z0-9+&amp;@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&amp;@#/%=~_|]{1,1000}"
+    }
+  },
+  {
+    "propertyName": "SageMakerStudioDomainUrl",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::FinSpace::Environment": "^[a-zA-Z-0-9-:\\/.]*{1,1000}$"
+    }
+  },
+  {
+    "propertyName": "DedicatedServiceAccountId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::FinSpace::Environment": "^[a-zA-Z0-9]{1,26}$"
+    }
+  },
+  {
+    "propertyName": "DataFrequency",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Forecast::Dataset": "^Y|M|W|D|H|30min|15min|10min|5min|1min$"
+    }
+  },
+  {
+    "propertyName": "DatasetGroupName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Forecast::DatasetGroup": "^[a-zA-Z][a-zA-Z0-9_]*"
+    }
+  },
+  {
+    "propertyName": "EC2InstanceType",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::GameLift::Fleet": "^.*..*$"
+    }
+  },
+  {
+    "propertyName": "InstanceRoleARN",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::GameLift::Fleet": "^arn:aws(-.*)?:[a-z-]+:(([a-z]+-)+[0-9])?:([0-9]{12})?:[^.]+$"
+    }
+  },
+  {
+    "propertyName": "PeerVpcAwsAccountId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::GameLift::Fleet": "^[0-9]{12}$"
+    }
+  },
+  {
+    "propertyName": "ScriptId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::GameLift::Fleet": "^script-\\S+|^arn:.*:script/script-\\S+"
+    }
+  },
+  {
+    "propertyName": "LocationName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::GameLift::Location": "^custom-[A-Za-z0-9\\-]+"
+    }
+  },
+  {
+    "propertyName": "InitialSchemaVersionId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Glue::Schema": "[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"
+    }
+  },
+  {
+    "propertyName": "SchemaVersionId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Glue::SchemaVersionMetadata": "[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"
+    }
+  },
+  {
+    "propertyName": "CertificateBody",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IAM::ServerCertificate": "[\\u0009\\u000A\\u000D\\u0020-\\u00FF]+"
+    }
+  },
+  {
+    "propertyName": "ServerCertificateName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IAM::ServerCertificate": "[\\w+=,.@-]+"
+    }
+  },
+  {
+    "propertyName": "VirtualMfaDeviceName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IAM::VirtualMFADevice": "[\\w+=,.@-]+"
+    }
+  },
+  {
+    "propertyName": "MembershipId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IdentityStore::GroupMembership": "^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$"
+    }
+  },
+  {
+    "propertyName": "VerificationCertificatePem",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoT::CACertificate": "[\\s\\S]*"
+    }
+  },
+  {
+    "propertyName": "ActionName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoT::MitigationAction": "[a-zA-Z0-9:_-]+"
+    }
+  },
+  {
+    "propertyName": "DomainConfigurationName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoT::DomainConfiguration": "^[\\w.-]+$"
+    }
+  },
+  {
+    "propertyName": "ValidationCertificateArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoT::DomainConfiguration": "^arn:aws(-cn|-us-gov|-iso-b|-iso)?:acm:[a-z]{2}-(gov-|iso-|isob-)?[a-z]{4,9}-\\d{1}:\\d{12}:certificate/[a-zA-Z0-9/-]+$"
+    }
+  },
+  {
+    "propertyName": "JobTemplateId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoT::JobTemplate": "[a-zA-Z0-9_-]+"
+    }
+  },
+  {
+    "propertyName": "RoleAlias",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoT::RoleAlias": "[\\w=,@-]+"
+    }
+  },
+  {
+    "propertyName": "RoleAliasArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoT::RoleAlias": "[\\w=,@-]+"
+    }
+  },
+  {
+    "propertyName": "TargetName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoT::ResourceSpecificLogging": "[a-zA-Z0-9.:_-]+"
+    }
+  },
+  {
+    "propertyName": "ScheduledAuditName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoT::ScheduledAudit": "[a-zA-Z0-9:_-]+"
+    }
+  },
+  {
+    "propertyName": "DayOfMonth",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoT::ScheduledAudit": "^([1-9]|[12][0-9]|3[01])$|^LAST$"
+    }
+  },
+  {
+    "propertyName": "SecurityProfileName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoT::SecurityProfile": "[a-zA-Z0-9:_-]+"
+    }
+  },
+  {
+    "propertyName": "DetectorModelName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoTEvents::DetectorModel": "^[a-zA-Z0-9_-]+$"
+    }
+  },
+  {
+    "propertyName": "AlarmModelName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoTEvents::AlarmModel": "^[a-zA-Z0-9_-]+$"
+    }
+  },
+  {
+    "propertyName": "InputName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoTEvents::Input": "^[a-zA-Z][a-zA-Z0-9_]*$"
+    }
+  },
+  {
+    "propertyName": "ComponentTypeId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoTTwinMaker::ComponentType": "[a-zA-Z_\\.\\-0-9:]+"
+    }
+  },
+  {
+    "propertyName": "SceneId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoTTwinMaker::Scene": "[a-zA-Z_0-9][a-zA-Z_\\-0-9]*[a-zA-Z0-9]+"
+    }
+  },
+  {
+    "propertyName": "ContentLocation",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoTTwinMaker::Scene": "[sS]3://[A-Za-z0-9._/-]+"
+    }
+  },
+  {
+    "propertyName": "EntityId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoTTwinMaker::Entity": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\\-0-9.:]*[a-zA-Z0-9]+"
+    }
+  },
+  {
+    "propertyName": "EntityName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoTTwinMaker::Entity": "[a-zA-Z_0-9-.][a-zA-Z_0-9-. ]*[a-zA-Z0-9]+"
+    }
+  },
+  {
+    "propertyName": "ParentEntityId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoTTwinMaker::Entity": "\\$ROOT|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\\-0-9.:]*[a-zA-Z0-9]+"
+    }
+  },
+  {
+    "propertyName": "SyncRole",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoTTwinMaker::SyncJob": "arn:((aws)|(aws-cn)|(aws-us-gov)):iam::[0-9]{12}:role/.*"
+    }
+  },
+  {
+    "propertyName": "RecordingConfigurationArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IVS::Channel": "^$|arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$"
+    }
+  },
+  {
+    "propertyName": "ChannelArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IVS::StreamKey": "^arn:aws:ivs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$"
+    }
+  },
+  {
+    "propertyName": "ServiceExecutionRoleArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::KafkaConnect::Connector": "arn:(aws|aws-us-gov|aws-cn):iam:.*"
+    }
+  },
+  {
+    "propertyName": "DeliveryStreamName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::KinesisFirehose::DeliveryStream": "[a-zA-Z0-9._-]+"
+    }
+  },
+  {
+    "propertyName": "AliasName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::KMS::Alias": "^(alias/)[a-zA-Z0-9:/_-]+$"
+    }
+  },
+  {
+    "propertyName": "DeviceName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::KinesisVideo::Stream": "[a-zA-Z0-9_.-]+"
+    }
+  },
+  {
+    "propertyName": "MediaType",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::KinesisVideo::Stream": "[\\w\\-\\.\\+]+/[\\w\\-\\.\\+]+(,[\\w\\-\\.\\+]+/[\\w\\-\\.\\+]+)*"
+    }
+  },
+  {
+    "propertyName": "CodeSigningConfigId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Lambda::CodeSigningConfig": "csc-[a-zA-Z0-9-_\\.]{17}"
+    }
+  },
+  {
+    "propertyName": "EventSourceArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Lambda::EventSourceMapping": "arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\\-])+:([a-z]{2}(-gov)?-[a-z]+-\\d{1})?:(\\d{12})?:(.*)"
+    }
+  },
+  {
+    "propertyName": "StartingPosition",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Lambda::EventSourceMapping": "(LATEST|TRIM_HORIZON|AT_TIMESTAMP)+"
+    }
+  },
+  {
+    "propertyName": "Handler",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Lambda::Function": "^[^\\s]+$"
+    }
+  },
+  {
+    "propertyName": "TargetFunctionArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Lambda::Url": "^(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\\d{1}:)?(\\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:((?!\\d+)[0-9a-zA-Z_]+))?$"
+    }
+  },
+  {
+    "propertyName": "AuthorizerName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::IoT::Authorizer": "[\\w=,@-]+"
+    }
+  },
+  {
+    "propertyName": "DistributionName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Lightsail::Distribution": "\\w[\\w\\-]*\\w"
+    }
+  },
+  {
+    "propertyName": "InstanceName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Lightsail::Instance": "^[a-zA-Z0-9][\\w\\-.]*[a-zA-Z0-9]$"
+    }
+  },
+  {
+    "propertyName": "MapArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Location::Map": "^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:([^/].*)?$"
+    }
+  },
+  {
+    "propertyName": "MapName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Location::Map": "^[-._\\w]+$"
+    }
+  },
+  {
+    "propertyName": "CollectionArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Location::GeofenceCollection": "^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:([^/].*)?$"
+    }
+  },
+  {
+    "propertyName": "CollectionName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Location::GeofenceCollection": "^[-._\\w]+$"
+    }
+  },
+  {
+    "propertyName": "IndexArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Location::PlaceIndex": "^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:([^/].*)?$"
+    }
+  },
+  {
+    "propertyName": "RelationalDatabaseName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Lightsail::Database": "\\w[\\w\\-]*\\w"
+    }
+  },
+  {
+    "propertyName": "TrackerArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Location::Tracker": "^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:([^/].*)?$"
+    }
+  },
+  {
+    "propertyName": "CalculatorArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Location::RouteCalculator": "^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:([^/].*)?$"
+    }
+  },
+  {
+    "propertyName": "CalculatorName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Location::RouteCalculator": "^[-._\\w]+$"
+    }
+  },
+  {
+    "propertyName": "ConsumerArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Location::TrackerConsumer": "^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:([^/].*)?$"
+    }
+  },
+  {
+    "propertyName": "InferenceSchedulerName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::LookoutEquipment::InferenceScheduler": "^[0-9a-zA-Z_-]{1,200}$"
+    }
+  },
+  {
+    "propertyName": "ServerSideKmsKeyId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::LookoutEquipment::InferenceScheduler": "^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$"
+    }
+  },
+  {
+    "propertyName": "InferenceSchedulerArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::LookoutEquipment::InferenceScheduler": "arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\\-]*:[0-9]{12}:inference-scheduler\\/.+"
+    }
+  },
+  {
+    "propertyName": "AlertName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::LookoutMetrics::Alert": "^[a-zA-Z0-9][a-zA-Z0-9\\-_]*"
+    }
+  },
+  {
+    "propertyName": "AlertDescription",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::LookoutMetrics::Alert": ".*\\S.*"
+    }
+  },
+  {
+    "propertyName": "AnomalyDetectorArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::LookoutMetrics::Alert": "arn:([a-z\\d-]+):.*:.*:.*:.+"
+    }
+  },
+  {
+    "propertyName": "AnomalyDetectorName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::LookoutMetrics::AnomalyDetector": "^[a-zA-Z0-9][a-zA-Z0-9\\-_]*"
+    }
+  },
+  {
+    "propertyName": "AnomalyDetectorDescription",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::LookoutMetrics::AnomalyDetector": ".*\\S.*"
+    }
+  },
+  {
+    "propertyName": "FirewallId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::NetworkFirewall::Firewall": "^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$"
+    }
+  },
+  {
+    "propertyName": "FirewallPolicyName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::NetworkFirewall::FirewallPolicy": "^[a-zA-Z0-9-]+$"
+    }
+  },
+  {
+    "propertyName": "FirewallPolicyId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::NetworkFirewall::FirewallPolicy": "^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$"
+    }
+  },
+  {
+    "propertyName": "RuleGroupName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::NetworkFirewall::RuleGroup": "^[a-zA-Z0-9-]+$"
+    }
+  },
+  {
+    "propertyName": "RuleGroupId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::NetworkFirewall::RuleGroup": "^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$"
+    }
+  },
+  {
+    "propertyName": "Ec2ImageId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::NimbleStudio::StreamingImage": "^ami-[0-9A-z]+$"
+    }
+  },
+  {
+    "propertyName": "StudioName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::NimbleStudio::Studio": "^[a-z0-9]*$"
+    }
+  },
+  {
+    "propertyName": "InstanceProfileArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::OpsWorksCM::Server": "arn:aws:iam::[0-9]{12}:instance-profile/.*"
+    }
+  },
+  {
+    "propertyName": "CustomCertificate",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::OpsWorksCM::Server": "(?s)\\s*-----BEGIN CERTIFICATE-----.+-----END CERTIFICATE-----\\s*"
+    }
+  },
+  {
+    "propertyName": "CustomDomain",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::OpsWorksCM::Server": "^(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$"
+    }
+  },
+  {
+    "propertyName": "CustomPrivateKey",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::OpsWorksCM::Server": "(?ms)\\s*^-----BEGIN (?-s:.*)PRIVATE KEY-----$.*?^-----END (?-s:.*)PRIVATE KEY-----$\\s*"
+    }
+  },
+  {
+    "propertyName": "AccountName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Organizations::Account": "[\\u0020-\\u007E]+"
+    }
+  },
+  {
+    "propertyName": "DatasetArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Personalize::Dataset": "arn:([a-z\\d-]+):personalize:.*:.*:.+"
+    }
+  },
+  {
+    "propertyName": "RecipeArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Personalize::Solution": "arn:([a-z\\d-]+):personalize:.*:.*:.+"
+    }
+  },
+  {
+    "propertyName": "BaseThemeId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::QuickSight::Theme": "[\\w\\-]+"
+    }
+  },
+  {
+    "propertyName": "ThemeId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::QuickSight::Theme": "[\\w\\-]+"
+    }
+  },
+  {
+    "propertyName": "AnalysisId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::QuickSight::Analysis": "[\\w\\-]+"
+    }
+  },
+  {
+    "propertyName": "DBProxyEndpointName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::RDS::DBProxyEndpoint": "[0-z]*"
+    }
+  },
+  {
+    "propertyName": "DBProxyEndpointArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::RDS::DBProxyEndpoint": "arn:aws[A-Za-z0-9-]{0,64}:rds:[A-Za-z0-9-]{1,64}:[0-9]{12}:.*"
+    }
+  },
+  {
+    "propertyName": "DiskName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Lightsail::Disk": "^[a-zA-Z0-9][\\w\\-.]*[a-zA-Z0-9]$"
+    }
+  },
+  {
+    "propertyName": "AdminUsername",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::RedshiftServerless::Namespace": "[a-zA-Z][a-zA-Z_0-9+.@-]*"
+    }
+  },
+  {
+    "propertyName": "DbName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::RedshiftServerless::Namespace": "[a-zA-Z][a-zA-Z_0-9+.@-]*"
+    }
+  },
+  {
+    "propertyName": "WorkgroupName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::RedshiftServerless::Workgroup": "^(?=^[a-z0-9-]+$).{3,64}$"
+    }
+  },
+  {
+    "propertyName": "ScheduledActionDescription",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Redshift::ScheduledAction": "^(?=^[\\x09\\x0a\\x0d\\x20-\\xff]*$).{1,255}$"
+    }
+  },
+  {
+    "propertyName": "ApiGatewayId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::RefactorSpaces::Application": "^[a-z0-9]{10}$"
+    }
+  },
+  {
+    "propertyName": "NlbArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::RefactorSpaces::Application": "^arn:(aws[a-zA-Z-]*)?:elasticloadbalancing:[a-zA-Z0-9\\\\-]+:\\\\w{12}:[a-zA-Z_0-9+=,.@\\\\-_\\/]+$"
+    }
+  },
+  {
+    "propertyName": "NlbName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::RefactorSpaces::Application": "^(?!internal-)[a-zA-Z0-9]+[a-zA-Z0-9-_ ]+.*[^-]$"
+    }
+  },
+  {
+    "propertyName": "ProxyUrl",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::RefactorSpaces::Application": "^http://[-a-zA-Z0-9+\\x38@#/%?=~_|!:,.;]*[-a-zA-Z0-9+\\x38@#/%=~_|]$"
+    }
+  },
+  {
+    "propertyName": "RouteIdentifier",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::RefactorSpaces::Route": "^rte-([0-9A-Za-z]{10}$)"
+    }
+  },
+  {
+    "propertyName": "ResiliencyPolicyArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::ResilienceHub::App": "^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$"
+    }
+  },
+  {
+    "propertyName": "AppTemplateBody",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::ResilienceHub::App": "^[\\w\\s:,-\\.'{}\\[\\]:\"]+$"
+    }
+  },
+  {
+    "propertyName": "PolicyArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::ResilienceHub::ResiliencyPolicy": "^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$"
+    }
+  },
+  {
+    "propertyName": "AssociatedAwsPrincipal",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::ResourceExplorer2::DefaultViewAssociation": "^[0-9]{12}$"
+    }
+  },
+  {
+    "propertyName": "ViewName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::ResourceExplorer2::View": "^[a-zA-Z0-9\\-]{1,64}$"
+    }
+  },
+  {
+    "propertyName": "CrlId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::RolesAnywhere::CRL": "[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}"
+    }
+  },
+  {
+    "propertyName": "TrustAnchorId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::RolesAnywhere::TrustAnchor": "[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}"
+    }
+  },
+  {
+    "propertyName": "CellName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Route53RecoveryReadiness::Cell": "[a-zA-Z0-9_]+"
+    }
+  },
+  {
+    "propertyName": "ReadinessCheckName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Route53RecoveryReadiness::ReadinessCheck": "[a-zA-Z0-9_]+"
+    }
+  },
+  {
+    "propertyName": "BucketAccountId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::S3::AccessPoint": "^\\d{12}$"
+    }
+  },
+  {
+    "propertyName": "MrapName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::S3::MultiRegionAccessPointPolicy": "^[a-z0-9][-a-z0-9]{1,48}[a-z0-9]$"
+    }
+  },
+  {
+    "propertyName": "ObjectLambdaAccessPoint",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::S3ObjectLambda::AccessPointPolicy": "^[a-z0-9]([a-z0-9\\-]*[a-z0-9])?$"
+    }
+  },
+  {
+    "propertyName": "SecurityGroupId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::S3Outposts::Endpoint": "^sg-([0-9a-f]{8}|[0-9a-f]{17})$"
+    }
+  },
+  {
+    "propertyName": "CustomerOwnedIpv4Pool",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::S3Outposts::Endpoint": "^ipv4pool-coip-([0-9a-f]{17})$"
+    }
+  },
+  {
+    "propertyName": "AppImageConfigArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::SageMaker::AppImageConfig": "arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:app-image-config/.*"
+    }
+  },
+  {
+    "propertyName": "AppImageConfigName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::SageMaker::AppImageConfig": "^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}"
+    }
+  },
+  {
+    "propertyName": "SecurityGroupIdForDomainBoundary",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::SageMaker::Domain": "[-0-9a-zA-Z]+"
+    }
+  },
+  {
+    "propertyName": "FeatureGroupName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::SageMaker::FeatureGroup": "^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,63}"
+    }
+  },
+  {
+    "propertyName": "RecordIdentifierFeatureName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::SageMaker::FeatureGroup": "^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,63}"
+    }
+  },
+  {
+    "propertyName": "EventTimeFeatureName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::SageMaker::FeatureGroup": "^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,63}"
+    }
+  },
+  {
+    "propertyName": "PipelineDisplayName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::SageMaker::Pipeline": "^[a-zA-Z0-9](-*[a-zA-Z0-9])*"
+    }
+  },
+  {
+    "propertyName": "UserProfileArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::SageMaker::UserProfile": "arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:user-profile/.*"
+    }
+  },
+  {
+    "propertyName": "SingleSignOnUserIdentifier",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::SageMaker::UserProfile": "UserName"
+    }
+  },
+  {
+    "propertyName": "ServiceActionId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::ServiceCatalog::ServiceActionAssociation": "^[a-zA-Z0-9][a-zA-Z0-9_-]{1,99}\\Z"
+    }
+  },
+  {
+    "propertyName": "AttributeGroup",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::ServiceCatalogAppRegistry::AttributeGroupAssociation": "\\w+|[a-z0-9]{12}"
+    }
+  },
+  {
+    "propertyName": "AttributeGroupArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::ServiceCatalogAppRegistry::AttributeGroupAssociation": "arn:aws[-a-z]*:servicecatalog:[a-z]{2}(-gov)?-[a-z]+-\\d:\\d{12}:/attribute-groups/[a-z0-9]+"
+    }
+  },
+  {
+    "propertyName": "ContactListName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::SES::ContactList": "^[a-zA-Z0-9_-]{1,64}$"
+    }
+  },
+  {
+    "propertyName": "ScalingMode",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::SES::DedicatedIpPool": "^(STANDARD|MANAGED)$"
+    }
+  },
+  {
+    "propertyName": "AssociationName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::SSM::Association": "^[a-zA-Z0-9_\\-.]{3,128}$"
+    }
+  },
+  {
+    "propertyName": "DocumentVersion",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::SSM::Association": "([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)"
+    }
+  },
+  {
+    "propertyName": "VersionName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::SSM::Document": "^[a-zA-Z0-9_\\-.]{1,128}$"
+    }
+  },
+  {
+    "propertyName": "ContactId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::SSMContacts::ContactChannel": "arn:[-\\w+=\\/,.@]+:[-\\w+=\\/,.@]+:[-\\w+=\\/,.@]*:[0-9]+:([\\w+=\\/,.@:-]+)*"
+    }
+  },
+  {
+    "propertyName": "PrincipalId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::SSO::Assignment": "^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$"
+    }
+  },
+  {
+    "propertyName": "SessionDuration",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::SSO::PermissionSet": "^(-?)P(?=\\d|T\\d)(?:(\\d+)Y)?(?:(\\d+)M)?(?:(\\d+)([DW]))?(?:T(?:(\\d+)H)?(?:(\\d+)M)?(?:(\\d+(?:\\.\\d+)?)S)?)?$"
+    }
+  },
+  {
+    "propertyName": "RelayStateType",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::SSO::PermissionSet": "[a-zA-Z0-9&amp;$@#\\/%?=~\\-_'&quot;|!:,.;*+\\[\\]\\ \\(\\)\\{\\}]+"
+    }
+  },
+  {
+    "propertyName": "AccountAlias",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::SupportApp::AccountAlias": "^[\\w\\- ]+$"
+    }
+  },
+  {
+    "propertyName": "AccountAliasResourceId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::SupportApp::AccountAlias": "^[\\w\\- ]+$"
+    }
+  },
+  {
+    "propertyName": "ChannelRoleArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::SupportApp::SlackChannelConfiguration": "^arn:aws[-a-z0-9]*:iam::[0-9]{12}:role\\/(.+)$"
+    }
+  },
+  {
+    "propertyName": "ArtifactS3Location",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Synthetics::Canary": "^(s3|S3)://"
+    }
+  },
+  {
+    "propertyName": "LocalProfileId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Transfer::Agreement": "^p-([0-9a-f]{17})$"
+    }
+  },
+  {
+    "propertyName": "PartnerProfileId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Transfer::Agreement": "^p-([0-9a-f]{17})$"
+    }
+  },
+  {
+    "propertyName": "BaseDirectory",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Transfer::Agreement": "^$|/.*"
+    }
+  },
+  {
+    "propertyName": "AgreementId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Transfer::Agreement": "^a-([0-9a-f]{17})$"
+    }
+  },
+  {
+    "propertyName": "CertificateId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Transfer::Certificate": "^cert-([0-9a-f]{17})$"
+    }
+  },
+  {
+    "propertyName": "RecoveryGroupName",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Route53RecoveryReadiness::RecoveryGroup": "[a-zA-Z0-9_]+"
+    }
+  },
+  {
+    "propertyName": "WorkflowId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Transfer::Workflow": "^w-([a-z0-9]{17})$"
+    }
+  },
+  {
+    "propertyName": "KnowledgeBaseArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Wisdom::KnowledgeBase": "^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$"
+    }
+  },
+  {
+    "propertyName": "KnowledgeBaseId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Wisdom::KnowledgeBase": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$"
+    }
+  },
+  {
+    "propertyName": "ConnectionString",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::WorkSpaces::ConnectionAlias": "^[.0-9a-zA-Z\\-]{1,255}$"
+    }
+  },
+  {
+    "propertyName": "AssistantAssociationArn",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Wisdom::AssistantAssociation": "^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$"
+    }
+  },
+  {
+    "propertyName": "AssistantAssociationId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Wisdom::AssistantAssociation": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$"
+    }
+  },
+  {
+    "propertyName": "ConnectorId",
+    "numberOfServicesItAppearsIn": 1,
+    "patterns": {
+      "AWS::Transfer::Connector": "^c-([0-9a-f]{17})$"
+    }
+  }
+]

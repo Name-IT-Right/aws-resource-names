@@ -1,0 +1,868 @@
+{
+    "AWS::S3::Bucket": {
+        "BucketName": {
+            "name_it_right": {
+                "pattern": "(?!(^xn--|.+-s3alias$))^[a-z0-9][a-z0-9-]{1,61}[a-z0-9]$",
+                "alt_pattern": "(?!(^((2(5[0-5]|[0-4][0-9])|[01]?[0-9]{1,2})\\.){3}(2(5[0-5]|[0-4][0-9])|[01]?[0-9]{1,2})$|^xn--|.+-s3alias$))^[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]$ ",
+                "delete_possible": "FALSE",
+                "errors": [
+                    {
+                        "id": "LENGTH_RULE",
+                        "regex": "^.{3,63}$",
+                        "errorMessage": "Bucket names must be between 3 (min) and 63 (max) characters long."
+                    },
+                    {
+                        "id": "CONTENTS_RULE",
+                        "regex": "^[a-z0-9\\\\.\\\\-]*$",
+                        "errorMessage": "Bucket names can consist only of lowercase letters, numbers, dots (.), and hyphens (-)."
+                    },
+                    {
+                        "id": "BEGINNING_RULE",
+                        "regex": "^[a-z0-9]",
+                        "errorMessage": "Bucket names must begin with a lowercase letter or number."
+                    },
+                    {
+                        "id": "ENDING_RULE",
+                        "regex": "[a-z0-9]$",
+                        "errorMessage": "Bucket names must end with a letter or number."
+                    },
+                    {
+                        "id": "NO_TWO_ADJACENT_PERIODS_RULE",
+                        "regex": "^(?!.*\\\\.\\\\.).*$",
+                        "errorMessage": "Bucket names must not contain two adjacent periods."
+                    },
+                    {
+                        "id": "NO_IP_ADDRESS_RULE",
+                        "regex": "^(?!(\\\\d{1,3}\\\\.){3}\\\\d{1,3}$)",
+                        "errorMessage": "Bucket names must not be formatted as an IP address (for example, 192.168.5.4)."
+                    },
+                    {
+                        "id": "NO_XN_BEGINNING_RULE",
+                        "regex": "^(?!xn\u00e2\u20ac\u201d)",
+                        "errorMessage": "Bucket names must not start with the prefix xn\u00e2\u20ac\u201d."
+                    },
+                    {
+                        "id": "NO_S3_ALIAS_ENDING_RULE",
+                        "regex": "^(?!.*-s3alias$).*$",
+                        "errorMessage": "Bucket names must not end with the suffix -s3alias."
+                    }
+                ],
+                "warnings": [
+                    {
+                        "id": "S3_TRANSFER_ACCELERATION_RULE",
+                        "regex": "^(?!.*\\\\.)",
+                        "errorMessage": "Buckets used with Amazon S3 Transfer Acceleration can't have dots (.) in their names."
+                    }
+                ]
+            }
+        }
+    },
+    "AWS::Lambda::Function": {
+        "FunctionName": {
+            "name_it_right": {
+                "pattern": "^[a-zA-Z0-9-_]{1,64}",
+                "explanation": "Use only letters, numbers, hyphens, or underscores with no spaces."
+            }
+        }
+    },
+    "AWS::IAM::User": {
+        "UserName": {
+            "name_it_right": {
+                "pattern": "^[a-zA-Z0-9+=,\\.@_-]{1,64}",
+                "explanation": "User names can be a combination of up to 64 letters, digits, and these characters: plus (+), equal (=), comma (,), period (.), at sign (@), underscore (_), and hyphen (-). Names must be unique within an account. They are not distinguished by case. For example, you cannot create two users named TESTUSER and testuser."
+            }
+        }
+    },
+    "AWS::CloudFormation::StackSet": {
+        "StackSetName": {
+            "name_it_right": {
+                "explanation": "Stack name can include letters (A-Z and a-z), numbers (0-9), and dashes (-)."
+            }
+        }
+    },
+    "AWS::ECS::Cluster": {
+        "ClusterName": {
+            "name_it_right": {
+                "pattern": "^[a-zA-Z0-9_-]{1,255}$",
+                "explanation": "There can be a maximum of 255 characters. The valid characters are letters (uppercase and lowercase), numbers, hyphens, and underscores."
+            }
+        }
+    },
+    "AWS::ElasticBeanstalk::Application": {
+        "ApplicationName": {
+            "name_it_right": {
+                "pattern": "^[^\\/]{1,100}$",
+                "explanation": "Up to 100 Unicode characters, not including forward slash (/)"
+            }
+        }
+    },
+    "AWS::Batch::JobDefinition": {
+        "JobDefinitionName": {
+            "name_it_right": {
+                "pattern": "^[a-zA-Z0-9_-]{1,128}$",
+                "explanation": "Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed"
+            }
+        }
+    },
+    "AWS::Batch::JobQueue": {
+        "JobQueueName": {
+            "name_it_right": {
+                "pattern": "^[a-zA-Z0-9_-]{1,128}$",
+                "explanation": "Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed"
+            }
+        }
+    },
+    "AWS::Batch::ComputeEnvironment": {
+        "ComputeEnvironmentName": {
+            "name_it_right": {
+                "pattern": "^[a-zA-Z0-9_-]{1,128}$",
+                "explanation": "Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed"
+            }
+        }
+    },
+    "AWS::Batch::SchedulingPolicy": {
+        "Name": {
+            "name_it_right": {
+                "pattern": "^[a-zA-Z0-9_-]{1,128}$",
+                "explanation": "Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed"
+            }
+        }
+    },
+    "AWS::StepFunctions::StateMachine": {
+        "StateMachineName": {
+            "name_it_right": {
+                "pattern": "^[a-zA-Z0-9_-]{1,80}$",
+                "explanation": "Must be 1-80 characters. Can use alphanumeric characters, dashes, or underscores."
+            }
+        }
+    },
+    "AWS::IAM::Policy": {
+        "PolicyName": {
+            "name_it_right": {
+                "pattern": "^[a-zA-Z0-9+=,\\.@_-]{1,64}",
+                "explanation": "Use alphanumeric and '+=,.@-_' characters. Maximum 128 characters."
+            }
+        }
+    },
+    "AWS::SNS::Topic": {
+        "TopicName": {
+            "name_it_right": {
+                "explanation": "Maximum 256 characters. Can include alphanumeric characters, hyphens (-) and underscores (_). FIFO topic names must end with \".fifo\"."
+            }
+        }
+    },
+    "AWS::SQS::Queue": {
+        "QueueName": {
+            "name_it_right": {
+                "explanation": "A queue name is case-sensitive and can have up to 80 characters. You can use alphanumeric characters, hyphens (-), and underscores ( _ )."
+            }
+        }
+    },
+    "AWS::Glue::Database DatabaseInput": {
+        "Name ": {
+            "name_it_right": {
+                "explanation": "Database name is required, in lowercase characters, and no longer than 255 characters."
+            }
+        }
+    },
+    "AWS::Glue::Table": {
+        "DatabaseName": {
+            "name_it_right": {
+                "explanation": "If you plan to access the table from Amazon Athena, then the name should be under 256 characters and contain only lowercase letters (a-z), numbers (0-9), and underscore (_)."
+            }
+        }
+    },
+    "AWS::Glue::Registry": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Only letters (A-Z), numbers (0-9), hyphens (-), underscores (_), dollar signs ($), periods (.), or hash marks (#) allowed. 255 characters maximum."
+            }
+        }
+    },
+    "AWS::Glue::Schema": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Only letters (A-Z), numbers (0-9), hyphens (-), underscores (_), dollar signs ($), periods (.), or hash marks (#) allowed. 255 characters maximum."
+            }
+        }
+    },
+    "AWS::Glue::Crawler": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Name may contain letters (A-Z), numbers (0-9), hyphens (-), or underscores (_), and can be up to 255 characters long."
+            }
+        }
+    },
+    "AWS::Glue::Trigger": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Name may contain letters (A-Z), numbers (0-9), hyphens (-), or underscores (_), and can be up to 255 characters long."
+            }
+        }
+    },
+    "AWS::Glue::Workflow": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Names may only contain letters (A-Z), numbers (0-9), hyphens (-), or underscores (_)"
+            }
+        }
+    },
+    "AWS::Glue::SecurityConfiguration": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Name may contain letters (A-Z), numbers (0-9), hyphens (-), or underscores (_), and can be up to 255 characters long."
+            }
+        }
+    },
+    "AWS::DataBrew::Project": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "The project name must contain 1-255 characters. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space."
+            }
+        }
+    },
+    "AWS::DataBrew::Dataset": {
+        "Name ": {
+            "name_it_right": {
+                "explanation": "The dataset name must contain 1-255 characters. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space."
+            }
+        }
+    },
+    "AWS::DataBrew::Recipe": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "The recipe name must contain 1-255 characters. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space."
+            }
+        }
+    },
+    "AWS::DataBrew::Ruleset": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "The ruleset name must contain 1-255 characters. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space."
+            }
+        }
+    },
+    "AWS::DataBrew::Job": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "The job name must contain 1-240 characters. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space."
+            }
+        }
+    },
+    "AWS::KinesisAnalyticsV2::Application": {
+        "ApplicationName": {
+            "name_it_right": {
+                "explanation": "Acceptable characters are uppercase and lowercase letters, numbers, underscores, hyphens, and periods."
+            }
+        }
+    },
+    "AWS::LakeFormation::DataCellsFilter": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Name may contain letters (A-Z), numbers (0-9), hyphens (-), or under-scores (_), and be less than 256 characters."
+            }
+        }
+    },
+    "AWS::MSK::Cluster": {
+        "ClusterName": {
+            "name_it_right": {
+                "explanation": "The name must be unique and can have a maximum of 64 characters. You can't change this name after you have created the cluster."
+            }
+        }
+    },
+    "AWS::MSK::Configuration": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "A unique name is required but the name can\u00e2\u20ac\u2122t start with a hyphen. Valid characters: a-z, A-Z, 0-9 and - (hyphen)"
+            }
+        }
+    },
+    "AWS::KafkaConnect::Connector": {
+        "ConnectorName": {
+            "name_it_right": {
+                "explanation": "The name must be unique and can have up to 128 characters. Valid characters: a-z, A-Z, 0-9 and - (hyphen). You can\u00e2\u20ac\u2122t change the name after you have created the worker configuration."
+            }
+        }
+    },
+    "AWS::OpenSearchService::Domain": {
+        "DomainName": {
+            "name_it_right": {
+                "explanation": "The name must start with a lowercase letter and must be between 3 and 28 characters. Valid characters are a-z (lowercase only), 0-9, and - (hyphen)."
+            }
+        }
+    },
+    "AWS::Redshift::Cluster": {
+        " DBName": {
+            "name_it_right": {
+                "explanation": "The identifier must be from 1-63 characters. Valid characters are a-z (lowercase only) and - (hyphen)."
+            }
+        }
+    },
+    "AWS::RedshiftServerless::Workgroup": {
+        "WorkgroupName": {
+            "name_it_right": {
+                "explanation": "The name must be from 3-64 characters. Valid characters are a-z (lowercase only), 0-9 (numbers), and - (hyphen)."
+            }
+        }
+    },
+    "AWS::Events::EventBus": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Maximum of 256 characters consisting of numbers, lower/upper case letters, .,-,_."
+            }
+        }
+    },
+    "AWS::Events::Rule": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Maximum of 64 characters consisting of numbers, lower/upper case letters, .,-,_."
+            }
+        }
+    },
+    "AWS::Events::Endpoint": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Maximum of 64 characters consisting of numbers, lower/upper case letters, .,-,_."
+            }
+        }
+    },
+    "AWS::Events::Archive": {
+        "ArchiveName": {
+            "name_it_right": {
+                "explanation": "Maximum of 48 characters consisting of numbers, lower/upper case letters, .,-,_. You can't change the name of the archive after it is created."
+            }
+        }
+    },
+    "AWS::Events::ApiDestination": {
+        "Name ": {
+            "name_it_right": {
+                "explanation": "Maximum of 64 characters consisting of numbers, lower/upper case letters, .,-,_."
+            }
+        }
+    },
+    "AWS::EventSchemas::Schema": {
+        "SchemaName": {
+            "name_it_right": {
+                "explanation": "Maximum of 385 characters consisting of lower case letters, upper case letters, ., -, _, @."
+            }
+        }
+    },
+    "AWS::AmazonMQ::Broker": {
+        "BrokerName": {
+            "name_it_right": {
+                "explanation": "Must be 1-50 characters long. Limited to alphanumeric characters, dashes, and underscores."
+            }
+        }
+    },
+    "AWS::AmazonMQ::Configuration": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Limited to alphanumeric characters, dashes, and underscores. Maximum 120 characters."
+            }
+        }
+    },
+    "AWS::BillingConductor::BillingGroup": {
+        "Name ": {
+            "name_it_right": {
+                "explanation": "The billing group name can have up to 128 characters. Blank spaces and special characters are not valid."
+            }
+        }
+    },
+    "AWS::ECR::Repository": {
+        "RepositoryName": {
+            "name_it_right": {
+                "explanation": "0 out of 256 characters maximum (2 minimum). The name must start with a letter and can only contain lowercase letters, numbers, hyphens, underscores, periods and forward slashes."
+            }
+        }
+    },
+    "AWS::EKS::Cluster": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "The cluster name should begin with letter or digit and can have any of the following characters: the set of Unicode letters, digits, hyphens and underscores. Maximum length of 100. This property cannot be changed after the cluster is created."
+            }
+        }
+    },
+    "AWS::DocDB::DBCluster": {
+        "DBClusterIdentifier": {
+            "name_it_right": {
+                "explanation": "Master username must start with a letter and contain 1 to 63 characters"
+            }
+        }
+    },
+    "AWS::ElastiCache::CacheCluster": {
+        "ClusterName": {
+            "name_it_right": {
+                "explanation": "The name is required, can have up to 40 characters and must not contain spaces."
+            }
+        }
+    },
+    "AWS::ElastiCache::GlobalReplicationGroup": {
+        "CacheParameterGroupName": {
+            "name_it_right": {
+                "explanation": "The name is required, can have up to 40 characters and must not contain spaces."
+            }
+        }
+    },
+    "AWS::ElastiCache::User": {
+        "UserId": {
+            "name_it_right": {
+                "explanation": "The ID is required, can have up to 40 characters, and must begin with a letter. It should not end with a hyphen or contain two consecutive hyphens. Valid characters: A-Z, a-z, 0-9, and -(hyphen)."
+            }
+        }
+    },
+    "AWS::ElastiCache::UserGroup": {
+        "UserGroupId": {
+            "name_it_right": {
+                "explanation": "The ID is required, can have up to 40 characters, and must begin with a letter. It should not end with a hyphen or contain two consecutive hyphens. Valid characters: A-Z, a-z, 0-9, and - (hyphen)."
+            }
+        }
+    },
+    "AWS::MemoryDB::Cluster": {
+        "ClusterName": {
+            "name_it_right": {
+                "explanation": "The name is required, can have up to 40 characters, and must begin with a letter. It should not end with a hyphen or contain two consecutive hyphens. Valid characters: A-Z, a-z, 0-9, and -(hyphen)"
+            }
+        }
+    },
+    "AWS::MemoryDB::User": {
+        "UserName": {
+            "name_it_right": {
+                "explanation": "The name is required, can have up to 40 characters, and must begin with a letter. It should not end with a hyphen or contain two consecutive hyphens. Valid characters: A-Z, a-z, 0-9, and -(hyphen)"
+            }
+        }
+    },
+    "AWS::MemoryDB::ACL": {
+        "ACLName": {
+            "name_it_right": {
+                "explanation": "The name is required, can have up to 40 characters, and must begin with a letter. It should not end with a hyphen or contain two consecutive hyphens. Valid characters: A-Z, a-z, 0-9, and -(hyphen)"
+            }
+        }
+    },
+    "AWS::MemoryDB::SubnetGroup": {
+        "SubnetGroupName ": {
+            "name_it_right": {
+                "explanation": "The name is required, can have up to 255 characters, and must begin with a letter. It should not end with a hyphen or contain two consecutive hyphens. Valid characters: A-Z, a-z, 0-9, and -(hyphen)"
+            }
+        }
+    },
+    "AWS::MemoryDB::ParameterGroup": {
+        "ParameterGroupName": {
+            "name_it_right": {
+                "explanation": "The name is required, can have up to 255 characters, and must begin with a letter. It should not end with a hyphen or contain two consecutive hyphens. Valid characters: A-Z, a-z, 0-9, and -(hyphen)"
+            }
+        }
+    },
+    "AWS::Neptune::DBCluster": {
+        "DBClusterIdentifier": {
+            "name_it_right": {
+                "explanation": "The name must be unique cross all DB clusters owned by your AWS account in the current AWS Region. The DB cluster identifier is case-insensitive, but is stored as all lowercase (as in \"mydbcluster\"). Constraints: 1 to 60 alphanumeric characters or hyphens. First character must be a letter. Can't contain two consecutive hyphens. Can't end with a hyphen."
+            }
+        }
+    },
+    "AWS::Neptune::DBSubnetGroup": {
+        "DBSubnetGroupName": {
+            "name_it_right": {
+                "explanation": "You won't be able to modify the name after your subnet group has been created. Must contain from 1 to 255 characters. Alphanumeric characters, spaces, hyphens, underscores, and periods are allowed."
+            }
+        }
+    },
+    "AWS::QLDB::Ledger": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Specify a name that is unique for all ledgers owned by your AWS account in the current Region. The ledger name must contain from 1 to 32 alphanumeric characters or hyphens, with at least one non-numeric character."
+            }
+        }
+    },
+    "AWS::QLDB::Stream": {
+        "StreamName": {
+            "name_it_right": {
+                "explanation": "Specify a name that is unique among all active streams for a given ledger. The stream name must contain from 1 to 32 alphanumeric characters or hyphens, with at least one non-numeric character."
+            }
+        }
+    },
+    "AWS::Timestream::Database": {
+        "DatabaseName": {
+            "name_it_right": {
+                "explanation": "Must be between 3 and 256 characters long. Must contain letters, digits, dashes, periods or underscores. Specify a name that is unique for all Timestream databases in your AWS account in the current Region. You can not change this name once you create it."
+            }
+        }
+    },
+    "AWS::Timestream::Table": {
+        "DatabaseName": {
+            "name_it_right": {
+                "explanation": "Must be between 3 and 256 characters long. Must contain letters, digits, dashes, periods or underscores. Specify a name that is unique for all Timestream databases in your AWS account in the current Region. You can not change this name once you create it."
+            }
+        }
+    },
+    "AWS::CloudWatch::Dashboard": {
+        "DashboardName ": {
+            "name_it_right": {
+                "explanation": "Valid characters in dashboard names include \"0-9A-Za-z-_\"."
+            }
+        }
+    },
+    "AWS::Cloud9::EnvironmentEC2": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Limit of 60 characters, alphanumeric, and unique per user."
+            }
+        }
+    },
+    "AWS::CodeBuild::Project": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "A project name must be 2 to 255 characters. It can include the letters A-Z and a-z, the numbers 0-9, and the special characters - and _."
+            }
+        }
+    },
+    "AWS::CodeCommit::Repository": {
+        "RepositoryName": {
+            "name_it_right": {
+                "explanation": "100 characters maximum. Other limits apply."
+            }
+        }
+    },
+    "AWS::CodeDeploy::Application": {
+        "ApplicationName": {
+            "name_it_right": {
+                "explanation": "100 character limit"
+            }
+        }
+    },
+    "AWS::CodeDeploy::DeploymentConfig": {
+        "DeploymentConfigName": {
+            "name_it_right": {
+                "explanation": "100 character limit"
+            }
+        }
+    },
+    "AWS::CodePipeline::Pipeline": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "No more than 100 characters"
+            }
+        }
+    },
+    "AWS::AppStream::Stack": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Allowed characters: a-z, A-Z, 0-9, _ - (hyphen)"
+            }
+        }
+    },
+    "AWS::AppStream::Application": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Allowed characters: a-z, A-Z, 0-9, _ - (hyphen)"
+            }
+        }
+    },
+    "AWS::Location::Map": {
+        "MapName": {
+            "name_it_right": {
+                "explanation": "Use only letters, numbers, hyphens, periods, or underscores with no spaces."
+            }
+        }
+    },
+    "AWS::Location::PlaceIndex": {
+        "IndexName": {
+            "name_it_right": {
+                "explanation": "Use only letters, numbers, hyphens, periods, or underscores with no spaces."
+            }
+        }
+    },
+    "AWS::Location::RouteCalculator": {
+        "CalculatorName": {
+            "name_it_right": {
+                "explanation": "Use only letters, numbers, hyphens, periods, or underscores with no spaces."
+            }
+        }
+    },
+    "AWS::Location::GeofenceCollection": {
+        "CollectionName": {
+            "name_it_right": {
+                "explanation": "Use only letters, numbers, hyphens, periods, or underscores with no spaces."
+            }
+        }
+    },
+    "AWS::Location::Tracker": {
+        "TrackerName": {
+            "name_it_right": {
+                "explanation": "Use only letters, numbers, hyphens, periods, or underscores with no spaces."
+            }
+        }
+    },
+    "AWS::IoTAnalytics::Channel": {
+        "ChannelName": {
+            "name_it_right": {
+                "explanation": "Valid characters: a-z, 0-9, and _ (underscore)."
+            }
+        }
+    },
+    "AWS::Greengrass::CoreDefinition": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "The name can be up to 128 characters. Valid characters: a-z, A-Z, 0-9, colon (:), underscore (_), and hyphen (-)."
+            }
+        }
+    },
+    "AWS::IoTTwinMaker::Workspace": {
+        "WorkspaceId": {
+            "name_it_right": {
+                "explanation": "Name must be alphanumeric, unique and contain fewer than 128 characters. It must start with a letter and contain no spaces."
+            }
+        }
+    },
+    "AWS::Forecast::DatasetGroup": {
+        "DatasetGroupName": {
+            "name_it_right": {
+                "explanation": "The dataset group name must have 1 to 63 characters. Valid characters: a-z, A-Z, 0-9, and _"
+            }
+        }
+    },
+    "AWS::HealthLake::FHIRDatastore": {
+        "DatastoreName": {
+            "name_it_right": {
+                "explanation": "The name can have up to 256 characters. Valid characters: A-Z, a-z, 0-9, space, and % + . / : = @ _ - (hyphen)."
+            }
+        }
+    },
+    "AWS::Kendra::Index": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Maximum of 1000 alphanumeric characters. Can include hyphens (-), but not spaces."
+            }
+        }
+    },
+    "AWS::Lex::Bot": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Maximum 100 characters. Valid characters: A\u00e2\u20ac\u201cZ, a\u00e2\u20ac\u201cz, 0\u00e2\u20ac\u201c9, -, _"
+            }
+        }
+    },
+    "AWS::LookoutMetrics::AnomalyDetector": {
+        "AnomalyDetectorName": {
+            "name_it_right": {
+                "explanation": "The name can have up to 63 character max. Valid characters: a-z, A-Z, 0-9, - (hyphen) and _."
+            }
+        }
+    },
+    "AWS::Personalize::DatasetGroup": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "The dataset group name must have 1-63 characters with no spaces. Valid characters: a-z, A-Z, 0-9, and _ - (hyphen)."
+            }
+        }
+    },
+    "AWS::SageMaker::NotebookInstance": {
+        "NotebookInstanceName": {
+            "name_it_right": {
+                "explanation": "Maximum of 63 alphanumeric characters. Can include hyphens (-), but not spaces. Must be unique within your account in an AWS Region."
+            }
+        }
+    },
+    "AWS::SageMaker::CodeRepository": {
+        "CodeRepositoryName": {
+            "name_it_right": {
+                "explanation": "The repository name must be unique in your account and in the AWS Region and can have up to 63 characters. Valid characters: a-z, A-Z, 0-9, and - (hyphen)"
+            }
+        }
+    },
+    "AWS::SageMaker::ModelPackage": {
+        "ModelPackageName": {
+            "name_it_right": {
+                "explanation": "The model package name must be unique in your account and in the AWS Region and can have up to 63 characters. Valid characters: a-z, A-Z, 0-9, and - (hyphen)"
+            }
+        }
+    },
+    "AWS::SageMaker::Model": {
+        "ModelName": {
+            "name_it_right": {
+                "explanation": "Maximum of 63 alphanumeric characters. Can include hyphens (-), but not spaces. Must be unique within your account in an AWS Region."
+            }
+        }
+    },
+    "AWS::SageMaker::EndpointConfig": {
+        "EndpointConfigName": {
+            "name_it_right": {
+                "explanation": "Maximum of 63 alphanumeric characters. Can include hyphens (-), but not spaces. Must be unique within your account in an AWS Region."
+            }
+        }
+    },
+    "AWS::CloudTrail::Trail": {
+        "TrailName": {
+            "name_it_right": {
+                "explanation": "3-128 characters. Only letters, numbers, periods, underscores, and dashes are allowed."
+            }
+        }
+    },
+    "AWS::IVS::Channel": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Maximum length: 128 characters. May include numbers, letters, underscores (_) and hyphens (-)."
+            }
+        }
+    },
+    "AWS::DMS::ReplicationInstance": {
+        "ReplicationInstanceIdentifier": {
+            "name_it_right": {
+                "explanation": "The name must be unique among all of your replication instances in the current AWS region. \nReplication instance name must not start with a numeric value"
+            }
+        }
+    },
+    "AWS::AppMesh::Mesh": {
+        " MeshName": {
+            "name_it_right": {
+                "explanation": "Alphanumeric characters, dashes, and underscores are allowed."
+            }
+        }
+    },
+    "AWS::ServiceDiscovery::HttpNamespace": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "The namespace name can have up to 1,024 characters, and must start and end with a letter.\nValid characters: a-z, A-Z, 0-9, . (period), _ (underscore), and - (hyphen)"
+            }
+        }
+    },
+    "AWS::CloudFront::Function": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Use only letters, numbers, hyphens, or underscores with no spaces."
+            }
+        }
+    },
+    "AWS::GlobalAccelerator::Accelerator": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Enter only letters, numbers or hyphens (-) with no spaces."
+            }
+        }
+    },
+    "AWS::Route53::HostedZone": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Valid characters: a-z, 0-9, ! \" # $ % & ' ( ) * + , - / : ; < = > ? @ [ \\ ] ^ _ ` { | } . ~"
+            }
+        }
+    },
+    "AWS::Route53RecoveryControl::Cluster": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Name can contain only letters, numbers, underscores (_), or dashes (-)."
+            }
+        }
+    },
+    "AWS::Route53RecoveryControl::RoutingControl": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Enter only letters, numbers, with no spaces."
+            }
+        }
+    },
+    "AWS::Route53RecoveryControl::ControlPanel": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Enter only letters or numbers, with no spaces."
+            }
+        }
+    },
+    "AWS::Route53RecoveryReadiness::RecoveryGroup": {
+        "RecoveryGroupName": {
+            "name_it_right": {
+                "explanation": "Enter only letters, numbers, underscores (_), or dashes (-), with no spaces."
+            }
+        }
+    },
+    "AWS::Route53RecoveryReadiness::ReadinessCheck": {
+        "ReadinessCheckName": {
+            "name_it_right": {
+                "explanation": "Enter only letters or numbers, with no spaces."
+            }
+        }
+    },
+    "AWS::RoboMaker::RobotApplication": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Must be between 1 and 255 characters. Valid characters are a-z, A-Z, 0-9, - (hyphen), and _ (underscore). No spaces."
+            }
+        }
+    },
+    "AWS::WAFv2::WebACL": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "The name must have 1-128 characters. Valid characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore)."
+            }
+        }
+    },
+    "AWS::WAFv2::IPSet": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "The name must have 1-128 characters. Valid characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore)."
+            }
+        }
+    },
+    "AWS::WAFv2::RuleGroup": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "The name must have 1-128 characters. Valid characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore)."
+            }
+        }
+    },
+    "AWS::IAM::Group": {
+        "GroupName": {
+            "name_it_right": {
+                "explanation": "Maximum 128 characters. Use alphanumeric and '+=,.@-_' characters."
+            }
+        }
+    },
+    "AWS::Signer::SigningProfile": {
+        "PlatformId": {
+            "name_it_right": {
+                "explanation": "Profile name must contain from 2 to 64 characters. Valid characters are lowercase a-z, uppercase A-Z, 0-9, and _ (underscore)."
+            }
+        }
+    },
+    "AWS::Backup::BackupVault": {
+        "BackupVaultName": {
+            "name_it_right": {
+                "explanation": "Backup vault name is case sensitive. Must contain from 2 to 50 alphanumeric or '-_' characters."
+            }
+        }
+    },
+    "AWS::Backup::BackupPlan": {
+        "BackupPlan": {
+            "name_it_right": {
+                "explanation": "Backup plan name is case sensitive. Must contain from 1 to 50 alphanumeric or '-_.' characters."
+            }
+        }
+    },
+    "AWS::EFS::AccessPoint": {
+        "FileSystemId": {
+            "name_it_right": {
+                "explanation": "Name can include letters, numbers, and +-=._:/ symbols, up to 256 characters."
+            }
+        }
+    },
+    "AWS::FSx::StorageVirtualMachine": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Maximum of 47 alphanumeric characters, plus . - _ . Must begin with a letter or underscore"
+            }
+        }
+    },
+    "AWS::FSx::Snapshot": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Maximum of 203 alphanumeric characters, plus _ - : ."
+            }
+        }
+    },
+    "AWS::S3ObjectLambda::AccessPoint": {
+        "Name": {
+            "name_it_right": {
+                "explanation": "Must be unique within a single AWS account and Region, comply with DNS naming restrictions, must begin with a number or lowercase letter, must be between 3 and 50 characters long, can't begin or end with a hyphen (-), can't contain underscores (_), uppercase letters, or periods (.), can't end with the suffix -s3alias. This suffix is reserved for access point alias names."
+            }
+        }
+    }
+}
