@@ -1,0 +1,387 @@
+Specific Service component (colloquial name),top level service,type name CF,cf_property_desc,Pattern in CF registry?,Regex from registry,registry explanation,Our own regex,Alternative regex,URL documentation,Rule in plain English,Validation error text,URL AWS console,Regex copied from external page:,Is tag?,Inserted by,can be deleted?
+S3 bucket name ,S3,AWS::S3::Bucket,"BucketName
+",yes but wrong,,,"(?!(^xn--|.+-s3alias$))^[a-z0-9][a-z0-9-]{1,61}[a-z0-9]$","(?!(^((2(5[0-5]|[0-4][0-9])|[01]?[0-9]{1,2})\.){3}(2(5[0-5]|[0-4][0-9])|[01]?[0-9]{1,2})$|^xn--|.+-s3alias$))^[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]$ 
+",https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html,,,,https://stackoverflow.com/questions/50480924/regex-for-s3-bucket-name,,simeon,FALSE
+Lambda function,Lambda,AWS::Lambda::Function,FunctionName,no,,,"^[a-zA-Z0-9-_]{1,64}",,,"Use only letters, numbers, hyphens, or underscores with no spaces.","The function name can contain only letters, numbers, hyphens, and underscores.",https://eu-central-1.console.aws.amazon.com/lambda/home?region=eu-central-1#/create/function?firstrun=true,,,simeon,
+IAM user,IAM,"AWS::IAM::User
+",UserName,no,no,,"^[a-zA-Z0-9+=,\.@_-]{1,64}",,https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html?icmpid=docs_iam_console AND https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html,"User names can be a combination of up to 64 letters, digits, and these characters: plus (+), equal (=), comma (,), period (.), at sign (@), underscore (_), and hyphen (-). Names must be unique within an account. They are not distinguished by case. For example, you cannot create two users named TESTUSER and testuser.","Invalid name. User names can contain alphanumeric characters, or any of the following: _+=,.@-",https://us-east-1.console.aws.amazon.com/iam/home#/users$new?step=details,,,simeon,
+CloudFormation stack,,AWS::CloudFormation::StackSet,"StackSetName
+",yes,"^[a-zA-Z][a-zA-Z0-9\\-]{0,127}$",,,,,"Stack name can include letters (A-Z and a-z), numbers (0-9), and dashes (-).","Stack name must contain only letters, numbers, dashes. Must start with a letter.",https://eu-central-1.console.aws.amazon.com/cloudformation/home?region=eu-central-1#/stacks/create,,,simeon,
+ECS cluster,,"AWS::ECS::Cluster
+","ClusterName
+",no,,,"^[a-zA-Z0-9_-]{1,255}$",,,"There can be a maximum of 255 characters. The valid characters are letters (uppercase and lowercase), numbers, hyphens, and underscores.",,,,,gabriel,
+Elastic Beanstalk,,"AWS::ElasticBeanstalk::Application
+","ApplicationName
+",no,,,"^[^\/]{1,100}$",,,"Up to 100 Unicode characters, not including forward slash (/)",,,,,gabriel,
+Batch Job Definition,,AWS::Batch::JobDefinition,"JobDefinitionName
+",no,,,"^[a-zA-Z0-9_-]{1,128}$",,,"Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed",,,,,gabriel,
+Batch Job Queue,,AWS::Batch::JobQueue,"JobQueueName
+",no,,,"^[a-zA-Z0-9_-]{1,128}$",,,"Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed",,,,,gabriel,
+Batch Compute Environments,,AWS::Batch::ComputeEnvironment,"ComputeEnvironmentName
+",no,,,"^[a-zA-Z0-9_-]{1,128}$",,,"Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed",,,,,gabriel,
+Batch scheduling policy,,AWS::Batch::SchedulingPolicy,"Name
+",no,,,"^[a-zA-Z0-9_-]{1,128}$",,,"Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed",,,,,gabriel,
+Step Functions (State machine),,AWS::StepFunctions::StateMachine,"StateMachineName
+",no,,,"^[a-zA-Z0-9_-]{1,80}$",,,"Must be 1-80 characters. Can use alphanumeric characters, dashes, or underscores.",,,,,gabriel,
+Step Activiy,,,,no,,,"^[a-zA-Z0-9_-]{1,80}$",,,"Must be 1-80 characters. Can use alphanumeric characters, dashes, or underscores.",,,,,gabriel,
+security group,,,,,,,,,,,,,,,,
+SQS,,,,no,,,"^[a-zA-Z0-9_-]{1,80}$",,,"A queue name is case-sensitive and can have up to 80 characters. You can use alphanumeric characters, hyphens (-), and underscores ( _ ).",,,,,gabriel,
+Kinesis data stream,,,,yes,,,"^[a-zA-Z0-9_-.]{1,128}$",,,"Acceptable characters are uppercase and lowercase letters, numbers, underscores, hyphens and periods.
+Stream name must be between 1 and 128 characters long.",,,,,gabriel,
+IAM policy,,AWS::IAM::Policy,PolicyName,no,,,"^[a-zA-Z0-9+=,\.@_-]{1,64}",,https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html,"Use alphanumeric and '+=,.@-_' characters. Maximum 128 characters.",,,,,simeon,
+Glue job,,,"
+",no,,,,,,The job name can be any UTF-8 string with a maximum length of 255 characters. ,,,,maybe,simeon,
+DynamoDB tables,,,,no,,,,,https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html,"All names must be encoded using UTF-8, and are case-sensitive.
+Table names and index names must be between 3 and 255 characters long, and can contain only the following characters:
+a-z
+A-Z
+0-9
+_ (underscore)
+- (dash)
+. (dot) https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html",,,,,daniel,
+S3 Object Keys,,,,no,,,,,https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html,"Alphanumeric characters0-9
+a-z
+A-Z
+Special characters
+Exclamation point (!)
+Hyphen (-)
+Underscore (_)
+Period (.)
+Asterisk (*)
+Single quote (')
+Open parenthesis (()
+Close parenthesis ())Alphanumeric characters
+1024 bytes long",,,,,daniel,
+Cognito User Pools,,,,no,,,,,https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-name.html,"User pool names must be between one and 128 characters long. They can contain uppercase and lowercase letters (a-z, A-Z), numbers (0-9), and the following special characters: + = , . @ and -",,,,,daniel,
+WAF rules,,,,no,,,,,https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-name.html,"The name can contain only the characters A-Z, a-z, 0-9, - (hyphen), and _ (underscore). You can't change the name of a rule after you create it in your rule group or web ACL.",,,,,daniel,no
+Redshift,,,,no,,,,,https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/acreldb/n1mj0107x0bhbjn1h7qjsza42ngz.htm,"Amazon Redshift is not case sensitive, and all names default to lowercase.
+
+A name can contain up to 128 characters.
+The first character in a name can be a letter, @, _, or #.
+A name cannot be an Amazon Redshift reserved word, such as WHERE or VIEW.
+A name cannot be the same as another Amazon Redshift object that has the same type.",,,,,daniel,
+RDS DB instance,,,"DBInstanceIdentifier
+",yes,"^$|^[a-zA-Z]{1}(?:-?[a-zA-Z0-9]){0,62}$",,,,,,,,,,simeon,
+RDS DB name,,,DBName,yes,"^$|^[_a-zA-Z][a-zA-Z0-9_]{0,63}$",,,,,,,,,,simeon,
+SNS Topic,,AWS::SNS::Topic,TopicName,,,"
+The name of the topic you want to create. Topic names must include only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long. FIFO topic names must end with .fifo.",,,,"Maximum 256 characters. Can include alphanumeric characters, hyphens (-) and underscores (_). FIFO topic names must end with "".fifo"".",,,,,daniel,
+SNS Mobile Push Notification,,-,-,,-,,,,,"Maximum 256 alphanumeric characters, including hyphens (-), underscores (_), and periods (.).",,,,,,
+SQS Queue,,AWS::SQS::Queue,QueueName,,,"A name for the queue. To create a FIFO queue, the name of your FIFO queue must end with the .fifo suffix. For more information, see FIFO queues in the Amazon SQS Developer Guide.",,,,"A queue name is case-sensitive and can have up to 80 characters. You can use alphanumeric characters, hyphens (-), and underscores ( _ ).",,,,,daniel,
+Clean Rooms Collaborations,,-,-,,-,,,,,0 of 100 characters.,,,,,daniel,
+Glue Database,,AWS::Glue::Database DatabaseInput,Name ,,,"The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
+Required: No
+Type: String
+Update requires: Replacement",,,,"Database name is required, in lowercase characters, and no longer than 255 characters.",,,,,daniel,
+Glue Table,,AWS::Glue::Table,DatabaseName,,,"The name of the database where the table metadata resides. For Hive compatibility, this must be all lowercase.
+Required: Yes
+Type: String
+Update requires: Replacement",,,,"If you plan to access the table from Amazon Athena, then the name should be under 256 characters and contain only lowercase letters (a-z), numbers (0-9), and underscore (_).",,,,,daniel,
+Glue Schema Registry,,AWS::Glue::Registry,Name,,,"Required: Yes
+Type: String
+Update requires: Replacement",,,,"Only letters (A-Z), numbers (0-9), hyphens (-), underscores (_), dollar signs ($), periods (.), or hash marks (#) allowed. 255 characters maximum.",,,,,daniel,
+Glue Schema,,AWS::Glue::Schema,Name,,,"Name of the schema to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.
+Required: Yes
+Type: String
+Update requires: Replacement",,,,"Only letters (A-Z), numbers (0-9), hyphens (-), underscores (_), dollar signs ($), periods (.), or hash marks (#) allowed. 255 characters maximum.",,,,,daniel,
+Glue Crawler,,AWS::Glue::Crawler,Name,,,"Required: Yes
+Type: String
+Update requires: Replacement",,,,"Name may contain letters (A-Z), numbers (0-9), hyphens (-), or underscores (_), and can be up to 255 characters long.",,,,,daniel,
+Glue Classifier,,AWS::Glue::Classifier,-,,-,,,,,"Name may contain letters (A-Z), numbers (0-9), hyphens (-), or underscores (_), and can be up to 255 characters long.",,,,,daniel,
+Glue Trigger,,AWS::Glue::Trigger,Name,,,"Required: Yes
+Type: String
+Update requires: Replacement",,,,"Name may contain letters (A-Z), numbers (0-9), hyphens (-), or underscores (_), and can be up to 255 characters long.",,,,,daniel,
+Glue Workflow,,AWS::Glue::Workflow,Name,,,"Required: Yes
+Type: String
+Update requires: Replacement",,,,"Names may only contain letters (A-Z), numbers (0-9), hyphens (-), or underscores (_)",,,,,daniel,
+Glue Blueprint,,,,,,,,,,"Names may only contain letters (A-Z), numbers (0-9), hyphens (-), or underscores (_)",,,,,daniel,
+Glue Security Configuration,,AWS::Glue::SecurityConfiguration,Name,,,"Required: Yes
+Type: String
+Update requires: Replacement",,,,"Name may contain letters (A-Z), numbers (0-9), hyphens (-), or underscores (_), and can be up to 255 characters long.",,,,,daniel,
+Glue Databrew Project,,AWS::DataBrew::Project,Name,,,"Required: Yes
+Type: String
+Minimum: 1
+Maximum: 255
+Update requires: Replacement",,,,"The project name must contain 1-255 characters. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.",,,,,daniel,
+Glue Databrew Dataset,,AWS::DataBrew::Dataset,Name ,,,"The unique name of the dataset.
+Required: Yes
+Type: String
+Minimum: 1
+Maximum: 255
+Update requires: Replacement",,,,"The dataset name must contain 1-255 characters. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.",,,,,daniel,
+Glue Databrew Recipe,,AWS::DataBrew::Recipe,Name,,,"Required: Yes
+Type: String
+Minimum: 1
+Maximum: 255
+Update requires: Replacement",,,,"The recipe name must contain 1-255 characters. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.",,,,,daniel,
+Glue Databrew Ruleset,,AWS::DataBrew::Ruleset,Name,,,"Required: Yes
+Type: String
+Update requires: Replacement",,,,"The ruleset name must contain 1-255 characters. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.",,,,,daniel,
+Glue Databrew Job,,AWS::DataBrew::Job,Name,,,"Required: Yes
+Type: String
+Minimum: 1
+Maximum: 240
+Update requires: Replacement",,,,"The job name must contain 1-240 characters. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.",,,,,daniel,
+Kinesis Analytics SQL application,,AWS::KinesisAnalyticsV2::Application,ApplicationName,,[a-zA-Z0-9_.-]+,,,,,"Acceptable characters are uppercase and lowercase letters, numbers, underscores, hyphens, and periods.",,,,,daniel,
+Lake Formation Table,,-,-,,-,,,,,"Name may contain letters (A-Z), numbers (0-9), hyphens (-), or underscores (_), and must be less than 256 characters long.",,,,,daniel,
+Lake Formation Data Filter,,AWS::LakeFormation::DataCellsFilter,Name,,,"UTF-8 string, not less than 1 or more than 255 bytes long, matching the single-line string pattern.
+The name given by the user to the data filter cell.
+Required: Yes
+Type: String
+Update requires: Replacement",,,,"Name may contain letters (A-Z), numbers (0-9), hyphens (-), or under-scores (_), and be less than 256 characters.",,,,,daniel,
+MSK Cluster,,AWS::MSK::Cluster,ClusterName,,,"Required: Yes
+Type: String
+Update requires: Replacement",,,,The name must be unique and can have a maximum of 64 characters. You can't change this name after you have created the cluster.,,,,,daniel,
+MSK Cluster Configuration,,AWS::MSK::Configuration,Name,,,"^[0-9A-Za-z][0-9A-Za-z-]{0,}$",,,,"A unique name is required but the name can’t start with a hyphen. Valid characters: a-z, A-Z, 0-9 and - (hyphen)",,,,,daniel,
+MSK Customised Connector,,AWS::KafkaConnect::Connector,ConnectorName,,,"Required: Yes
+Type: String
+Update requires: Replacement",,,,"The name must be unique and can have up to 128 characters. Valid characters: a-z, A-Z, 0-9 and - (hyphen). You can’t change the name after you have created the worker configuration.",,,,,daniel,
+MSK Customised Plugin,,-,-,,-,,,,,"The name must be unique and can have up to 128 characters. Valid characters: a-z, A-Z, 0-9 and - (hyphen). You can’t change the name after you have created the worker configuration.",,,,,daniel,
+MSK Worker Configuration,,-,-,,-,,,,,"The name must be unique and can have up to 128 characters. Valid characters: a-z, A-Z, 0-9 and - (hyphen). You can’t change the name after you have created the worker configuration.",,,,,daniel,
+OpenSearch Domain,,AWS::OpenSearchService::Domain,DomainName,,,"A name for the OpenSearch Service domain. The name must have a minimum length of 3 and a maximum length of 28. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the domain name. For more information, see Name Type.",,,,"The name must start with a lowercase letter and must be between 3 and 28 characters. Valid characters are a-z (lowercase only), 0-9, and - (hyphen).",,,,,daniel,
+Redshift Cluster,,AWS::Redshift::Cluster, DBName,,,"Must contain 1 to 64 alphanumeric characters.
+Must contain only lowercase letters.
+Cannot be a word that is reserved by the service. A list of reserved words can be found in Reserved Words in the Amazon Redshift Database Developer Guide.
+Required: Yes
+Type: String
+Maximum: 2147483647
+Update requires: Replacement",,,,The identifier must be from 1-63 characters. Valid characters are a-z (lowercase only) and - (hyphen).,,,,,daniel,
+Redshit Serverless Work Group,,AWS::RedshiftServerless::Workgroup,WorkgroupName,,,"Required: Yes
+Type: String
+Update requires: Replacement",,,,"The name must be from 3-64 characters. Valid characters are a-z (lowercase only), 0-9 (numbers), and - (hyphen).",,,,,daniel,
+EventBridge Event Bus,,AWS::Events::EventBus,Name,,[/\.\-_A-Za-z0-9]+,,,,,"Maximum of 256 characters consisting of numbers, lower/upper case letters, .,-,_.",,,,,daniel,
+EventBridge Rule,,AWS::Events::Rule,Name,,[\.\-_A-Za-z0-9]+,,,,,"Maximum of 64 characters consisting of numbers, lower/upper case letters, .,-,_.",,,,,daniel,
+EventBridge Global Endpoint,,AWS::Events::Endpoint,Name,,[\.\-_A-Za-z0-9]+,,,,,"Maximum of 64 characters consisting of numbers, lower/upper case letters, .,-,_.",,,,,daniel,
+EventBridge Archive,,AWS::Events::Archive,ArchiveName,,[\.\-_A-Za-z0-9]+,,,,,"Maximum of 48 characters consisting of numbers, lower/upper case letters, .,-,_. You can't change the name of the archive after it is created.",,,,,daniel,
+EventBridge Replay,,-,-,,-,,,,,"Maximum of 64 characters consisting of numbers, lower/upper case letters, .,-,_.",,,,,daniel,
+EventBridge API Destination,,AWS::Events::ApiDestination,Name ,,[\.\-_A-Za-z0-9]+,,,,,"Maximum of 64 characters consisting of numbers, lower/upper case letters, .,-,_.",,,,,daniel,
+EventBridge Schema,,AWS::EventSchemas::Schema,SchemaName,,,"Required: No
+Type: String
+Update requires: Replacement",,,,"Maximum of 385 characters consisting of lower case letters, upper case letters, ., -, _, @.",,,,,daniel,
+MQ Broker,,AWS::AmazonMQ::Broker,BrokerName,,,"The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.",,,,"Must be 1-50 characters long. Limited to alphanumeric characters, dashes, and underscores.",,,,,daniel,
+MQ Configuration,,AWS::AmazonMQ::Configuration,Name,,,"The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.",,,,"Limited to alphanumeric characters, dashes, and underscores. Maximum 120 characters.",,,,,daniel,
+SWF Domain,,-,-,,-,,,,,"Up to 256 characters. Must not contain a : (colon), / (slash), | (vertical bar), or any control characters.",,,,,daniel,
+Billing Conductor Billing Group,,AWS::BillingConductor::BillingGroup,Name ,,,"Required: Yes
+Type: String
+Update requires: No interruption",,,,The billing group name can have up to 128 characters. Blank spaces and special characters are not valid.,,,,,daniel,
+AWS Budgets,,AWS::Budgets::Budget,-,,-,,,,,Names must be between 1-100 characters.,,,,,daniel,
+AWS Blockchain Network,,-,-,,-,,,,,The network name can be up to 64 characters long.,,,,,daniel,
+PinPoint Message Template,,-,TemplateName,,,"Required: Yes
+Type: String
+Update requires: Replacement",,,,"A template name has to begin with a letter or number and it can contain up to 128 characters. The characters can be letters, numbers, underscores (_), or hyphens (-).",,,,,daniel,
+PinPoint Recommender Model,,-,-,,-,,,,,"A model name has to start with a letter or number and it can contain up to 128 characters. The characters can be letters, numbers, spaces, underscores ( _ ), or hyphens (-).",,,,,daniel,
+ECR Repository,,AWS::ECR::Repository,RepositoryName,,(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*,,,,,"0 out of 256 characters maximum (2 minimum). The name must start with a letter and can only contain lowercase letters, numbers, hyphens, underscores, periods and forward slashes.",,,,,daniel,
+EKS Cluster,,AWS::EKS::Cluster,Name,,^[0-9A-Za-z][A-Za-z0-9\-_]*,,,,,"The cluster name should begin with letter or digit and can have any of the following characters: the set of Unicode letters, digits, hyphens and underscores. Maximum length of 100. This property cannot be changed after the cluster is created.",,,,,daniel,
+DocumentDB Cluster,,AWS::DocDB::DBCluster,DBClusterIdentifier,,,"Must contain from 1 to 63 letters, numbers, or hyphens.
+The first character must be a letter.
+Cannot end with a hyphen or contain two consecutive hyphens.",,,,Master username must start with a letter and contain 1 to 63 characters,,,,,daniel,
+ElastiCache Redis Cluster,,AWS::ElastiCache::CacheCluster,ClusterName,,,"The name must contain 1 to 50 alphanumeric characters or hyphens. The name must start with a letter and cannot end with a hyphen or contain two consecutive hyphens.
+Required: No
+Type: String
+Update requires: Replacement",,,,"The name is required, can have up to 40 characters and must not contain spaces.",,,,,daniel,
+ElastiCache Global Datastore,,AWS::ElastiCache::GlobalReplicationGroup,CacheParameterGroupName,,,"The name of the cache parameter group to use with the Global datastore. It must be compatible with the major engine version used by the Global datastore.
+Required: No
+Type: String
+Update requires: No interruption",,,,"The name is required, can have up to 40 characters and must not contain spaces.",,,,,daniel,
+ElastiCache Memcached,,-,-,,-,,,,,"The name is required, can have up to 40 characters and must not contain spaces.",,,,,daniel,
+ElastiCache Subnet Group,,AWS::ElastiCache::SubnetGroup,-,,-,,,,,"The name is required, can have up to 255 characters and must not contain spaces.",,,,,daniel,
+ElastiCache Parameter Group,,AWS::ElastiCache::ParameterGroup,-,,-,,,,,"The name is required, can have up to 255 characters and must not contain spaces.",,,,,daniel,
+ElastiCache User,,AWS::ElastiCache::User,UserId,,[a-zA-Z][a-zA-Z0-9\-]*,,,,,"The ID is required, can have up to 40 characters, and must begin with a letter. It should not end with a hyphen or contain two consecutive hyphens. Valid characters: A-Z, a-z, 0-9, and -(hyphen).",,,,,daniel,
+ElastiCache User Group,,AWS::ElastiCache::UserGroup,UserGroupId,,,"Required: Yes
+Type: String
+Update requires: Replacement",,,,"The ID is required, can have up to 40 characters, and must begin with a letter. It should not end with a hyphen or contain two consecutive hyphens. Valid characters: A-Z, a-z, 0-9, and - (hyphen).",,,,,daniel,
+MemoryDB Redis Cluster,,AWS::MemoryDB::Cluster,ClusterName,,,"Required: Yes
+Type: String
+Update requires: Replacement",,,,"The name is required, can have up to 40 characters, and must begin with a letter. It should not end with a hyphen or contain two consecutive hyphens. Valid characters: A-Z, a-z, 0-9, and -(hyphen)",,,,,daniel,
+MemoryDB Redis User,,AWS::MemoryDB::User,UserName,,,"Required: Yes
+Type: String
+Update requires: Replacement",,,,"The name is required, can have up to 40 characters, and must begin with a letter. It should not end with a hyphen or contain two consecutive hyphens. Valid characters: A-Z, a-z, 0-9, and -(hyphen)",,,,,daniel,
+MemoryDB Redis ACL,,AWS::MemoryDB::ACL,ACLName,,,"Required: Yes
+Type: String
+Update requires: Replacement",,,,"The name is required, can have up to 40 characters, and must begin with a letter. It should not end with a hyphen or contain two consecutive hyphens. Valid characters: A-Z, a-z, 0-9, and -(hyphen)",,,,,daniel,
+MemoryDB Redis Subnet Group,,AWS::MemoryDB::SubnetGroup,SubnetGroupName ,,,"Required: Yes
+Type: String
+Update requires: Replacement",,,,"The name is required, can have up to 255 characters, and must begin with a letter. It should not end with a hyphen or contain two consecutive hyphens. Valid characters: A-Z, a-z, 0-9, and -(hyphen)",,,,,daniel,
+MemoryDB Redis Parameter Group,,AWS::MemoryDB::ParameterGroup,ParameterGroupName,,,"Required: Yes
+Type: String
+Update requires: Replacement",,,,"The name is required, can have up to 255 characters, and must begin with a letter. It should not end with a hyphen or contain two consecutive hyphens. Valid characters: A-Z, a-z, 0-9, and -(hyphen)",,,,,daniel,
+Neptune Database,,AWS::Neptune::DBCluster,DBClusterIdentifier,,,"Required: No
+Type: String
+Update requires: Replacement",,,,"The name must be unique cross all DB clusters owned by your AWS account in the current AWS Region. The DB cluster identifier is case-insensitive, but is stored as all lowercase (as in ""mydbcluster""). Constraints: 1 to 60 alphanumeric characters or hyphens. First character must be a letter. Can't contain two consecutive hyphens. Can't end with a hyphen.",,,,,daniel,
+Neptune Notebooks,,-,-,,-,,,,,"Names may only contain letters (A-Z), numbers (0-9), or hyphens (-).",,,,,daniel,
+Neptune Subnet Group,,AWS::Neptune::DBSubnetGroup,DBSubnetGroupName,,,"Required: No
+Type: String
+Update requires: Replacement",,,,"You won't be able to modify the name after your subnet group has been created. Must contain from 1 to 255 characters. Alphanumeric characters, spaces, hyphens, underscores, and periods are allowed.",,,,,daniel,
+QLDB Ledger,,AWS::QLDB::Ledger,Name,,(?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$,,,,,"Specify a name that is unique for all ledgers owned by your AWS account in the current Region. The ledger name must contain from 1 to 32 alphanumeric characters or hyphens, with at least one non-numeric character.",,,,,daniel,
+QLDB Stream,,AWS::QLDB::Stream,StreamName,,(?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$,,,,,"Specify a name that is unique among all active streams for a given ledger. The stream name must contain from 1 to 32 alphanumeric characters or hyphens, with at least one non-numeric character.",,,,,daniel,
+Timestream Database,,AWS::Timestream::Database,DatabaseName,,,"Length Constraints: Minimum length of 3 bytes. Maximum length of 256 bytes.
+Required: No
+Type: String
+Update requires: Replacement",,,,"Must be between 3 and 256 characters long. Must contain letters, digits, dashes, periods or underscores. Specify a name that is unique for all Timestream databases in your AWS account in the current Region. You can not change this name once you create it.",,,,,daniel,
+Timestream Table,,AWS::Timestream::Table,DatabaseName,,,"Length Constraints: Minimum length of 3 bytes. Maximum length of 256 bytes.
+Required: Yes
+Type: String
+Update requires: Replacement",,,,"Must be between 3 and 256 characters long. Must contain letters, digits, dashes, periods or underscores. Specify a name that is unique for all Timestream databases in your AWS account in the current Region. You can not change this name once you create it.",,,,,daniel,
+CloudWatch Dashboard,,AWS::CloudWatch::Dashboard,DashboardName ,,,"The name of the dashboard. The name must be between 1 and 255 characters. If you do not specify a name, one will be generated automatically.
+Required: No
+Type: String
+Update requires: Replacement",,,,"Valid characters in dashboard names include ""0-9A-Za-z-_"".",,,,,daniel,
+Maintenance Window,,-,-,,-,,,,,"It has to be between 3 and 128 characters. Valid characters contain the following: a-z, A-Z, 0-9, and ._-",,,,,daniel,
+Patch Manager Patch Baseline,,-,-,,-,,,,,"You can use letters, numbers, periods, dashes, and underscores in the name.",,,,,daniel,
+Cloud9 Environment,,AWS::Cloud9::EnvironmentEC2,Name,,,"Required: No
+Type: String
+Update requires: No interruption",,,,"Limit of 60 characters, alphanumeric, and unique per user.",,,,,daniel,
+CodeBuild Create Project,,AWS::CodeBuild::Project,Name,,"[A-Za-z0-9][A-Za-z0-9\-_]{1,254}",,,,,"A project name must be 2 to 255 characters. It can include the letters A-Z and a-z, the numbers 0-9, and the special characters - and _.",,,,,daniel,
+CodeCommit REpository,,AWS::CodeCommit::Repository,RepositoryName,,[\w\.-]+,,,,,100 characters maximum. Other limits apply.,,,,,daniel,
+CodeDeploy Application,,AWS::CodeDeploy::Application,ApplicationName,,,"Type: String
+Minimum: 1
+Maximum: 100
+Update requires: Replacement",,,,100 character limit,,,,,daniel,
+CodeDeploy Configuration,,AWS::CodeDeploy::DeploymentConfig,DeploymentConfigName,,,"A name for the deployment configuration. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the deployment configuration name. For more information, see Name Type. Type: String
+Minimum: 1
+Maximum: 100
+Update requires: Replacement",,,,100 character limit,,,,,daniel,
+CodePipeline Pipeline,,AWS::CodePipeline::Pipeline,Name,,[A-Za-z0-9.@\-_]+,,,,,No more than 100 characters,,,,,daniel,
+FIS Experiment Template,,AWS::FIS::ExperimentTemplate,-,,-,,,,,Enter a description of up to 512 characters.,,,,,daniel,
+AppStream Stack,,AWS::AppStream::Stack,Name,,"^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$",,,,,"Allowed characters: a-z, A-Z, 0-9, _ - (hyphen)",,,,,daniel,
+AppStream Application,,AWS::AppStream::Application,Name,,"^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$",,,,,"Allowed characters: a-z, A-Z, 0-9, _ - (hyphen)",,,,,daniel,
+Amazon Location Map,,AWS::Location::Map,MapName,,^[-._\w]+$,,,,,"Use only letters, numbers, hyphens, periods, or underscores with no spaces.",,,,,daniel,
+Amazon Location Place Index,,AWS::Location::PlaceIndex,IndexName,,^[-._\w]+$,,,,,"Use only letters, numbers, hyphens, periods, or underscores with no spaces.",,,,,daniel,
+Amazon Location Route Calculator,,AWS::Location::RouteCalculator,CalculatorName,,^[-._\w]+$,,,,,"Use only letters, numbers, hyphens, periods, or underscores with no spaces.",,,,,daniel,
+Amazon Location Geofence Collector,,AWS::Location::GeofenceCollection,CollectionName,,^[-._\w]+$,,,,,"Use only letters, numbers, hyphens, periods, or underscores with no spaces.",,,,,daniel,
+Amazon Location Tracker,,AWS::Location::Tracker,TrackerName,,^[-._\w]+$,,,,,"Use only letters, numbers, hyphens, periods, or underscores with no spaces.",,,,,daniel,
+GameSparks Create Game,,-,-,,-,,,,,"The game name can have up to 36 characters. It must start with a letter and contain valid characters: A-Z, a-z, 0-9, and _ - (hyphen). The name can't be changed after the game is created.",,,,,daniel,
+IoT Analytics,,AWS::IoTAnalytics::Channel,ChannelName,,(^(?!_{2}))(^[a-zA-Z0-9_]+$),,,,,"Valid characters: a-z, 0-9, and _ (underscore).",,,,,daniel,
+IoT GreenGrass,,AWS::Greengrass::CoreDefinition,Name,,,"Required: Yes
+Type: String
+Update requires: No interruption",,,,"The name can be up to 128 characters. Valid characters: a-z, A-Z, 0-9, colon (:), underscore (_), and hyphen (-).",,,,,daniel,
+IoT TwinMaker,,AWS::IoTTwinMaker::Workspace,WorkspaceId,,,"Required: Yes
+Type: String
+Update requires: Replacement",,,,"Name must be alphanumeric, unique and contain fewer than 128 characters. It must start with a letter and contain no spaces.",,,,,daniel,
+Comprehend Analysis Job,,-,-,,-,,,,,"The name can have up to 256 characters. Valid characters: A-Z, a-z, 0-9, space, and % + . / : = @ _ - (hyphen)",,,,,daniel,
+DeepRacer Model,,-,-,,-,,,,,"The model name can have up to 64 characters. Valid characters: A-Z, a-z, 0-9, and hypens (-). No spaces or underscores (_).",,,,,daniel,
+DeepRacer Garage,,-,-,,-,,,,,"The vehicle name must have 1-32 characters. Valid characters: A-Z, a-z, 0-9, _ (underscore) - (hyphen).",,,,,daniel,
+Forecast Dataset Group,,AWS::Forecast::DatasetGroup,DatasetGroupName,,^[a-zA-Z][a-zA-Z0-9_]*,,,,,"The dataset group name must have 1 to 63 characters. Valid characters: a-z, A-Z, 0-9, and _",,,,,daniel,
+HealthLake Data Store,,AWS::HealthLake::FHIRDatastore,DatastoreName,,^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$,,,,,"The name can have up to 256 characters. Valid characters: A-Z, a-z, 0-9, space, and % + . / : = @ _ - (hyphen).",,,,,daniel,
+Kendra Indexes,,AWS::Kendra::Index,Name,,[a-zA-Z0-9][a-zA-Z0-9_-]*,,,,,"Maximum of 1000 alphanumeric characters. Can include hyphens (-), but not spaces.",,,,,daniel,
+Lex Bot,,AWS::Lex::Bot,Name,,-,,,,,"Maximum 100 characters. Valid characters: A–Z, a–z, 0–9, -, _",,,,,daniel,
+Lookout for Projects Project,,-,-,,-,,,,,"The project name can have up to 200 characters. Valid characters: a-z, A-Z, 0-9, _, and - (hyphen)",,,,,daniel,
+Lookout for Metrics Detector,,AWS::LookoutMetrics::AnomalyDetector,AnomalyDetectorName,,-,,,,,"The name can have up to 63 character max. Valid characters: a-z, A-Z, 0-9, - (hyphen) and _.",,,,,daniel,
+Monitron Projects,,-,-,,-,,,,,"The project name must have 1 to 60 characters. Valid characters: a–z, A–Z, 0–9, punctuation marks, _ (underscore) and space.",,,,,daniel,
+Personalize Dataset Group,,AWS::Personalize::DatasetGroup,Name,,^[a-zA-Z0-9][a-zA-Z0-9\-_]*,,,,,"The dataset group name must have 1-63 characters with no spaces. Valid characters: a-z, A-Z, 0-9, and _ - (hyphen).",,,,,daniel,
+SageMaker Labelling Job,,-,-,,-,,,,,"Maximum of 63 alphanumeric characters. Can include hyphens (-), but not spaces. Must be unique within your account in an AWS Region.",,,,,daniel,
+SageMaker Notebook Instance,,AWS::SageMaker::NotebookInstance,NotebookInstanceName,,^[a-zA-Z0-9](-*[a-zA-Z0-9])*,,,,,"Maximum of 63 alphanumeric characters. Can include hyphens (-), but not spaces. Must be unique within your account in an AWS Region.",,,,,daniel,
+SageMaker Repository,,AWS::SageMaker::CodeRepository,CodeRepositoryName,,"^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$",,,,,"The repository name must be unique in your account and in the AWS Region and can have up to 63 characters. Valid characters: a-z, A-Z, 0-9, and - (hyphen)",,,,,daniel,
+SageMaker Proessing Job,,-,-,,-,,,,,"Maximum of 63 alphanumeric characters. Can include hyphens (-), but not spaces. Must be unique within your account in an AWS Region.",,,,,daniel,
+SageMaker Algorithm,,-,-,,-,,,,,"The algorithm name must be unique in your account and in the AWS Region and can have up to 63 characters. Valid characters: a-z, A-Z, 0-9, and - (hyphen)",,,,,daniel,
+SageMaker Training Job,,-,-,,-,,,,,"Maximum of 63 alphanumeric characters. Can include hyphens (-), but not spaces. Must be unique within your account in an AWS Region.",,,,,daniel,
+SageMaker Hyperparameter Tuning Job,,-,-,,-,,,,,"The name must be from 1 to 32 characters and must be unique in your AWS account and AWS Region. Valid characters are a-z, A-Z, 0-9, and hyphen (-).",,,,,daniel,
+SageMaker Compilation Job,,-,-,,-,,,,,"The name must be between 1 and 63 characters in length and unique in your AWS account and AWS region. Valid characters and a-z, A-Z, 0-9, and hyphen (-).",,,,,daniel,
+SageMaker Model Package,,AWS::SageMaker::ModelPackage,ModelPackageName,,"^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$",,,,,"The model package name must be unique in your account and in the AWS Region and can have up to 63 characters. Valid characters: a-z, A-Z, 0-9, and - (hyphen)",,,,,daniel,
+SageMaker Model,,AWS::SageMaker::Model,ModelName,,^[a-zA-Z0-9](-*[a-zA-Z0-9])*,,,,,"Maximum of 63 alphanumeric characters. Can include hyphens (-), but not spaces. Must be unique within your account in an AWS Region.",,,,,daniel,
+SageMaker Endpoint Configuration,,AWS::SageMaker::EndpointConfig,EndpointConfigName,,"^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}",,,,,"Maximum of 63 alphanumeric characters. Can include hyphens (-), but not spaces. Must be unique within your account in an AWS Region.",,,,,daniel,
+SageMaker Batch Job,,-,-,,-,,,,,"Maximum of 63 alphanumeric characters. Can include hyphens (-), but not spaces. Must be unique within your account in the same AWS Region.",,,,,daniel,
+SageMaker Human Review Workflow,,-,-,,-,,,,,"The name must be lowercase, unique within the Region in your account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen)",,,,,daniel,
+SageMaker Worker Task Template,,-,-,,-,,,,,"The name must be lowercase, unique within the Region in your account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen)",,,,,daniel,
+Transcribe Job,,-,-,,-,,,,,"The name can be up to 200 characters long. Valid characters are a-z, A-Z, 0-9, . (period), _ (underscore), and – (hyphen).",,,,,daniel,
+Transcribe Vocabulary,,-,-,,-,,,,,"The name can be up to 200 characters long. Valid characters are a-z, A-Z, and 0-9.",,,,,daniel,
+Transcribe Vocabulary Filter,,-,-,,-,,,,,"The name can be up to 200 characters long. Valid characters are a-z, A-Z, 0-9 and - (hyphen).",,,,,daniel,
+Transcribe Category,,-,-,,-,,,,,"The name can be up to 200 characters long. Valid characters are a-z, A-Z, 0-9, ., _ , and – (hyphen).",,,,,daniel,
+Translate Job,,-,-,,-,,,,,"The name must have 2 to 256 characters. Valid characters: a-z, A-Z, 0-9, and . : + = @ _ % - (hyphen)",,,,,daniel,
+Translate Terminology,,-,-,,-,,,,,"The name can be up to 256 characters long. Valid characters are _, -, a-z, A-Z, and 0-9.",,,,,daniel,
+Translate Parallel data,,-,-,,-,,,,,"The name can be up to 256 characters long. Valid characters are _,-,a-z,A-Z and 0-9.",,,,,daniel,
+CloudTrail Trail,,AWS::CloudTrail::Trail,TrailName,,,"Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)
+Start with a letter or number, and end with a letter or number
+Be between 3 and 128 characters
+Have no adjacent periods, underscores or dashes. Names like my-_namespace and my--namespace are not valid.
+Not be in IP address format (for example, 192.168.5.4)",,,,"3-128 characters. Only letters, numbers, periods, underscores, and dashes are allowed.",,,,,daniel,
+License Manager Self-Managed Licenses,,-,-,,-,,,,,"The name can be up to 100 characters. Valid characters: a-z, A-Z and 0-9",,,,,daniel,
+License Manager Host Resource Group,,-,-,,-,,,,,"The name can be up to 128 characters and must start with a letter. Valid characters: a-z, A-Z, 0-9, _ (underscore), and - (hyphen).",,,,,,
+AWS Proton,,-,-,,-,,,,,"Only use letters, numbers or hyphens. The maximum length is 100 characters.",,,,,daniel,
+Amazon IVS Video Create Channel,,AWS::IVS::Channel,Name,,^[a-zA-Z0-9-_]*$,,,,,"Maximum length: 128 characters. May include numbers, letters, underscores (_) and hyphens (-).",,,,,daniel,
+Elemental MediaConnect Flow,,-,-,,-,,,,,"The flow name can have up to 64 characters. Valid characters: A-Z, a-z, and 0-9",,,,,daniel,
+Elemental MediaStore Container,,-,-,,-,,,,,"The container name is case sensitive, must be unique within this account for the current AWS Region, and can be up to 255 characters long. Valid characters: a-z, A-Z, 0-9, - (hyphen) and _ (underscore).",,,,,daniel,
+DMS Replication Instance,,AWS::DMS::ReplicationInstance,ReplicationInstanceIdentifier,,,,,,,"The name must be unique among all of your replication instances in the current AWS region. 
+Replication instance name must not start with a numeric value",,,,,daniel,
+DMS Data Collector,,-,-,,-,,,,,"Can have only Unicode letters, digits, white space, or one of the symbols in parentheses: (_.:/=+-@()). Maximum of 60 characters.",,,,,daniel,
+DMS Migration project,,-,-,,-,,,,,"Should begin with a letter; should contain only ASCII letters, digits, and hyphens; and shouldn’t end with a hyphen or contain two consecutive hyphens.",,,,,daniel,
+DMS Instance Profile,,-,-,,-,,,,,"Should begin with a letter; should contain only ASCII letters, digits, and hyphens; and shouldn’t end with a hyphen or contain two consecutive hyphens.",,,,,daniel,
+DMS Data Provider,,-,-,,-,,,,,"Should begin with a letter; should contain only ASCII letters, digits, and hyphens; and shouldn’t end with a hyphen or contain two consecutive hyphens.",,,,,daniel,
+Mainframe Modernization Application,,-,-,,-,,,,,"Use only alphanumeric characters, hyphens, and underscores. The maximum length is 60 characters.",,,,,daniel,
+App Mesh,,AWS::AppMesh::Mesh, MeshName,,,"Required: No
+Type: String
+Minimum: 1
+Maximum: 255
+Update requires: Replacement",,,,"Alphanumeric characters, dashes, and underscores are allowed.",,,,,daniel,
+AWS Cloud Map Namespace,,AWS::ServiceDiscovery::HttpNamespace,Name,,"^[!-~]{1,1024}$",,,,,"The namespace name can have up to 1,024 characters, and must start and end with a letter.
+Valid characters: a-z, A-Z, 0-9, . (period), _ (underscore), and - (hyphen)",,,,,daniel,
+Direct Connect Connection,,-,-,,-,,,,,"Name must contain no more than 100 characters. Valid characters are a-z, 0-9, and hyphens (–).",,,,,daniel,
+Direct Connect Virtual interface,,-,-,,-,,,,,"Name must contain no more than 100 characters. Valid characters are a-z, 0-9, and hyphens (–).",,,,,daniel,
+Direct Connect LAG,,-,-,,-,,,,,"Name must contain no more than 100 characters. Valid characters are a-z, 0-9, and hyphens (–).",,,,,daniel,
+Direct Connect Gateway,,-,-,,-,,,,,"Name must contain no more than 100 characters. Valid characters are a-z, 0-9, and hyphens (–).",,,,,daniel,
+CloudFront Function,,AWS::CloudFront::Function,Name,,"^[a-zA-Z0-9-_]{1,64}$",,,,,"Use only letters, numbers, hyphens, or underscores with no spaces.",,,,,daniel,
+CloudFront Origin Access ,,-,-,,-,,,,,"The name must be unique. Valid characters: letters, numbers and most special characters. Use up to 64 characters.",,,,,daniel,
+CloudFront Field-level encryption,,-,-,,-,,,,,"The profile name can have up to 128 characters. Valid characters: A-Z, a-z, 0-9, and _ -",,,,,daniel,
+Global Accelerator,,AWS::GlobalAccelerator::Accelerator,Name,,,"Required: Yes
+Type: String
+Maximum: 64
+Update requires: No interruption",,,,"Enter only letters, numbers or hyphens (-) with no spaces.",,,,,daniel,
+Private 5G Networks,,-,-,,-,,,,,"The field network name can have up 64 characters. Valid characters: a-z, A-Z, 0-9, and - (hyphen). You cannot change the network name after you create it.",,,,,daniel,
+Route53 Hosted zones,,AWS::Route53::HostedZone,Name,,,"Required: No
+Type: String
+Maximum: 1024
+Update requires: Replacement",,,,"Valid characters: a-z, 0-9, ! "" # $ % & ' ( ) * + , - / : ; < = > ? @ [ \ ] ^ _ ` { | } . ~",,,,,daniel,
+Route53 Inbound Endpoint,,-,-,,-,,,,,"The endpoint name can have up to 64 characters. Valid characters: a-z, A-Z, 0-9, space, _ (underscore), and - (hyphen)",,,,,daniel,
+Route53 Outbound Endpoint,,-,-,,-,,,,,"The endpoint name can have up to 64 characters. Valid characters: a-z, A-Z, 0-9, space, _ (underscore), and - (hyphen)",,,,,daniel,
+Route53 Rule,,-,-,,-,,,,,"The rule name can have up to 64 characters. Valid characters: a-z, A-Z, 0-9, space, _ (underscore), and - (hyphen)",,,,,daniel,
+Route53 Rule Group,,-,-,,-,,,,,"The name must have 1-128 characters. Valid characters: A-Z, a-z, 0-9, -(hyphen), and _(underscore).",,,,,daniel,
+Route53 Query Logging,,-,-,,-,,,,,"The name can have up to 64 characters. Valid characters: A-Z, a-z, 0-9, space, _ (underscore) and - (hyphen)",,,,,daniel,
+Route53 Application Recovery Controller Cluster,,AWS::Route53RecoveryControl::Cluster,Name,,,"Name of the cluster. You can use any non-white space character in the name.
+Required: No
+Type: String
+Update requires: Replacement",,,,"Name can contain only letters, numbers, underscores (_), or dashes (-).",,,,,daniel,
+Route53 Application Recovery Controller Routing Control,,AWS::Route53RecoveryControl::RoutingControl,Name,,,"The name of the routing control. You can use any non-white space character in the name.
+Required: Yes
+Type: String
+Update requires: No interruption",,,,"Enter only letters, numbers, with no spaces.",,,,,daniel,
+Route53 Application Recovery Controller Routing Control Panel,,AWS::Route53RecoveryControl::ControlPanel,Name,,,"Required: No
+Type: String
+Update requires: Replacement",,,,"Enter only letters or numbers, with no spaces.",,,,,daniel,
+Route53 Application Recovery Controller Recovery Group,,AWS::Route53RecoveryReadiness::RecoveryGroup,RecoveryGroupName,,,"Required: No
+Type: String
+Update requires: Replacement",,,,"Enter only letters, numbers, underscores (_), or dashes (-), with no spaces.",,,,,daniel,
+Route53 Application Recovery Controller Readiness Check,,AWS::Route53RecoveryReadiness::ReadinessCheck,ReadinessCheckName,,,"Required: No
+Type: String
+Update requires: Replacement",,,,"Enter only letters or numbers, with no spaces.",,,,,daniel,
+VPC DNS Firewall Rule Group,,-,-,,-,,,,,"The name must have 1-128 characters. Valid characters: A-Z, a-z, 0-9, -(hyphen), and _(underscore).",,,,,daniel,
+VPC DNS Firewall Domain List,,-,-,,-,,,,,"The name must have 1-128 characters. Valid characters: A-Z, a-z, 0-9, -(hyphen), and _(underscore).",,,,,daniel,
+VPC Firewall,,-,-,,-,,,,,"The name must have 1-128 characters. Valid characters: a-z, A-Z, 0-9 and -(hyphen). The name can’t start or end with a hyphen, and it can’t contain two consecutive hyphens.",,,,,daniel,
+VPC Firewall Policy,,-,-,,-,,,,,"The name must have 1-128 characters. Valid characters: a-z, A-Z, 0-9 and -(hyphen). The name can’t start or end with a hyphen, and it can’t contain two consecutive hyphens.",,,,,daniel,
+VPC Firewall Rule Group,,-,-,,-,,,,,"The name must have 1-128 characters. Valid characters: a-z, A-Z, 0-9 and -(hyphen). The name can’t start or end with a hyphen, and it can’t contain two consecutive hyphens.",,,,,daniel,
+Amazon Braket Notebooks,,-,-,,-,,,,,"Maximum of 49 alphanumeric characters. Can include hyphens (-), but not spaces. Must be unique within your account in an AWS Region.",,,,,daniel,
+AWS RoboMaker Robot Application,,AWS::RoboMaker::RobotApplication,Name,,[a-zA-Z0-9_\-]*,,,,,"Must be between 1 and 255 characters. Valid characters are a-z, A-Z, 0-9, - (hyphen), and _ (underscore). No spaces.",,,,,daniel,
+WAF Web ACL,,AWS::WAFv2::WebACL,Name,,^[\w\-]+$,,,,,"The name must have 1-128 characters. Valid characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore).",,,,,daniel,
+WAF IP Sets,,AWS::WAFv2::IPSet,Name,,^[\w\-]+$,,,,,"The name must have 1-128 characters. Valid characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore).",,,,,daniel,
+WAF Rule Group,,AWS::WAFv2::RuleGroup,Name,,^[\w\-]+$,,,,,"The name must have 1-128 characters. Valid characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore).",,,,,daniel,
+IAM User Group,,AWS::IAM::Group,GroupName,,,"The group name must be unique within the account. Group names are not distinguished by case. For example, you cannot create groups named both ""ADMINS"" and ""admins"". If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the group name.",,,,"Maximum 128 characters. Use alphanumeric and '+=,.@-_' characters.",,,,,daniel,
+IAM Identity Provider,,-,-,,-,,,,,Maximum 128 characters. Use alphanumeric or '._-' characters.,,,,,daniel,
+AWS Signer Signing Profiles,,AWS::Signer::SigningProfile,PlatformId,,,"Required: Yes
+Type: String
+Update requires: Replacement",,,,"Profile name must contain from 2 to 64 characters. Valid characters are lowercase a-z, uppercase A-Z, 0-9, and _ (underscore).",,,,,daniel,
+AWS Backup Backup Vault,,AWS::Backup::BackupVault,BackupVaultName,,"^[a-zA-Z0-9\-\_]{2,50}$",,,,,Backup vault name is case sensitive. Must contain from 2 to 50 alphanumeric or '-_' characters.,,,,,daniel,
+AWS Backup Backup Plan,,AWS::Backup::BackupPlan,BackupPlan,,,"Required: Yes
+Type: BackupPlanResourceType
+Update requires: No interruption",,,,Backup plan name is case sensitive. Must contain from 1 to 50 alphanumeric or '-_.' characters.,,,,,daniel,
+AWS Backup Hypervisor,,-,-,,-,,,,,"Hypervisor name can have up to 100 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen). It can't be changed after creation.",,,,,daniel,
+EFS File System,,AWS::EFS::FileSystem,-,,-,,,,,"Name can include letters, numbers, and +-=._:/ symbols, up to 256 characters.",,,,,daniel,
+EFS Access Point,,AWS::EFS::AccessPoint,FileSystemId,,"^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:file-system/fs-[0-9a-f]{8,40}|fs-[0-9a-f]{8,40})$",,,,,"Name can include letters, numbers, and +-=._:/ symbols, up to 256 characters.",,,,,daniel,
+FSx Caches,,-,-,,-,,,,,"Maximum of 256 Unicode letters, whitespace, and numbers, plus + - = . _ : /",,,,,daniel,
+FSx Storage Virtual Machine,,AWS::FSx::StorageVirtualMachine,Name,,"^[^\u0000\u0085\u2028\u2029\r\n]{1,47}$",,,,,"Maximum of 47 alphanumeric characters, plus . - _ . Must begin with a letter or underscore",,,,,daniel,
+FSx Snapshot,,AWS::FSx::Snapshot,Name,,"^[a-zA-Z0-9_:.-]{1,203}$",,,,,"Maximum of 203 alphanumeric characters, plus _ - : .",,,,,daniel,
+S3 Object Lambda Access Points,,AWS::S3ObjectLambda::AccessPoint,Name,,,"Required: No
+Type: String
+Update requires: Replacement",,,,"Must be unique within a single AWS account and Region, comply with DNS naming restrictions, must begin with a number or lowercase letter, must be between 3 and 50 characters long, can't begin or end with a hyphen (-), can't contain underscores (_), uppercase letters, or periods (.), can't end with the suffix -s3alias. This suffix is reserved for access point alias names.",,,,,daniel,
+S3 Storage Lens Dashboard,,-,-,,-,,,,,Dashboard name must be fewer than 65 characters and must not contain special characters or spaces. You will not be able to change this after the dashboard has been created.,,,,,daniel,
+S3 Glacier Vaults,,-,-,,-,,,,,"The vault name can be up to 255 characters, and must be unique within the account and the AWS Region. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), and '.' (period).",,,,,daniel,
+Storage Gateway Gateway,,-,-,,-,,,,,The name must be between 2 and 255 characters and cannot include a slash ( or /).,,,,,daniel,
+Storage Gateway Pools,,-,-,,-,,,,,Between 2 and 100 characters in length.,,,,,daniel,
+Storage Gateway Hardware Gateway,,-,-,,-,,,,,The name must be between 2 and 255 characters and cannot include a slash ( or /).,,,,,daniel,

@@ -1,0 +1,9 @@
+Service type_name,property,warning_id,regex,error_message
+AWS::S3::Bucket,BucketName,"S3_TRANSFER_ACCELERATION_RULE
+","^(?!.*\\.)
+
+","Buckets used with Amazon S3 Transfer Acceleration can't have dots (.) in their names.
+
+"
+,"
+",,,
