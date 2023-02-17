@@ -23,5 +23,7 @@ AWS::S3::Bucket,BucketName,NO_XN_BEGINNING_RULE,"^(?!xn—)
 AWS::S3::Bucket,BucketName,NO_S3_ALIAS_ENDING_RULE,"^(?!.*-s3alias$).*$
 ","Bucket names must not end with the suffix -s3alias.
 "
-,,"
-",,
+AWS::SageMaker::NotebookInstance,NotebookInstanceName,LENGTH_RULE,"^.{1,63}$",Notebook instance name must be between 1 (min) and 63 (max) characters long.
+AWS::SageMaker::NotebookInstance,NotebookInstanceName,CONTENTS_RULE,^[a-zA-Z0-9-]*$,"Notebook instance name may only contain letters (a-Z), numbers (0-9), and hyphens (-)."
+AWS::SageMaker::NotebookInstance,NotebookInstanceName,BEGINNING_RULE,^(?!-).*,Notebook instance name must not start with a hypen.
+AWS::SageMaker::NotebookInstance,NotebookInstanceName,ENDING_RULE,^(?!.*-$).*$,Notebook instance name must not end with a hypen.
